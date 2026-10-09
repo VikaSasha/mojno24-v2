@@ -1,0 +1,366 @@
+{
+ "partners": [
+  {
+   "id": "ozon",
+   "name": "Ozon",
+   "type": "market",
+   "text": "Маркетплейс с доставкой по всей России — домой или в пункт выдачи.",
+   "region": "Вся Россия",
+   "url": "https://www.ozon.ru/search/?text=Street+Lunch+%D1%81%D1%83%D0%BF-%D0%BF%D1%8E%D1%80%D0%B5",
+   "button": "Найти на Ozon",
+   "brands": [],
+   "stores": "",
+   "points": [],
+   "photos": []
+  },
+  {
+   "id": "svetofor",
+   "name": "Светофор",
+   "type": "federal",
+   "text": "Сеть магазинов низких цен. Суп-пюре Street Lunch в коробках по 240 г.",
+   "region": "Урал, юг России, Калининград",
+   "url": "",
+   "brands": [
+    "Street Lunch"
+   ],
+   "stores": "",
+   "points": [
+    {
+     "city": "Екатеринбург",
+     "lat": 56.8389,
+     "lon": 60.6057,
+     "label": "Свердловская область",
+     "stores": 74,
+     "note": "Екатеринбург, Первоуральск, Каменск-Уральский, Ревда, Серов, Асбест, Берёзовский, Ирбит и ещё 30+ населённых пунктов"
+    },
+    {
+     "city": "Ростов-на-Дону",
+     "lat": 47.2357,
+     "lon": 39.7015,
+     "label": "Ростовская область",
+     "stores": 70,
+     "note": "Ростов-на-Дону, Таганрог, Шахты, Новочеркасск, Батайск, Азов, Волгодонск и ещё 30+ населённых пунктов"
+    },
+    {
+     "city": "Челябинск",
+     "lat": 55.1644,
+     "lon": 61.4368,
+     "label": "Челябинск",
+     "stores": "",
+     "note": ""
+    },
+    {
+     "city": "Магнитогорск",
+     "lat": 53.4072,
+     "lon": 58.9791,
+     "label": "Магнитогорск",
+     "stores": "",
+     "note": ""
+    },
+    {
+     "city": "Калининград",
+     "lat": 54.7104,
+     "lon": 20.4522,
+     "label": "Калининград",
+     "stores": "",
+     "note": ""
+    },
+    {
+     "city": "Краснодар",
+     "lat": 45.0355,
+     "lon": 38.9753,
+     "label": "Краснодар",
+     "stores": "",
+     "note": ""
+    }
+   ],
+   "photos": [
+    "/v2/img/shelf/svetofor.jpg",
+    "/v2/img/shelf/svetofor-magnitogorsk.jpg"
+   ]
+  },
+  {
+   "id": "perekrestok",
+   "name": "Перекрёсток",
+   "type": "federal",
+   "text": "Федеральная сеть супермаркетов.",
+   "region": "",
+   "url": "",
+   "brands": [],
+   "stores": "",
+   "points": [],
+   "photos": []
+  },
+  {
+   "id": "lenta",
+   "name": "Лента",
+   "type": "federal",
+   "text": "Федеральная сеть гипермаркетов и супермаркетов. Супы-пюре Street Lunch в стаканах.",
+   "region": "",
+   "url": "",
+   "brands": [
+    "Street Lunch"
+   ],
+   "stores": "",
+   "points": [],
+   "photos": [
+    "/v2/img/shelf/lenta.jpg"
+   ]
+  },
+  {
+   "id": "globus",
+   "name": "GLOBUS",
+   "type": "federal",
+   "text": "Сеть гипермаркетов.",
+   "region": "Москва",
+   "url": "",
+   "brands": [
+    "Street Lunch"
+   ],
+   "stores": "",
+   "points": [
+    {
+     "city": "Москва",
+     "lat": 55.7558,
+     "lon": 37.6173,
+     "label": "Москва",
+     "stores": "",
+     "note": ""
+    }
+   ],
+   "photos": [
+    "/v2/img/shelf/globus.webp"
+   ]
+  },
+  {
+   "id": "spar",
+   "name": "SPAR",
+   "type": "chain",
+   "text": "Сеть супермаркетов SPAR Урал.",
+   "region": "Урал",
+   "url": "",
+   "brands": [],
+   "stores": "",
+   "points": [],
+   "photos": []
+  },
+  {
+   "id": "zhiznmart",
+   "name": "ЖизньМарт",
+   "type": "chain",
+   "text": "Сеть супермаркетов. Хрустящий десерт РисоМишки.",
+   "region": "",
+   "url": "",
+   "brands": [
+    "РисоМишки"
+   ],
+   "stores": "",
+   "points": [
+    {
+     "city": "Екатеринбург",
+     "lat": 56.8389,
+     "lon": 60.6057,
+     "label": "Екатеринбург",
+     "stores": "",
+     "note": ""
+    }
+   ],
+   "photos": [
+    "/v2/img/shelf/zhiznmart.jpg"
+   ]
+  },
+  {
+   "id": "yagodka",
+   "name": "Ягодка",
+   "type": "chain",
+   "text": "Хрустящий десерт РисоМишки.",
+   "region": "",
+   "url": "",
+   "brands": [
+    "РисоМишки"
+   ],
+   "stores": "",
+   "points": [
+    {
+     "city": "Екатеринбург",
+     "lat": 56.8389,
+     "lon": 60.6057,
+     "label": "Екатеринбург",
+     "stores": "",
+     "note": ""
+    }
+   ],
+   "photos": [
+    "/v2/img/shelf/yagodka.jpg"
+   ]
+  },
+  {
+   "id": "ariant",
+   "name": "Ариант",
+   "type": "chain",
+   "text": "Сеть супермаркетов. Хрустящий десерт РисоМишки.",
+   "region": "",
+   "url": "",
+   "brands": [
+    "РисоМишки"
+   ],
+   "stores": "",
+   "points": [
+    {
+     "city": "Челябинск",
+     "lat": 55.1644,
+     "lon": 61.4368,
+     "label": "Челябинск",
+     "stores": "",
+     "note": ""
+    }
+   ],
+   "photos": [
+    "/v2/img/shelf/ariant.jpg"
+   ]
+  },
+  {
+   "id": "mayak",
+   "name": "Маяк",
+   "type": "chain",
+   "text": "Сеть магазинов.",
+   "region": "",
+   "url": "",
+   "brands": [],
+   "stores": "",
+   "points": [
+    {
+     "city": "Челябинск",
+     "lat": 55.1644,
+     "lon": 61.4368,
+     "label": "Челябинск",
+     "stores": "",
+     "note": ""
+    }
+   ],
+   "photos": []
+  },
+  {
+   "id": "teorema",
+   "name": "Теорема",
+   "type": "chain",
+   "text": "Сеть магазинов.",
+   "region": "",
+   "url": "",
+   "brands": [],
+   "stores": "",
+   "points": [
+    {
+     "city": "Челябинск",
+     "lat": 55.1644,
+     "lon": 61.4368,
+     "label": "Челябинск",
+     "stores": "",
+     "note": ""
+    }
+   ],
+   "photos": []
+  },
+  {
+   "id": "mindal",
+   "name": "Миндаль",
+   "type": "chain",
+   "text": "Сеть магазинов. Хрустящий десерт РисоМишки в белой глазури.",
+   "region": "",
+   "url": "",
+   "brands": [
+    "РисоМишки"
+   ],
+   "stores": 20,
+   "points": [],
+   "photos": [
+    "/v2/img/shelf/mindal.jpg"
+   ]
+  },
+  {
+   "id": "fitograd",
+   "name": "ФитоГрад",
+   "type": "chain",
+   "text": "Магазины здорового питания: супы и каши Street Lunch, хлебцы Смакус, Хрумстики.",
+   "region": "",
+   "url": "",
+   "brands": [
+    "Street Lunch",
+    "Смакус",
+    "Хрумстик"
+   ],
+   "stores": "",
+   "points": [
+    {
+     "city": "Пермь",
+     "lat": 58.0105,
+     "lon": 56.2502,
+     "label": "Пермь",
+     "stores": "",
+     "note": ""
+    }
+   ],
+   "photos": [
+    "/v2/img/shelf/fitograd.jpg",
+    "/v2/img/shelf/fitograd-2.jpg"
+   ]
+  },
+  {
+   "id": "bazar-market",
+   "name": "Bazar Market",
+   "type": "chain",
+   "text": "Супы-пюре Street Lunch в стаканах.",
+   "region": "",
+   "url": "",
+   "brands": [
+    "Street Lunch"
+   ],
+   "stores": "",
+   "points": [
+    {
+     "city": "Калининград",
+     "lat": 54.7104,
+     "lon": 20.4522,
+     "label": "Калининград",
+     "stores": "",
+     "note": ""
+    }
+   ],
+   "photos": [
+    "/v2/img/shelf/bazar-market.jpg"
+   ]
+  },
+  {
+   "id": "kantmarket",
+   "name": "КантМаркет",
+   "type": "chain",
+   "text": "Хрустящий десерт РисоМишки.",
+   "region": "",
+   "url": "",
+   "brands": [
+    "РисоМишки"
+   ],
+   "stores": "",
+   "points": [],
+   "photos": [
+    "/v2/img/shelf/kantmarket.jpg"
+   ]
+  },
+  {
+   "id": "kazakhstan",
+   "name": "Казахстан",
+   "type": "export",
+   "text": "Поставки супов-пюре Street Lunch в розничные магазины Казахстана.",
+   "region": "Казахстан",
+   "url": "",
+   "brands": [
+    "Street Lunch"
+   ],
+   "stores": "",
+   "points": [],
+   "photos": [
+    "/v2/img/shelf/kazakhstan.jpg"
+   ]
+  }
+ ]
+}

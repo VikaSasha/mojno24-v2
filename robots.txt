@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /request
+Disallow: /*?q=
+Disallow: /*?brand=
+Disallow: /*?category=
+Disallow: /admin
+Sitemap: https://mojno24.ru/sitemap.xml
