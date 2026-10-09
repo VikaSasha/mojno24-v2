@@ -6,11 +6,20 @@
   'use strict';
 
   var SITE = window.V2_SITE || { cats: [], products: [], news: [] };
+  // Префикс адреса: '' локально, '/mojno24-v2' на GitHub Pages — берём из адреса самого скрипта
+  var BASE = (function () {
+    var s = document.currentScript && document.currentScript.src;
+    return s ? new URL(s).pathname.replace(/\/v2\/v2\.js$/, '') : '';
+  })();
   var ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4"></path></svg>';
   var MAKER = 'ООО «Новые продукты», г. Челябинск';
 
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
-  function h(html) { var t = document.createElement('template'); t.innerHTML = html.trim(); return t.content.firstElementChild; }
+  function h(html) {
+    // все внутренние ссылки и картинки в генерируемой разметке пишутся от корня — добавляем префикс сайта
+    if (BASE) html = html.replace(/(\s(?:href|src|data-src)=")\/(?!\/)/g, '$1' + BASE + '/');
+    var t = document.createElement('template'); t.innerHTML = html.trim(); return t.content.firstElementChild;
+  }
   function $(sel, root) { return (root || document).querySelector(sel); }
   function $$(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
   function plural(n, f) { var a = Math.abs(n) % 100, b = a % 10; return a > 10 && a < 20 ? f[2] : b > 1 && b < 5 ? f[1] : b === 1 ? f[0] : f[2]; }
@@ -314,7 +323,7 @@
 
     // фото для товаров без изображения
     if (FILL_IMG[slug]) {
-      $$('.workspace-gallery img:not([src]), .current-product img:not([src])').forEach(function (img) { img.setAttribute('src', FILL_IMG[slug]); });
+      $$('.workspace-gallery img:not([src]), .current-product img:not([src])').forEach(function (img) { img.setAttribute('src', BASE + FILL_IMG[slug]); });
     }
 
     var specs = $('.product-specs');
@@ -355,7 +364,7 @@
   }
   function fillCatalogImages() {
     Object.keys(FILL_IMG).forEach(function (slug) {
-      $$('a.product-image[href="/product/' + slug + '"]').forEach(function (a) {
+      $$('a.product-image[href="' + BASE + '/product/' + slug + '"]').forEach(function (a) {
         if (a.querySelector('img.v2-filled')) return;
         var fb = a.querySelector('.image-fallback'); if (!fb) return;
         fb.style.display = 'none';
@@ -452,7 +461,7 @@
     if (nav && !nav.querySelector('.v2-nav')) {
       var last = nav.lastElementChild;
       [['/gde-kupit', 'Где купить'], ['/suppliers', 'Поставщикам']].forEach(function (l, i) {
-        var a = last.cloneNode(true); a.classList.add('v2-nav'); a.setAttribute('href', l[0]);
+        var a = last.cloneNode(true); a.classList.add('v2-nav'); a.setAttribute('href', BASE + l[0]);
         var spans = a.querySelectorAll('span'); if (spans[0]) spans[0].textContent = '0' + (nav.children.length + 1); if (spans[1]) spans[1].textContent = l[1];
         nav.appendChild(a);
       });
@@ -761,7 +770,7 @@
   /* ---------------- маршрутизация ---------------- */
 
   function run() {
-    var path = location.pathname.replace(/\/+$/, '') || '/';
+    var path = location.pathname.slice(BASE.length).replace(/\/+$/, '') || '/';
     var vp = ($('meta[name=v2-page]') || {}).content;
     enhanceNav();
     if (vp === '404') return page404();
@@ -780,7 +789,7 @@
 
   window.V2 = { ask: ask, data: function () { return { groups: GROUPS, products: ALL, news: NEWS }; }, defaults: { groups: GROUPS, products: NEW } };
   applyData(null, null);
-  var dataReady = Promise.all([loadJSON('/v2/data/catalog.json'), loadJSON('/v2/data/news.json'), loadJSON('/v2/data/where.json')])
+  var dataReady = Promise.all([loadJSON(BASE + '/v2/data/catalog.json'), loadJSON(BASE + '/v2/data/news.json'), loadJSON(BASE + '/v2/data/where.json')])
     .then(function (r) { applyData(r[0], r[1]); if (r[2] && Array.isArray(r[2].partners)) WHERE = { partners: r[2].partners.filter(function (p) { return p && p.id && !p.hidden; }) }; });
   whenHydrated(function () {
     dataReady.then(function () {
