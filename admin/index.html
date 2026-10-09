@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Админка · Новые продукты</title>
+  <link rel="icon" href="/generated/newprod-logo.png">
+  <link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="side">
+      <a class="logo" href="#products"><img src="/generated/newprod-logo.png" alt=""><span><b>Новые продукты</b><small>Управление сайтом</small></span></a>
+      <nav class="side-nav" aria-label="Разделы админки">
+        <a href="#products" data-nav="products">Каталог <span id="cnt-products"></span></a>
+        <a href="#news" data-nav="news">Новости <span id="cnt-news"></span></a>
+        <a href="#where" data-nav="where">Где купить <span id="cnt-where"></span></a>
+      </nav>
+      <div class="side-foot">
+        <a href="/" target="_blank" rel="noopener">Открыть сайт ↗</a>
+        <span id="api-status" class="api-status">Проверяю сервер…</span>
+      </div>
+    </aside>
+    <main id="view" class="view" tabindex="-1"></main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/v2/site-index.js"></script>
+  <script src="/admin/admin.js"></script>
+</body>
+</html>
