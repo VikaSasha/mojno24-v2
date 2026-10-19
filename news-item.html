@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ru" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Новость | Новые продукты</title>
+  <meta name="description" content="Новости ООО «Новые продукты».">
+  <meta name="theme-color" content="#123620">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/sofia-sans-extra-condensed-cyrillic-raxoHjaf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/onest-cyrillic-gNMKW3F-.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script defer src="assets/js/data.js"></script>
+  <script defer src="assets/js/app.js"></script>
+</head>
+<body data-page="news-item" data-section="news">
+<!--@header-->
+<a class="skip-link" href="#main">Перейти к содержанию</a>
+<header class="site-header">
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar__group">
+        <span>Производитель с 2003 года · Челябинск</span>
+        <a href="where.html">Где купить</a>
+        <a href="faq.html">Вопросы и ответы</a>
+      </div>
+      <div class="topbar__group">
+        <a href="mailto:info@newprod.ru">info@newprod.ru</a>
+        <a href="tel:+79043054275">+7 (904) 305-42-75</a>
+        <span class="lang-switch" aria-label="Язык сайта"><span aria-current="true">RU</span><a href="en/index.html" lang="en" hreflang="en">EN</a></span>
+      </div>
+    </div>
+  </div>
+  <div class="container header-bar">
+    <a class="logo" href="index.html" aria-label="Новые продукты — на главную">
+      <img class="logo__mark" src="assets/img/np-mark.svg" alt="" width="48" height="48">
+      <span class="logo__word"><span>Новые</span><span>продукты</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Основное меню">
+      <ul>
+        <li><a class="nav-link" data-nav="catalog" href="catalog.html">Продукция</a></li>
+        <li class="has-dropdown">
+          <button class="nav-link" type="button" data-dropdown data-nav="business" aria-expanded="false" aria-controls="dd-business">Бизнесу <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <ul class="dropdown" id="dd-business">
+            <li><a data-nav="retail" href="retail.html"><strong>Сетям и дистрибьюторам</strong><small>Ассортимент, поддержка продаж, образцы</small></a></li>
+            <li><a data-nav="private-label" href="private-label.html"><strong>СТМ и контрактное производство</strong><small>Продукт под вашей маркой — кейс ЖизньМарт</small></a></li>
+            <li><a data-nav="b2g" href="b2g.html"><strong>B2G и HoReCa</strong><small>Питание для учреждений, столовых, кафе</small></a></li>
+            <li><a data-nav="export" href="export.html"><strong>Экспорт</strong><small>Беларусь, Казахстан, Узбекистан, Кыргызстан</small></a></li>
+            <li><a data-nav="suppliers" href="suppliers.html"><strong>Поставщикам</strong><small>Сырьё и упаковка</small></a></li>
+            <li><a data-nav="documents" href="documents.html"><strong>Документы</strong><small>Каталог, декларации, медиакит</small></a></li>
+            <li><a data-nav="business" href="business.html"><strong>Все направления →</strong></a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link" data-nav="where" href="where.html">Где купить</a></li>
+        <li><a class="nav-link" data-nav="about" href="about.html">О компании</a></li>
+        <li><a class="nav-link" data-nav="social" href="social.html">Соцпроекты</a></li>
+        <li><a class="nav-link" data-nav="news" href="news.html" aria-current="page">Новости</a></li>
+        <li><a class="nav-link" data-nav="contacts" href="contacts.html">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="request-btn" type="button" data-request-open data-request-btn-label aria-label="Заявка: 0 позиций">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <span class="request-btn__label">Сотрудничество</span>
+        <span class="count-badge" data-request-count>0</span>
+      </button>
+      <button class="btn btn--sm header-cta" type="button" data-request-open data-who="retail">Стать партнёром</button>
+      <button class="burger" type="button" data-drawer-open aria-expanded="false" aria-controls="drawer" aria-label="Открыть меню">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<!--/@header-->
+
+<main id="main">
+  <div class="container" style="max-width:980px">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки"><ol data-crumbs><li><a href="index.html">Главная</a></li><li><a href="news.html">Новости</a></li></ol></nav>
+    <article class="section--tight" data-news-item aria-live="polite">
+      <div class="skeleton" style="height:64px;width:70%"></div>
+      <div class="skeleton mt-5" style="aspect-ratio:16/10"></div>
+    </article>
+    <p class="mb-5"><a class="link-arrow" href="news.html">Все новости</a></p>
+  </div>
+  <section class="section section--alt" aria-labelledby="more-news">
+    <div class="container">
+      <h2 class="h3 mb-5" id="more-news">Последние новости</h2>
+      <div class="cards cards--3" data-news-list data-limit="3"></div>
+    </div>
+  </section>
+</main>
+
+<!--@footer-->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-cta">
+      <div>
+        <p class="kicker">Отдел продаж</p>
+        <p class="h2">Обсудим поставки для вашей сети?</p>
+      </div>
+      <div class="cluster">
+        <button class="btn btn--accent btn--lg" type="button" data-request-open data-who="retail">Оставить заявку</button>
+        <a class="btn btn--ghost btn--lg" style="--btn-fg:#fbf8f1;--btn-bd:rgba(251,248,241,.45)" href="tel:+79043054275">+7 (904) 305-42-75</a>
+      </div>
+    </div>
+    <div class="footer-grid">
+      <div>
+        <h2>Компания</h2>
+        <div class="footer-contact">
+          <a href="mailto:info@newprod.ru">info@newprod.ru</a>
+          <span>454047, г. Челябинск, ул. Лазурная, д. 8</span>
+          <span>ООО «Новые продукты» · ИНН 7453101828</span>
+          <div data-socials-box>
+            <p class="small mb-0" style="margin-top:8px">Мы в соцсетях</p>
+            <div class="socials mt-4" data-socials></div>
+          </div>
+        </div>
+      </div>
+      <nav aria-label="Продукция">
+        <h2>Продукция</h2>
+        <ul>
+          <li><a href="catalog.html">Весь каталог</a></li>
+                    <li><a href="brand.html?b=street-lunch">Street Lunch</a></li>
+          <li><a href="brand.html?b=risomishki">РисоМишки</a></li>
+          <li><a href="brand.html?b=nasha-kasha">Наша Каша</a></li>
+          <li><a href="brand.html?b=hrumstik">Хрумстик</a></li><li><a href="brand.html?b=krupy">Зерно и мука</a></li>
+          <li><a href="where.html">Где купить</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Бизнесу">
+        <h2>Бизнесу</h2>
+        <ul>
+          <li><a href="retail.html">Сетям и дистрибьюторам</a></li>
+          <li><a href="private-label.html">СТМ и контрактное производство</a></li>
+          <li><a href="b2g.html">B2G и HoReCa</a></li>
+          <li><a href="export.html">Экспорт</a></li>
+          <li><a href="suppliers.html">Поставщикам</a></li>
+          <li><a href="documents.html">Документы</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="О компании">
+        <h2>О нас</h2>
+        <ul>
+          <li><a href="about.html">О компании</a></li>
+          <li><a href="social.html">Социальные проекты</a></li>
+          <li><a href="news.html">Новости</a></li>
+          <li><a href="faq.html">Вопросы и ответы</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="en/index.html" lang="en" hreflang="en">English version</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2003–<span data-year>2026</span> ООО «Новые продукты»</span>
+      <span class="cluster"><a href="privacy.html">Политика конфиденциальности</a><a href="consent.html">Согласие на обработку данных</a><a href="cookies.html">Cookie</a><a href="sitemap.html">Карта сайта</a></span>
+    </div>
+    <p class="disclaimer mt-4" data-meta-note hidden>* Instagram принадлежит компании Meta, признанной экстремистской организацией и запрещённой в РФ.</p>
+  </div>
+</footer>
+<!--/@footer-->
+<!--@drawer-->
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Меню">
+  <div class="drawer__scrim" data-drawer-close></div>
+  <div class="drawer__panel">
+    <div class="drawer__top">
+      <a class="logo" href="index.html" aria-label="Новые продукты — на главную">
+        <img class="logo__mark" src="assets/img/np-mark.svg" alt="" width="48" height="48">
+        <span class="logo__word"><span>Новые</span><span>продукты</span></span>
+      </a>
+      <button class="icon-btn" type="button" data-drawer-close aria-label="Закрыть меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <nav aria-label="Мобильное меню">
+      <ul>
+        <li><a data-nav="catalog" href="catalog.html">Продукция</a></li>
+        <li>
+          <details>
+            <summary>Бизнесу <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <ul>
+              <li><a data-nav="business" href="business.html">Все направления</a></li>
+              <li><a data-nav="retail" href="retail.html">Сетям и дистрибьюторам</a></li>
+              <li><a data-nav="private-label" href="private-label.html">СТМ и контрактное производство</a></li>
+              <li><a data-nav="b2g" href="b2g.html">B2G и HoReCa</a></li>
+              <li><a data-nav="export" href="export.html">Экспорт</a></li>
+              <li><a data-nav="suppliers" href="suppliers.html">Поставщикам</a></li>
+              <li><a data-nav="documents" href="documents.html">Документы</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a data-nav="where" href="where.html">Где купить</a></li>
+        <li><a data-nav="about" href="about.html">О компании</a></li>
+        <li><a data-nav="social" href="social.html">Соцпроекты</a></li>
+        <li><a data-nav="news" href="news.html" aria-current="page">Новости</a></li>
+        <li><a data-nav="faq" href="faq.html">Вопросы и ответы</a></li>
+        <li><a data-nav="contacts" href="contacts.html">Контакты</a></li>
+      </ul>
+    </nav>
+    <button class="btn btn--lg btn--block" type="button" data-request-open>Сотрудничество · <span data-request-count class="count-badge">0</span></button>
+    <div class="drawer__meta">
+      <a href="tel:+79043054275">+7 (904) 305-42-75</a>
+      <a href="mailto:info@newprod.ru">info@newprod.ru</a>
+      <span class="lang-switch" aria-label="Язык сайта"><span aria-current="true">RU</span><a href="en/index.html" lang="en" hreflang="en">EN</a></span>
+    </div>
+  </div>
+</div>
+<!--/@drawer-->
+<!--@request-->
+<dialog class="modal" id="request-dialog" aria-labelledby="req-title">
+  <button class="icon-btn modal__close" type="button" data-dialog-close aria-label="Закрыть окно заявки"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <div class="modal__inner">
+    <aside class="modal__aside">
+      <p class="kicker">Отдел продаж</p>
+      <h2 class="modal__title" id="req-title">Давайте сотрудничать</h2>
+      <p class="small">Соберите позиции в каталоге или напишите без выбора продукции. Цены и условия пришлём индивидуально.</p>
+      <div class="cluster" style="justify-content:space-between"><strong>Ваш список</strong><span class="count-badge has-items" data-request-total>0</span></div>
+      <ul class="req-list" data-request-list aria-live="polite"></ul>
+      <div class="cluster mt-0">
+        <a class="btn btn--sm btn--light" href="catalog.html">Перейти в каталог</a>
+        <button class="btn btn--sm btn--ghost" type="button" data-request-clear>Очистить</button>
+      </div>
+    </aside>
+    <div class="modal__main">
+      <form data-mail-form data-with-list novalidate>
+        <div class="form-grid">
+          <fieldset class="radio-cards">
+            <legend>Кто вы <span class="req" aria-hidden="true">*</span></legend>
+            <label class="radio-card"><input type="radio" name="who" value="retail" data-label="Сеть или магазин" required><span>Сеть или магазин</span></label>
+            <label class="radio-card"><input type="radio" name="who" value="distributor" data-label="Дистрибьютор"><span>Дистрибьютор</span></label>
+            <label class="radio-card"><input type="radio" name="who" value="stm" data-label="СТМ"><span>Производство СТМ</span></label>
+            <label class="radio-card"><input type="radio" name="who" value="b2g" data-label="B2G / HoReCa"><span>B2G / HoReCa</span></label>
+            <label class="radio-card"><input type="radio" name="who" value="export" data-label="Экспорт"><span>Экспорт</span></label>
+            <label class="radio-card"><input type="radio" name="who" value="supplier" data-label="Поставщик"><span>Поставщик</span></label>
+            <label class="radio-card"><input type="radio" name="who" value="buyer" data-label="Покупатель"><span>Покупатель</span></label>
+            <span class="field__error" role="alert"></span>
+          </fieldset>
+          <div class="form-grid form-grid--2">
+            <div class="field"><label for="rq-name">Имя <span class="req" aria-hidden="true">*</span></label><input class="input" id="rq-name" name="name" autocomplete="name" required aria-describedby="rq-name-e"><span class="field__error" id="rq-name-e" role="alert"></span></div>
+            <div class="field"><label for="rq-company">Компания</label><input class="input" id="rq-company" name="company" autocomplete="organization"></div>
+            <div class="field"><label for="rq-contact">Телефон или e-mail <span class="req" aria-hidden="true">*</span></label><input class="input" id="rq-contact" name="contact" autocomplete="email" inputmode="email" required aria-describedby="rq-contact-e"><span class="field__error" id="rq-contact-e" role="alert"></span></div>
+            <div class="field"><label for="rq-city">Город или страна</label><input class="input" id="rq-city" name="city" autocomplete="address-level2"></div>
+            <div class="field span-2"><label for="rq-msg">Комментарий</label><textarea class="textarea" id="rq-msg" name="message" rows="3" placeholder="Объёмы, регион, формат сотрудничества"></textarea></div>
+          </div>
+          <label class="check"><input type="checkbox" name="consent" required><span>Согласен на обработку персональных данных по <a href="privacy.html">политике конфиденциальности</a> и даю <a href="consent.html">согласие</a>.</span><span class="field__error" role="alert"></span></label>
+          <div class="alert" data-form-status role="status" hidden></div>
+          <div class="cluster">
+            <button class="btn btn--lg" type="submit">Отправить заявку</button>
+            <p class="form-note mb-0">Откроется ваша почта с готовым письмом на info@newprod.ru.</p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</dialog>
+<!--/@request-->
+</body>
+</html>

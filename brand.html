@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="ru" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Бренд | Новые продукты</title>
+  <meta name="description" content="Бренды ООО «Новые продукты»: Street Lunch, РисоМишки, Наша Каша, Хрумстик.">
+  <meta name="theme-color" content="#123620">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/sofia-sans-extra-condensed-cyrillic-raxoHjaf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/onest-cyrillic-gNMKW3F-.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/rubik-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/brand.css">
+  <script defer src="assets/js/data.js"></script>
+  <script defer src="assets/js/app.js"></script>
+</head>
+<body data-page="brand" data-section="catalog">
+<!--@header-->
+<a class="skip-link" href="#main">Перейти к содержанию</a>
+<header class="site-header">
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar__group">
+        <span>Производитель с 2003 года · Челябинск</span>
+        <a href="where.html">Где купить</a>
+        <a href="faq.html">Вопросы и ответы</a>
+      </div>
+      <div class="topbar__group">
+        <a href="mailto:info@newprod.ru">info@newprod.ru</a>
+        <a href="tel:+79043054275">+7 (904) 305-42-75</a>
+        <span class="lang-switch" aria-label="Язык сайта"><span aria-current="true">RU</span><a href="en/index.html" lang="en" hreflang="en">EN</a></span>
+      </div>
+    </div>
+  </div>
+  <div class="container header-bar">
+    <a class="logo" href="index.html" aria-label="Новые продукты — на главную">
+      <img class="logo__mark" src="assets/img/np-mark.svg" alt="" width="48" height="48">
+      <span class="logo__word"><span>Новые</span><span>продукты</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Основное меню">
+      <ul>
+        <li><a class="nav-link" data-nav="catalog" href="catalog.html" aria-current="page">Продукция</a></li>
+        <li class="has-dropdown">
+          <button class="nav-link" type="button" data-dropdown data-nav="business" aria-expanded="false" aria-controls="dd-business">Бизнесу <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <ul class="dropdown" id="dd-business">
+            <li><a data-nav="retail" href="retail.html"><strong>Сетям и дистрибьюторам</strong><small>Ассортимент, поддержка продаж, образцы</small></a></li>
+            <li><a data-nav="private-label" href="private-label.html"><strong>СТМ и контрактное производство</strong><small>Продукт под вашей маркой — кейс ЖизньМарт</small></a></li>
+            <li><a data-nav="b2g" href="b2g.html"><strong>B2G и HoReCa</strong><small>Питание для учреждений, столовых, кафе</small></a></li>
+            <li><a data-nav="export" href="export.html"><strong>Экспорт</strong><small>Беларусь, Казахстан, Узбекистан, Кыргызстан</small></a></li>
+            <li><a data-nav="suppliers" href="suppliers.html"><strong>Поставщикам</strong><small>Сырьё и упаковка</small></a></li>
+            <li><a data-nav="documents" href="documents.html"><strong>Документы</strong><small>Каталог, декларации, медиакит</small></a></li>
+            <li><a data-nav="business" href="business.html"><strong>Все направления →</strong></a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link" data-nav="where" href="where.html">Где купить</a></li>
+        <li><a class="nav-link" data-nav="about" href="about.html">О компании</a></li>
+        <li><a class="nav-link" data-nav="social" href="social.html">Соцпроекты</a></li>
+        <li><a class="nav-link" data-nav="news" href="news.html">Новости</a></li>
+        <li><a class="nav-link" data-nav="contacts" href="contacts.html">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="request-btn" type="button" data-request-open data-request-btn-label aria-label="Заявка: 0 позиций">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <span class="request-btn__label">Сотрудничество</span>
+        <span class="count-badge" data-request-count>0</span>
+      </button>
+      <button class="btn btn--sm header-cta" type="button" data-request-open data-who="retail">Стать партнёром</button>
+      <button class="burger" type="button" data-drawer-open aria-expanded="false" aria-controls="drawer" aria-label="Открыть меню">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<!--/@header-->
+
+<main id="main" data-brand-page>
+  <!-- Общая графика для страниц брендов: горох, стручок, листок (используется через <use>) -->
+  <svg class="bsprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <radialGradient id="g-pea" cx="35%" cy="30%" r="72%"><stop offset="0" stop-color="#d4f29a"/><stop offset=".5" stop-color="#86c64a"/><stop offset="1" stop-color="#3d8a22"/></radialGradient>
+      <linearGradient id="g-pod" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a6dc62"/><stop offset="1" stop-color="#3f8d24"/></linearGradient>
+      <linearGradient id="g-leaf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9ed35a"/><stop offset="1" stop-color="#4e9a2c"/></linearGradient>
+      <symbol id="i-pea" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9.2" fill="url(#g-pea)"/><ellipse cx="7" cy="6.4" rx="3.2" ry="2.1" fill="#fff" opacity=".5"/></symbol>
+      <symbol id="i-pod" viewBox="0 0 220 84">
+        <path d="M4 50C36 14 168 4 216 30c-30 14-150 46-212 20z" fill="url(#g-pod)"/>
+        <path d="M22 46c40-18 140-24 178-14-36 14-120 34-178 14z" fill="#d9f2ad" opacity=".75"/>
+        <use href="#i-pea" x="30" y="30" width="26" height="26"/><use href="#i-pea" x="56" y="25" width="28" height="28"/><use href="#i-pea" x="84" y="21" width="29" height="29"/>
+        <use href="#i-pea" x="113" y="19" width="29" height="29"/><use href="#i-pea" x="142" y="19" width="27" height="27"/><use href="#i-pea" x="168" y="21" width="24" height="24"/>
+        <path d="M212 30c4-6 4-14 0-22" fill="none" stroke="#4e9a2c" stroke-width="4" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-leaf" viewBox="0 0 64 44"><path d="M2 40C8 14 30 2 62 4 56 28 34 42 2 40z" fill="url(#g-leaf)"/><path d="M6 37C22 26 38 16 56 8" fill="none" stroke="#e8f7cf" stroke-width="2.2" stroke-linecap="round" opacity=".8"/></symbol>
+      <symbol id="i-grain" viewBox="0 0 20 32"><path d="M10 1C17 6 19 20 10 31 1 20 3 6 10 1z" fill="currentColor"/><path d="M10 5v22" stroke="#fff" stroke-opacity=".35" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ==================== STREET LUNCH — в стиле листовки ==================== -->
+  <section class="sl-hero" data-for-brand="street-lunch" hidden aria-labelledby="sl-title">
+    <div class="sl-hero__panel" aria-hidden="true"></div>
+    <div class="container sl-hero__grid">
+      <div class="sl-hero__brand">
+        <nav class="breadcrumbs" aria-label="Хлебные крошки"><ol><li><a href="index.html">Главная</a></li><li><a href="catalog.html">Продукция</a></li><li aria-current="page" data-brand-crumb>Street Lunch</li></ol></nav>
+        <h1 class="sl-hero__logo" id="sl-title"><img src="assets/img/brand/sl-logo.png" alt="Стрит Ланч — Street Lunch" width="560" height="457" fetchpriority="high"></h1>
+        <p class="sl-script sl-hero__slogan">Быстро и вкусно!</p>
+        <p class="sl-hero__lead">Суп-пюре без варки: высыпать пакетик, залить кипятком, подождать три минуты — и горячий сытный обед готов там, где нет плиты.</p>
+        <p class="sl-hero__count" data-brand-count></p>
+        <div class="cluster mt-5">
+          <a class="btn btn--accent btn--lg" href="#lineup">Смотреть линейку</a>
+          <a class="btn btn--ghost btn--lg" style="--btn-fg:#fff;--btn-bd:rgba(255,255,255,.6)" href="where.html">Где купить</a>
+        </div>
+      </div>
+      <div class="sl-hero__art" aria-hidden="true">
+        <span class="np-stamp"><img src="assets/img/np-star.svg" alt="" width="33" height="32"><span>Новые<br>продукты</span></span>
+        <div class="sl-bowl"><img src="assets/img/scenes/sl-bowl.jpg" alt="" width="1280" height="1600"></div>
+        <svg class="sl-pod sl-pod--1"><use href="#i-pod"/></svg>
+        <svg class="sl-pod sl-pod--2"><use href="#i-pod"/></svg>
+        <svg class="sl-pea sl-pea--1"><use href="#i-pea"/></svg>
+        <svg class="sl-pea sl-pea--2"><use href="#i-pea"/></svg>
+        <svg class="sl-pea sl-pea--3"><use href="#i-pea"/></svg>
+        <svg class="sl-leaf sl-leaf--1"><use href="#i-leaf"/></svg>
+        <div class="sl-timer"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="47" fill="#1c5e35"/><g class="sl-timer__arc"><circle cx="60" cy="60" r="55" fill="none" stroke="#f0a530" stroke-width="7" stroke-linecap="round" stroke-dasharray="255 346"/><path d="M60 0l13 6-13 7z" fill="#f0a530"/></g></svg><span class="sl-timer__n">3</span><span class="sl-timer__u">мин</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sl-paper" data-for-brand="street-lunch" hidden aria-labelledby="sl-intro-title">
+    <div class="container">
+      <h2 class="sl-caps reveal" id="sl-intro-title">«Стрит Ланч» — суп-пюре моментального приготовления</h2>
+      <div class="sl-intro">
+        <ul class="sl-boxes" aria-label="Супы-пюре в коробках">
+          <li><a href="product.html?id=sl-rebra&amp;f=box"><img class="reveal reveal--pop" style="--d:0ms" src="assets/img/products/sl-rebra-box.jpg" alt="Чечевичный с «копчёными рёбрышками», коробка" width="486" height="720" loading="lazy"></a></li>
+          <li><a href="product.html?id=sl-govyadina&amp;f=box"><img class="reveal reveal--pop" style="--d:90ms" src="assets/img/products/sl-govyadina-box.jpg" alt="Гороховый с «говядиной», коробка" width="486" height="720" loading="lazy"></a></li>
+          <li><a href="product.html?id=sl-griby&amp;f=box"><img class="reveal reveal--pop" style="--d:180ms" src="assets/img/products/sl-griby-box.jpg" alt="Гороховый с грибами, коробка" width="486" height="720" loading="lazy"></a></li>
+          <li><a href="product.html?id=sl-kurica&amp;f=box"><img class="reveal reveal--pop" style="--d:270ms" src="assets/img/products/sl-kurica-box.jpg" alt="Гороховый с «курицей», коробка" width="486" height="720" loading="lazy"></a></li>
+          <li><a href="product.html?id=sl-ovoshchi&amp;f=box"><img class="reveal reveal--pop" style="--d:360ms" src="assets/img/products/sl-ovoshchi-box.jpg" alt="Гороховый с овощами, коробка" width="486" height="720" loading="lazy"></a></li>
+        </ul>
+        <ul class="sl-facts">
+          <li class="reveal" style="--d:0ms"><span class="sl-facts__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg></span><p><strong>Без варки — 3 минуты.</strong> Высыпать пакетик, залить 250 мл кипятка или горячей воды, перемешать.</p></li>
+          <li class="reveal" style="--d:100ms"><span class="sl-facts__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 15c3-7 10-10 16-9-1 7-7 12-16 9z"/><path d="M4 15c4-2 8-4 11-7"/></svg></span><p><strong>Горох и чечевица.</strong> Около 17 г растительного белка в 100 г сухого горохового супа.</p></li>
+          <li class="reveal" style="--d:200ms"><span class="sl-facts__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 11h18a9 9 0 0 1-18 0z"/><path d="M8 7c0-2 2-2 2-4M13 7c0-2 2-2 2-4"/></svg></span><p><strong>Порция — пакетик 40 г.</strong> Из него получается около 300 г густого горячего супа. В коробке — шесть пакетиков.</p></li>
+          <li class="reveal" style="--d:300ms"><span class="sl-facts__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><p><strong>12 месяцев хранения</strong> при температуре до +25 °C и влажности не выше 75%.</p></li>
+        </ul>
+      </div>
+
+      <ol class="sl-steps" aria-label="Как приготовить">
+        <li class="reveal" style="--d:0ms"><span class="sl-steps__n" aria-hidden="true">1</span><h3>Высыпьте пакетик</h3><p>40 г — одна порция.</p></li>
+        <li class="reveal" style="--d:120ms"><span class="sl-steps__n" aria-hidden="true">2</span><h3>Залейте 250 мл кипятка</h3><p>Подойдёт и горячая вода.</p></li>
+        <li class="reveal" style="--d:240ms"><span class="sl-steps__n" aria-hidden="true">3</span><h3>Подождите 3 минуты</h3><p>Перемешайте — и обед готов.</p></li>
+      </ol>
+
+      <div class="sl-table">
+        <h3 class="sl-table__title">Супы, каши и пюре в стаканах</h3>
+        <ul class="sl-cups sl-cups--classic" aria-label="Супы, каши и пюре в стаканах">
+          <li><a href="product.html?id=sl-griby&amp;f=cup"><img class="reveal reveal--pop" style="--d:0ms" src="assets/img/products/sl-griby-cup-classic.jpg" alt="" width="560" height="720" loading="lazy"><span class="sl-cups__name">Гороховый с грибами</span></a></li>
+          <li><a href="product.html?id=sl-ovoshchi&amp;f=cup"><img class="reveal reveal--pop" style="--d:60ms" src="assets/img/products/sl-ovoshchi-cup-classic.jpg" alt="" width="560" height="720" loading="lazy"><span class="sl-cups__name">Гороховый с овощами</span></a></li>
+          <li><a href="product.html?id=sl-rebra&amp;f=cup"><img class="reveal reveal--pop" style="--d:120ms" src="assets/img/products/sl-rebra-cup-classic.jpg" alt="" width="560" height="720" loading="lazy"><span class="sl-cups__name">Чечевичный с «копчёными рёбрышками»</span></a></li>
+          <li><a href="product.html?id=sl-borshch&amp;f=cup"><img class="reveal reveal--pop" style="--d:180ms" src="assets/img/products/sl-borshch-cup-classic.jpg" alt="" width="560" height="720" loading="lazy"><span class="sl-cups__name">Борщ «по-Уральски»</span></a></li>
+          <li><a href="product.html?id=sl-solyanka&amp;f=cup"><img class="reveal reveal--pop" style="--d:240ms" src="assets/img/products/sl-solyanka-cup-classic.jpg" alt="" width="560" height="720" loading="lazy"><span class="sl-cups__name">Солянка «по-Уральски»</span></a></li>
+          <li><a href="product.html?id=sl-pyure&amp;f=cup"><img class="reveal reveal--pop" style="--d:300ms" src="assets/img/products/sl-pyure-cup-classic.jpg" alt="" width="560" height="720" loading="lazy"><span class="sl-cups__name">Пюре картофельное «по-Уральски»</span></a></li>
+          <li><a href="product.html?id=sl-kasha-gorokh&amp;f=cup"><img class="reveal reveal--pop" style="--d:360ms" src="assets/img/products/sl-kasha-gorokh-cup-classic.jpg" alt="" width="560" height="720" loading="lazy"><span class="sl-cups__name">Каша гороховая с жареным луком</span></a></li>
+          <li><a href="product.html?id=sl-kasha-grech&amp;f=cup"><img class="reveal reveal--pop" style="--d:420ms" src="assets/img/products/sl-kasha-grech-cup-classic.jpg" alt="" width="560" height="720" loading="lazy"><span class="sl-cups__name">Каша гречневая с мясом и зеленью</span></a></li>
+          <li><a href="product.html?id=sl-kasha-rizotto&amp;f=cup"><img class="reveal reveal--pop" style="--d:480ms" src="assets/img/products/sl-kasha-rizotto-cup-classic.jpg" alt="" width="560" height="720" loading="lazy"><span class="sl-cups__name">Каша ризотто с белыми грибами</span></a></li>
+        </ul>
+        <h3 class="sl-table__title">Новый дизайн стаканов <span class="soon-badge soon-badge--inline">Скоро в продаже</span></h3>
+        <ul class="sl-cups" aria-label="Стаканы в новом дизайне — скоро в продаже">
+          <li><a href="product.html?id=sl-rebra&amp;f=cupnew"><img class="reveal reveal--pop" style="--d:0ms" src="assets/img/products/sl-rebra-cup.jpg" alt="Чечевичный с «копчёными рёбрышками», стакан в новом дизайне" width="720" height="433" loading="lazy"></a></li>
+          <li><a href="product.html?id=sl-kurica&amp;f=cupnew"><img class="reveal reveal--pop" style="--d:110ms" src="assets/img/products/sl-kurica-cup.jpg" alt="Гороховый с «курицей», стакан в новом дизайне" width="720" height="485" loading="lazy"></a></li>
+          <li><a href="product.html?id=sl-griby&amp;f=cupnew"><img class="reveal reveal--pop" style="--d:220ms" src="assets/img/products/sl-griby-cup.jpg" alt="Гороховый с грибами, стакан в новом дизайне" width="720" height="433" loading="lazy"></a></li>
+          <li><a href="product.html?id=sl-govyadina&amp;f=cupnew"><img class="reveal reveal--pop" style="--d:330ms" src="assets/img/products/sl-govyadina-cup.jpg" alt="Гороховый с «говядиной», стакан в новом дизайне" width="720" height="485" loading="lazy"></a></li>
+        </ul>
+      </div>
+      <p class="sl-script sl-script--green reveal">Супы и каши «Стрит Ланч» — идеальный продукт для тех, кто живёт в&nbsp;быстром темпе!</p>
+    </div>
+  </section>
+
+  <section class="sl-life" data-for-brand="street-lunch" hidden aria-labelledby="sl-life-title">
+    <svg class="sl-pea sl-life__pea sl-life__pea--1" aria-hidden="true"><use href="#i-pea"/></svg>
+    <svg class="sl-pea sl-life__pea sl-life__pea--2" aria-hidden="true"><use href="#i-pea"/></svg>
+    <svg class="sl-pod sl-life__pod" aria-hidden="true"><use href="#i-pod"/></svg>
+    <div class="container sl-life__grid">
+      <ul class="sl-polaroids">
+        <li class="reveal reveal--drop" style="--r:-5deg;--d:0ms"><figure><img src="assets/img/scenes/sl-desk.jpg" alt="Коробка «Стрит Ланч» и тарелка супа на рабочем столе" width="1280" height="1600" loading="lazy"><figcaption>В офисе</figcaption></figure></li>
+        <li class="reveal reveal--drop" style="--r:4deg;--d:120ms"><figure><img src="assets/img/scenes/sl-backpack.jpg" alt="Коробка «Стрит Ланч» рядом с рюкзаком" width="1280" height="1600" loading="lazy"><figcaption>В дороге</figcaption></figure></li>
+        <li class="reveal reveal--drop" style="--r:-3deg;--d:240ms"><figure><img src="assets/img/scenes/sl-desk-duo.jpg" alt="Две коробки «Стрит Ланч» на столе" width="1280" height="1600" loading="lazy"><figcaption>На работе</figcaption></figure></li>
+        <li class="reveal reveal--drop" style="--r:5deg;--d:360ms"><figure><img src="assets/img/scenes/sl-bowl.jpg" alt="Тарелка горохового супа-пюре" width="1280" height="1600" loading="lazy"><figcaption>Дома</figcaption></figure></li>
+      </ul>
+      <h2 class="sl-life__slogan reveal" id="sl-life-title"><svg class="sl-life__leaf" aria-hidden="true"><use href="#i-leaf"/></svg>Всегда с&nbsp;тобой! Всегда вкусно!</h2>
+    </div>
+  </section>
+
+  <section class="section sl-video" data-for-brand="street-lunch" hidden aria-labelledby="sl-video-title">
+    <div class="container">
+      <div class="section-head section-head--split">
+        <div><p class="kicker">Видео</p><h2 class="sl-caps sl-caps--left" id="sl-video-title">Street Lunch в&nbsp;деле</h2></div>
+        <p class="lead">Ролики о приготовлении, упаковке и обеде там, где нет кухни. Видео загружается только после нажатия.</p>
+      </div>
+      <div class="carousel vcar" data-carousel>
+        <div class="carousel__head">
+          <p class="small muted">7 роликов — длинные и короткие</p>
+          <div class="carousel__nav">
+            <button type="button" data-prev aria-label="Предыдущие видео"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+            <button type="button" data-next aria-label="Следующие видео"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+        <div class="carousel__track vcar__track" data-videos="sl-prostota,sl-packet-vert,sl-new-pack,sl-privale,sl-cup-vert,sl-semya,sl-master" tabindex="0" role="region" aria-label="Видео Street Lunch"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== РИСОМИШКИ — в стиле листовки и презентации ==================== -->
+  <section class="rm-hero" data-for-brand="risomishki" hidden aria-labelledby="rm-title">
+    <div class="rm-sky" aria-hidden="true">
+      <span class="rm-rays"></span>
+      <span class="rm-bokeh rm-bokeh--1"></span><span class="rm-bokeh rm-bokeh--2"></span><span class="rm-bokeh rm-bokeh--3"></span><span class="rm-bokeh rm-bokeh--4"></span>
+      <svg class="rm-cloud rm-cloud--1" viewBox="0 0 200 80"><path d="M30 70a24 24 0 0 1 4-48 34 34 0 0 1 62-10 28 28 0 0 1 48 10 26 26 0 0 1 26 48z" fill="#fff"/></svg>
+      <svg class="rm-cloud rm-cloud--2" viewBox="0 0 200 80"><path d="M30 70a24 24 0 0 1 4-48 34 34 0 0 1 62-10 28 28 0 0 1 48 10 26 26 0 0 1 26 48z" fill="#fff"/></svg>
+    </div>
+    <div class="container rm-hero__grid">
+      <div class="rm-hero__text">
+        <nav class="breadcrumbs" aria-label="Хлебные крошки"><ol><li><a href="index.html">Главная</a></li><li><a href="catalog.html">Продукция</a></li><li aria-current="page" data-brand-crumb>РисоМишки</li></ol></nav>
+        <h1 class="rm-hero__logo" id="rm-title"><img src="assets/img/brand/rm-logo.png" alt="РисоМишки" width="720" height="468" fetchpriority="high"></h1>
+        <p class="rm-hero__lead">Хрустящий десерт из воздушного риса в&nbsp;форме медвежат — в шоколадной или фруктовой глазури.</p>
+        <p class="rm-hero__count" data-brand-count></p>
+        <div class="cluster mt-5">
+          <a class="btn btn--rm btn--lg" href="#rm-flavours">Все вкусы</a>
+          <a class="btn btn--ghost btn--lg" style="--btn-fg:#fff;--btn-bd:rgba(255,255,255,.7)" href="where.html">Где купить</a>
+        </div>
+      </div>
+      <div class="rm-hero__art" aria-hidden="true">
+        <img class="rm-bear-main" src="assets/img/brand/rm-bear-hero.png" alt="" width="437" height="560">
+        <img class="rm-choco" src="assets/img/brand/rm-choco.png" alt="" width="520" height="311">
+        <button type="button" class="rm-award" data-lightbox="assets/img/awards/worldfood-2025-diploma.jpg" data-caption="Диплом WorldFood Moscow 2025, «Новинка года»" tabindex="-1"><img src="assets/img/awards/worldfood-2025.png" alt="" width="540" height="600"></button>
+      </div>
+    </div>
+    <img class="rm-peek" src="assets/img/brand/rm-bear-peek.png" alt="" width="270" height="380" aria-hidden="true">
+  </section>
+
+  <section class="rm-sky-section" id="rm-flavours" data-for-brand="risomishki" hidden aria-labelledby="rm-flv-title">
+    <div class="container">
+      <h2 class="rm-text reveal" id="rm-flv-title">Это вкусный хрустящий десерт из воздушного риса в форме медвежат, покрытый шоколадной или фруктовой глазурью.</h2>
+      <ul class="rm-feats">
+        <li class="reveal" style="--d:0ms"><span class="rm-feats__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M8 14.5c1 1.5 2.4 2.2 4 2.2s3-.7 4-2.2"/><circle cx="9" cy="10" r=".6" fill="currentColor"/><circle cx="15" cy="10" r=".6" fill="currentColor"/></svg></span>Разные вкусы</li>
+        <li class="reveal" style="--d:90ms"><span class="rm-feats__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Срок хранения 12&nbsp;месяцев</li>
+        <li class="reveal" style="--d:180ms"><span class="rm-feats__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 21V9"/><path d="M12 9c-2.4 0-3.4-2-3.4-4 2.4 0 3.4 2 3.4 4zm0 0c2.4 0 3.4-2 3.4-4-2.4 0-3.4 2-3.4 4zM12 14.5c-2.4 0-3.4-2-3.4-4 2.4 0 3.4 2 3.4 4zm0 0c2.4 0 3.4-2 3.4-4-2.4 0-3.4 2-3.4 4z"/><path d="M4 4l16 16"/></svg></span>Без глютена</li>
+        <li class="reveal" style="--d:270ms"><span class="rm-feats__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M3 13h18M12 9v12M12 9c-2-4-6-4-6-1s4 1 6 1zm0 0c2-4 6-4 6-1s-4 1-6 1z"/></svg></span>Яркая упаковка</li>
+        <li class="reveal" style="--d:360ms"><img class="rm-feats__badge" src="assets/img/awards/worldfood-2025.png" alt="" width="46" height="51">«Новинка года» WorldFood 2025</li>
+      </ul>
+      <ul class="rm-boxes" aria-label="Вкусы РисоМишек">
+        <li class="reveal reveal--pop" style="--d:0ms"><a href="product.html?id=rm-apelsin&amp;f=rmbox"><img src="assets/img/cutouts/rm-box-orange.png" alt="" width="340" height="365" loading="lazy"><span>В глазури со вкусом апельсина</span></a></li>
+        <li class="reveal reveal--pop" style="--d:80ms"><a href="product.html?id=rm-malina&amp;f=rmbox"><img src="assets/img/cutouts/rm-box-raspberry.png" alt="" width="340" height="365" loading="lazy"><span>В глазури со вкусом малины</span></a></li>
+        <li class="reveal reveal--pop" style="--d:160ms"><a href="product.html?id=rm-mango&amp;f=rmbox"><img src="assets/img/cutouts/rm-box-mango.png" alt="" width="340" height="364" loading="lazy"><span>В глазури со вкусом манго</span></a></li>
+        <li class="reveal reveal--pop" style="--d:240ms"><a href="product.html?id=rm-molochnaya&amp;f=rmbox"><img src="assets/img/cutouts/rm-box-milk.png" alt="" width="340" height="365" loading="lazy"><span>В молочной глазури</span></a></li>
+        <li class="reveal reveal--pop" style="--d:320ms"><a href="product.html?id=rm-belaya&amp;f=rmbox"><img src="assets/img/cutouts/rm-box-white.png" alt="" width="340" height="365" loading="lazy"><span>В белой глазури</span></a></li>
+        <li class="reveal reveal--pop" style="--d:400ms"><a href="product.html?id=rm-temnaya&amp;f=rmbox"><img src="assets/img/cutouts/rm-box-dark.png" alt="" width="340" height="364" loading="lazy"><span>В тёмной глазури</span></a></li>
+        <li class="reveal reveal--pop" style="--d:480ms"><a href="product.html?id=rm-solenye&amp;f=rmbox"><img src="assets/img/cutouts/rm-box-salted.png" alt="" width="340" height="366" loading="lazy"><span>Хлебцы солёные</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="rm-sky-section rm-sky-section--story" data-for-brand="risomishki" hidden aria-labelledby="rm-story">
+    <div class="container rm-story">
+      <div class="rm-card reveal">
+        <img class="rm-card__badge" src="assets/img/awards/worldfood-2025.png" alt="Знак «Новинка года 2025» выставки WorldFood Moscow" width="540" height="600" loading="lazy">
+        <p class="rm-card__kicker">О десерте</p>
+        <h2 class="rm-text rm-text--dark" id="rm-story">Хрустящие медвежата из&nbsp;воздушного риса</h2>
+        <p class="mt-5">Основа — шлифованный и бурый рис. Мишки покрыты белой, тёмной, молочной или фруктовой глазурью; есть и солёные хлебцы без глазури — без глютена, лактозы, дрожжей и масла.</p>
+        <ul class="rm-card__list">
+          <li>Каждая РисоМишка рассчитана на один укус.</li>
+          <li>Понравятся и детям, и взрослым.</li>
+          <li>В 2022 году мы впервые показали «Мишек в шоколаде» на «Продэкспо», в 2025-м РисоМишки стали «Новинкой года» WorldFood Moscow.</li>
+          <li>Для сети ЖизньМарт выпускаем РисоМишки под совместной маркой.</li>
+        </ul>
+        <div class="cluster mt-6"><a class="btn btn--rm" href="private-label.html">Кейс СТМ ЖизньМарт</a><button class="btn btn--ghost" type="button" data-lightbox="assets/img/awards/worldfood-2025-diploma.jpg" data-caption="Диплом WorldFood Moscow 2025, «Новинка года»">Диплом «Новинка года»</button></div>
+      </div>
+      <div class="rm-bears reveal" aria-hidden="true">
+        <img src="assets/img/brand/rm-bear-cap-red.png" alt="" width="337" height="440" loading="lazy">
+        <img src="assets/img/brand/rm-bear-cap-violet.png" alt="" width="338" height="440" loading="lazy">
+        <img src="assets/img/brand/rm-bear-sailor.png" alt="" width="325" height="440" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="rm-sky-section rm-sky-section--logi" data-for-brand="risomishki" hidden aria-labelledby="rm-logi-title">
+    <div class="container">
+      <div class="rm-card rm-card--table reveal">
+        <p class="rm-card__kicker">Для байеров</p>
+        <h2 class="rm-text rm-text--dark" id="rm-logi-title">Логистика РисоМишек 80&nbsp;г</h2>
+        <p class="small muted mt-2">Коробка с десертом — 13,5 × 13,5 × 6 см, внутри — прозрачный пакет. Актуальную спецификацию пришлём вместе с предложением.</p>
+        <div class="table-scroll mt-5">
+          <table class="rm-logi">
+            <thead><tr><th scope="col">Вложение в транспортную коробку</th><th scope="col">Размер транспортной коробки, см</th><th scope="col">Коробок в слое</th><th scope="col">Коробок на паллете (высота 1,76 м)</th><th scope="col">Штук на паллете</th><th scope="col">Масса паллеты брутто, кг</th></tr></thead>
+            <tbody>
+              <tr><td>12 шт.</td><td>55 × 14 × 19,5</td><td>10</td><td>80</td><td>960</td><td>140</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section rm-video" data-for-brand="risomishki" hidden aria-labelledby="rm-video-title">
+    <div class="container">
+      <div class="section-head section-head--split">
+        <div><p class="kicker">Видео</p><h2 class="rm-text rm-text--blue" id="rm-video-title">Медвежата в&nbsp;кадре</h2></div>
+        <p class="lead">Рекламные ролики, маскот и отзыв покупательницы. Видео загружается только после нажатия.</p>
+      </div>
+      <div class="carousel vcar" data-carousel>
+        <div class="carousel__head">
+          <p class="small muted">4 ролика</p>
+          <div class="carousel__nav">
+            <button type="button" data-prev aria-label="Предыдущие видео"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+            <button type="button" data-next aria-label="Следующие видео"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+        <div class="carousel__track vcar__track" data-videos="rm-spot-1,rm-mascot,rm-spot-2,rm-review-1" tabindex="0" role="region" aria-label="Видео РисоМишек"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Наша Каша, Хрумстик, крупы: общий герой с оформлением в цветах бренда ==================== -->
+  <section class="brand-hero" data-brand-hero data-for-brand="nasha-kasha hrumstik krupy" hidden aria-labelledby="brand-title">
+    <div class="brand-hero__deco" aria-hidden="true">
+      <svg class="bh-grain bh-grain--1"><use href="#i-grain"/></svg><svg class="bh-grain bh-grain--2"><use href="#i-grain"/></svg><svg class="bh-grain bh-grain--3"><use href="#i-grain"/></svg>
+      <svg class="bh-grain bh-grain--4"><use href="#i-grain"/></svg><svg class="bh-grain bh-grain--5"><use href="#i-grain"/></svg><svg class="bh-grain bh-grain--6"><use href="#i-grain"/></svg>
+    </div>
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки"><ol><li><a href="index.html">Главная</a></li><li><a href="catalog.html">Продукция</a></li><li aria-current="page" data-brand-crumb>Бренд</li></ol></nav>
+      <div class="brand-hero__grid">
+        <div>
+          <p class="brand-hero__tagline" data-brand-tagline></p>
+          <h1 class="h1" id="brand-title" data-brand-name>Бренд</h1>
+          <p class="lead mt-5" data-brand-lead></p>
+          <p class="small mt-5" style="opacity:.85" data-brand-count></p>
+          <div class="cluster mt-6">
+            <a class="btn btn--light btn--lg" href="#lineup">Смотреть линейку</a>
+            <a class="btn btn--ghost btn--lg" style="--btn-fg:currentColor;--btn-bd:currentColor" href="where.html">Где купить</a>
+          </div>
+        </div>
+        <div class="brand-hero__art">
+          <svg class="bh-steam" data-for-brand="nasha-kasha" viewBox="0 0 120 90" aria-hidden="true"><path d="M30 86c-10-14 10-22 0-38s10-24 0-40"/><path d="M60 86c-10-14 10-22 0-38s10-24 0-40"/><path d="M90 86c-10-14 10-22 0-38s10-24 0-40"/></svg>
+          <div data-brand-img></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Хрумстик: этикетки -->
+  <section class="section hr-labels" data-for-brand="hrumstik" hidden aria-labelledby="hr-story">
+    <div class="container split">
+      <div>
+        <p class="kicker">О батончике</p>
+        <h2 class="h2" id="hr-story">Воздушные крупы с фруктозой</h2>
+        <p class="lead mt-5">Воздушные рис, гречка, пшеница и ячмень собраны в хрустящий батончик — с курагой, корицей, грецким орехом или семечками тыквы и подсолнечника.</p>
+        <p class="mt-5">Хрумстик — одна из первых марок компании: среди наших наград есть дипломы Хрумстика начала 2000-х.</p>
+      </div>
+      <div class="hr-stickers" aria-hidden="true">
+        <img class="reveal reveal--drop" style="--r:-6deg;--d:0ms" src="assets/img/brand/hr-label-kuraga.jpg" alt="" width="640" height="474" loading="lazy">
+        <img class="reveal reveal--drop" style="--r:4deg;--d:140ms" src="assets/img/brand/hr-label-orekh.jpg" alt="" width="640" height="474" loading="lazy">
+        <img class="reveal reveal--drop" style="--r:-2deg;--d:280ms" src="assets/img/brand/hr-label-tykva.jpg" alt="" width="640" height="474" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Крупы: фасовка в разработке -->
+  <section class="section" data-for-brand="krupy" hidden aria-labelledby="kr-story">
+    <div class="container split">
+      <div>
+        <p class="kicker">Фасовка в разработке</p>
+        <h2 class="h2" id="kr-story">Один продукт — ПЭТ-банка и упаковка B&amp;B</h2>
+        <p class="lead mt-5">ПЭТ-банка — для маркетплейсов: прозрачная, продукт виден сразу. Упаковка B&amp;B — для розничных сетей и опта. Масса фасовки появится на сайте, когда упаковка будет готова.</p>
+      </div>
+      <div class="grid grid--3">
+        <figure class="media reveal reveal--pop" style="--d:0ms"><img src="assets/img/products/pet-grechka.jpg" alt="Гречка в ПЭТ-банке" width="448" height="720" loading="lazy" style="background:#fff;object-fit:contain;aspect-ratio:3/4"></figure>
+        <figure class="media reveal reveal--pop" style="--d:120ms"><img src="assets/img/products/pet-ris.jpg" alt="Рис в ПЭТ-банке" width="461" height="720" loading="lazy" style="background:#fff;object-fit:contain;aspect-ratio:3/4"></figure>
+        <figure class="media reveal reveal--pop" style="--d:240ms"><img src="assets/img/products/pet-polba-drob.jpg" alt="Полба дроблёная в ПЭТ-банке" width="395" height="720" loading="lazy" style="background:#fff;object-fit:contain;aspect-ratio:3/4"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Линейка бренда -->
+  <section class="section section--alt brand-lineup" id="lineup" aria-labelledby="lineup-title">
+    <div class="container">
+      <div class="section-head section-head--split">
+        <div><p class="kicker">Линейка</p><h2 class="h2" id="lineup-title">Все вкусы и форматы</h2></div>
+        <a class="link-arrow" href="catalog.html" data-brand-catalog-link>Открыть в каталоге</a>
+      </div>
+      <div class="product-grid" data-brand-grid></div>
+    </div>
+  </section>
+
+  <!-- Вопросы по бренду -->
+  <section class="section brand-faq" data-for-brand="street-lunch nasha-kasha" hidden aria-labelledby="bfaq-sl">
+    <div class="container split">
+      <div><p class="kicker">Вопросы</p><h2 class="h2" id="bfaq-sl">О супах и кашах</h2></div>
+      <div class="faq" data-faq="product" data-pick="product:0,product:2,product:3,product:1"></div>
+    </div>
+  </section>
+  <section class="section brand-faq brand-faq--snacks" data-for-brand="risomishki hrumstik" hidden aria-labelledby="bfaq-rm">
+    <div class="container split">
+      <div><p class="kicker">Вопросы</p><h2 class="h2" id="bfaq-rm">О снеках и десертах</h2></div>
+      <div class="faq" data-faq="product" data-pick="product:4,product:1,buy:1,buy:3"></div>
+    </div>
+  </section>
+
+  <section class="section section--dark pattern-peas brand-cta" aria-labelledby="bcta">
+    <div class="container split">
+      <div><p class="kicker">Для бизнеса</p><h2 class="h2" id="bcta">Хотите видеть линейку на своей полке?</h2></div>
+      <div>
+        <p class="lead">Соберите позиции в запрос — пришлём условия и бесплатные образцы для дегустации.</p>
+        <div class="cluster mt-5"><button class="btn btn--accent btn--lg" type="button" data-request-open data-who="retail">Отправить запрос</button><a class="btn btn--ghost btn--lg" href="retail.html">Условия для сетей</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!--@footer-->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-cta">
+      <div>
+        <p class="kicker">Отдел продаж</p>
+        <p class="h2">Обсудим поставки для вашей сети?</p>
+      </div>
+      <div class="cluster">
+        <button class="btn btn--accent btn--lg" type="button" data-request-open data-who="retail">Оставить заявку</button>
+        <a class="btn btn--ghost btn--lg" style="--btn-fg:#fbf8f1;--btn-bd:rgba(251,248,241,.45)" href="tel:+79043054275">+7 (904) 305-42-75</a>
+      </div>
+    </div>
+    <div class="footer-grid">
+      <div>
+        <h2>Компания</h2>
+        <div class="footer-contact">
+          <a href="mailto:info@newprod.ru">info@newprod.ru</a>
+          <span>454047, г. Челябинск, ул. Лазурная, д. 8</span>
+          <span>ООО «Новые продукты» · ИНН 7453101828</span>
+          <div data-socials-box>
+            <p class="small mb-0" style="margin-top:8px">Мы в соцсетях</p>
+            <div class="socials mt-4" data-socials></div>
+          </div>
+        </div>
+      </div>
+      <nav aria-label="Продукция">
+        <h2>Продукция</h2>
+        <ul>
+          <li><a href="catalog.html">Весь каталог</a></li>
+                    <li><a href="brand.html?b=street-lunch">Street Lunch</a></li>
+          <li><a href="brand.html?b=risomishki">РисоМишки</a></li>
+          <li><a href="brand.html?b=nasha-kasha">Наша Каша</a></li>
+          <li><a href="brand.html?b=hrumstik">Хрумстик</a></li><li><a href="brand.html?b=krupy">Зерно и мука</a></li>
+          <li><a href="where.html">Где купить</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Бизнесу">
+        <h2>Бизнесу</h2>
+        <ul>
+          <li><a href="retail.html">Сетям и дистрибьюторам</a></li>
+          <li><a href="private-label.html">СТМ и контрактное производство</a></li>
+          <li><a href="b2g.html">B2G и HoReCa</a></li>
+          <li><a href="export.html">Экспорт</a></li>
+          <li><a href="suppliers.html">Поставщикам</a></li>
+          <li><a href="documents.html">Документы</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="О компании">
+        <h2>О нас</h2>
+        <ul>
+          <li><a href="about.html">О компании</a></li>
+          <li><a href="social.html">Социальные проекты</a></li>
+          <li><a href="news.html">Новости</a></li>
+          <li><a href="faq.html">Вопросы и ответы</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="en/index.html" lang="en" hreflang="en">English version</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2003–<span data-year>2026</span> ООО «Новые продукты»</span>
+      <span class="cluster"><a href="privacy.html">Политика конфиденциальности</a><a href="consent.html">Согласие на обработку данных</a><a href="cookies.html">Cookie</a><a href="sitemap.html">Карта сайта</a></span>
+    </div>
+    <p class="disclaimer mt-4" data-meta-note hidden>* Instagram принадлежит компании Meta, признанной экстремистской организацией и запрещённой в РФ.</p>
+  </div>
+</footer>
+<!--/@footer-->
+<!--@drawer-->
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Меню">
+  <div class="drawer__scrim" data-drawer-close></div>
+  <div class="drawer__panel">
+    <div class="drawer__top">
+      <a class="logo" href="index.html" aria-label="Новые продукты — на главную">
+        <img class="logo__mark" src="assets/img/np-mark.svg" alt="" width="48" height="48">
+        <span class="logo__word"><span>Новые</span><span>продукты</span></span>
+      </a>
+      <button class="icon-btn" type="button" data-drawer-close aria-label="Закрыть меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <nav aria-label="Мобильное меню">
+      <ul>
+        <li><a data-nav="catalog" href="catalog.html" aria-current="page">Продукция</a></li>
+        <li>
+          <details>
+            <summary>Бизнесу <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <ul>
+              <li><a data-nav="business" href="business.html">Все направления</a></li>
+              <li><a data-nav="retail" href="retail.html">Сетям и дистрибьюторам</a></li>
+              <li><a data-nav="private-label" href="private-label.html">СТМ и контрактное производство</a></li>
+              <li><a data-nav="b2g" href="b2g.html">B2G и HoReCa</a></li>
+              <li><a data-nav="export" href="export.html">Экспорт</a></li>
+              <li><a data-nav="suppliers" href="suppliers.html">Поставщикам</a></li>
+              <li><a data-nav="documents" href="documents.html">Документы</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a data-nav="where" href="where.html">Где купить</a></li>
+        <li><a data-nav="about" href="about.html">О компании</a></li>
+        <li><a data-nav="social" href="social.html">Соцпроекты</a></li>
+        <li><a data-nav="news" href="news.html">Новости</a></li>
+        <li><a data-nav="faq" href="faq.html">Вопросы и ответы</a></li>
+        <li><a data-nav="contacts" href="contacts.html">Контакты</a></li>
+      </ul>
+    </nav>
+    <button class="btn btn--lg btn--block" type="button" data-request-open>Сотрудничество · <span data-request-count class="count-badge">0</span></button>
+    <div class="drawer__meta">
+      <a href="tel:+79043054275">+7 (904) 305-42-75</a>
+      <a href="mailto:info@newprod.ru">info@newprod.ru</a>
+      <span class="lang-switch" aria-label="Язык сайта"><span aria-current="true">RU</span><a href="en/index.html" lang="en" hreflang="en">EN</a></span>
+    </div>
+  </div>
+</div>
+<!--/@drawer-->
+<!--@request-->
+<dialog class="modal" id="request-dialog" aria-labelledby="req-title">
+  <button class="icon-btn modal__close" type="button" data-dialog-close aria-label="Закрыть окно заявки"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <div class="modal__inner">
+    <aside class="modal__aside">
+      <p class="kicker">Отдел продаж</p>
+      <h2 class="modal__title" id="req-title">Давайте сотрудничать</h2>
+      <p class="small">Соберите позиции в каталоге или напишите без выбора продукции. Цены и условия пришлём индивидуально.</p>
+      <div class="cluster" style="justify-content:space-between"><strong>Ваш список</strong><span class="count-badge has-items" data-request-total>0</span></div>
+      <ul class="req-list" data-request-list aria-live="polite"></ul>
+      <div class="cluster mt-0">
+        <a class="btn btn--sm btn--light" href="catalog.html">Перейти в каталог</a>
+        <button class="btn btn--sm btn--ghost" type="button" data-request-clear>Очистить</button>
+      </div>
+    </aside>
+    <div class="modal__main">
+      <form data-mail-form data-with-list novalidate>
+        <div class="form-grid">
+          <fieldset class="radio-cards">
+            <legend>Кто вы <span class="req" aria-hidden="true">*</span></legend>
+            <label class="radio-card"><input type="radio" name="who" value="retail" data-label="Сеть или магазин" required><span>Сеть или магазин</span></label>
+            <label class="radio-card"><input type="radio" name="who" value="distributor" data-label="Дистрибьютор"><span>Дистрибьютор</span></label>
+            <label class="radio-card"><input type="radio" name="who" value="stm" data-label="СТМ"><span>Производство СТМ</span></label>
+            <label class="radio-card"><input type="radio" name="who" value="b2g" data-label="B2G / HoReCa"><span>B2G / HoReCa</span></label>
+            <label class="radio-card"><input type="radio" name="who" value="export" data-label="Экспорт"><span>Экспорт</span></label>
+            <label class="radio-card"><input type="radio" name="who" value="supplier" data-label="Поставщик"><span>Поставщик</span></label>
+            <label class="radio-card"><input type="radio" name="who" value="buyer" data-label="Покупатель"><span>Покупатель</span></label>
+            <span class="field__error" role="alert"></span>
+          </fieldset>
+          <div class="form-grid form-grid--2">
+            <div class="field"><label for="rq-name">Имя <span class="req" aria-hidden="true">*</span></label><input class="input" id="rq-name" name="name" autocomplete="name" required aria-describedby="rq-name-e"><span class="field__error" id="rq-name-e" role="alert"></span></div>
+            <div class="field"><label for="rq-company">Компания</label><input class="input" id="rq-company" name="company" autocomplete="organization"></div>
+            <div class="field"><label for="rq-contact">Телефон или e-mail <span class="req" aria-hidden="true">*</span></label><input class="input" id="rq-contact" name="contact" autocomplete="email" inputmode="email" required aria-describedby="rq-contact-e"><span class="field__error" id="rq-contact-e" role="alert"></span></div>
+            <div class="field"><label for="rq-city">Город или страна</label><input class="input" id="rq-city" name="city" autocomplete="address-level2"></div>
+            <div class="field span-2"><label for="rq-msg">Комментарий</label><textarea class="textarea" id="rq-msg" name="message" rows="3" placeholder="Объёмы, регион, формат сотрудничества"></textarea></div>
+          </div>
+          <label class="check"><input type="checkbox" name="consent" required><span>Согласен на обработку персональных данных по <a href="privacy.html">политике конфиденциальности</a> и даю <a href="consent.html">согласие</a>.</span><span class="field__error" role="alert"></span></label>
+          <div class="alert" data-form-status role="status" hidden></div>
+          <div class="cluster">
+            <button class="btn btn--lg" type="submit">Отправить заявку</button>
+            <p class="form-note mb-0">Откроется ваша почта с готовым письмом на info@newprod.ru.</p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</dialog>
+<!--/@request-->
+</body>
+</html>
