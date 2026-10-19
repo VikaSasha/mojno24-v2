@@ -1,0 +1,4 @@
+v2/data/backup/
+v2/img/uploads/*
+!v2/img/uploads/.gitkeep
+Thumbs.db

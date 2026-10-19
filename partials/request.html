@@ -1,0 +1,46 @@
+<dialog class="modal" id="request-dialog" aria-labelledby="req-title">
+  <button class="icon-btn modal__close" type="button" data-dialog-close aria-label="Закрыть окно заявки"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <div class="modal__inner">
+    <aside class="modal__aside">
+      <p class="kicker">Отдел продаж</p>
+      <h2 class="modal__title" id="req-title">Давайте сотрудничать</h2>
+      <p class="small">Соберите позиции в каталоге или напишите без выбора продукции. Цены и условия пришлём индивидуально.</p>
+      <div class="cluster" style="justify-content:space-between"><strong>Ваш список</strong><span class="count-badge has-items" data-request-total>0</span></div>
+      <ul class="req-list" data-request-list aria-live="polite"></ul>
+      <div class="cluster mt-0">
+        <a class="btn btn--sm btn--light" href="catalog.html">Перейти в каталог</a>
+        <button class="btn btn--sm btn--ghost" type="button" data-request-clear>Очистить</button>
+      </div>
+    </aside>
+    <div class="modal__main">
+      <form data-mail-form data-with-list novalidate>
+        <div class="form-grid">
+          <fieldset class="radio-cards">
+            <legend>Кто вы <span class="req" aria-hidden="true">*</span></legend>
+            <label class="radio-card"><input type="radio" name="who" value="retail" data-label="Сеть или магазин" required><span>Сеть или магазин</span></label>
+            <label class="radio-card"><input type="radio" name="who" value="distributor" data-label="Дистрибьютор"><span>Дистрибьютор</span></label>
+            <label class="radio-card"><input type="radio" name="who" value="stm" data-label="СТМ"><span>Производство СТМ</span></label>
+            <label class="radio-card"><input type="radio" name="who" value="b2g" data-label="B2G / HoReCa"><span>B2G / HoReCa</span></label>
+            <label class="radio-card"><input type="radio" name="who" value="export" data-label="Экспорт"><span>Экспорт</span></label>
+            <label class="radio-card"><input type="radio" name="who" value="supplier" data-label="Поставщик"><span>Поставщик</span></label>
+            <label class="radio-card"><input type="radio" name="who" value="buyer" data-label="Покупатель"><span>Покупатель</span></label>
+            <span class="field__error" role="alert"></span>
+          </fieldset>
+          <div class="form-grid form-grid--2">
+            <div class="field"><label for="rq-name">Имя <span class="req" aria-hidden="true">*</span></label><input class="input" id="rq-name" name="name" autocomplete="name" required aria-describedby="rq-name-e"><span class="field__error" id="rq-name-e" role="alert"></span></div>
+            <div class="field"><label for="rq-company">Компания</label><input class="input" id="rq-company" name="company" autocomplete="organization"></div>
+            <div class="field"><label for="rq-contact">Телефон или e-mail <span class="req" aria-hidden="true">*</span></label><input class="input" id="rq-contact" name="contact" autocomplete="email" inputmode="email" required aria-describedby="rq-contact-e"><span class="field__error" id="rq-contact-e" role="alert"></span></div>
+            <div class="field"><label for="rq-city">Город или страна</label><input class="input" id="rq-city" name="city" autocomplete="address-level2"></div>
+            <div class="field span-2"><label for="rq-msg">Комментарий</label><textarea class="textarea" id="rq-msg" name="message" rows="3" placeholder="Объёмы, регион, формат сотрудничества"></textarea></div>
+          </div>
+          <label class="check"><input type="checkbox" name="consent" required><span>Согласен на обработку персональных данных по <a href="privacy.html">политике конфиденциальности</a> и даю <a href="consent.html">согласие</a>.</span><span class="field__error" role="alert"></span></label>
+          <div class="alert" data-form-status role="status" hidden></div>
+          <div class="cluster">
+            <button class="btn btn--lg" type="submit">Отправить заявку</button>
+            <p class="form-note mb-0">Откроется ваша почта с готовым письмом на info@newprod.ru.</p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</dialog>
