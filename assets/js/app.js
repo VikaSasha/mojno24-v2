@@ -954,17 +954,29 @@
     window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }, { passive: true });
     window.addEventListener("resize", upd); upd();
   }
-  /* ---------- «Для партнёров»: подсветка текущего раздела в липком меню; кнопки разделов выбирают направление в форме ---------- */
+  /* ---------- «О компании»: лента годов истории подсвечивает год, до которого дочитали ---------- */
+  function initStory() {
+    var rail = $("[data-story-rail]"); if (!rail || !("IntersectionObserver" in window)) return;
+    var links = $$("a[href^='#']", rail);
+    var io = new IntersectionObserver(function (en) {
+      en.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        links.forEach(function (a) { if (a.getAttribute("href") === "#" + e.target.id) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); });
+      });
+    }, { rootMargin: "-40% 0px -55% 0px" });
+    links.forEach(function (a) { var s = document.getElementById(a.getAttribute("href").slice(1)); if (s) io.observe(s); });
+  }
+  /* ---------- Липкое меню разделов («О компании»; data-pt-nav): подсветка текущего раздела. «Для партнёров»: кнопки выбирают направление в форме ---------- */
   function initPartnerNav() {
-    var nav = $("[data-pt-nav]"); if (!nav) return;
-    var links = $$("a[href^='#']", nav), map = {};
+    var nav = $("[data-pt-nav]");
+    var links = nav ? $$("a[href^='#']", nav) : [], map = {};
     links.forEach(function (a) { var s = document.getElementById(a.getAttribute("href").slice(1)); if (s) map[s.id] = a; });
     function mark(id) {
       links.forEach(function (a) { a.removeAttribute("aria-current"); });
       var a = map[id]; if (!a) return; a.setAttribute("aria-current", "true");
       var ul = a.parentNode.parentNode; if (ul.scrollWidth > ul.clientWidth) ul.scrollTo({ left: a.offsetLeft - 16, behavior: RM ? "auto" : "smooth" });
     }
-    if ("IntersectionObserver" in window) {
+    if (nav && "IntersectionObserver" in window) {
       var io = new IntersectionObserver(function (en) { en.forEach(function (e) { if (e.isIntersecting) mark(e.target.id); }); }, { rootMargin: "-35% 0px -60% 0px" });
       Object.keys(map).forEach(function (id) { io.observe(document.getElementById(id)); });
     }
@@ -1145,6 +1157,7 @@
   initExportMap();
   initPartnerNav();
   initGrowth();
+  initStory();
   initVideos();
   initCatalog();
   initProduct();

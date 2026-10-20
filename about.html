@@ -41,18 +41,7 @@
     <nav class="main-nav" aria-label="Основное меню">
       <ul>
         <li><a class="nav-link" data-nav="catalog" href="catalog.html">Продукция</a></li>
-        <li class="has-dropdown">
-          <button class="nav-link" type="button" data-dropdown data-nav="business" aria-expanded="false" aria-controls="dd-business">Для партнёров <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
-          <ul class="dropdown" id="dd-business">
-            <li><a href="business.html#retail"><strong>Сетям и дистрибьюторам</strong><small>Полка, касса, маркетплейс; образцы и ЭДО</small></a></li>
-            <li><a href="business.html#stm"><strong>Своя торговая марка</strong><small>Продукт под маркой сети — кейс ЖизньМарт</small></a></li>
-            <li><a href="business.html#horeca"><strong>Учреждениям и HoReCa</strong><small>Горячее питание без кухни</small></a></li>
-            <li><a href="business.html#export"><strong>Экспорт</strong><small>Беларусь, Казахстан, Узбекистан, Кыргызстан</small></a></li>
-            <li><a href="business.html#suppliers"><strong>Поставщикам</strong><small>Сырьё и упаковка</small></a></li>
-            <li><a href="business.html#docs"><strong>Документы</strong><small>Декларации, сертификаты, реквизиты</small></a></li>
-            <li><a data-nav="business" href="business.html"><strong>Всё для партнёров на одной странице →</strong></a></li>
-          </ul>
-        </li>
+        <li><a class="nav-link" data-nav="business" href="business.html">Для партнёров</a></li>
         <li><a class="nav-link" data-nav="where" href="where.html">Где купить</a></li>
         <li><a class="nav-link" data-nav="about" href="about.html" aria-current="page">О компании</a></li>
         <li><a class="nav-link" data-nav="social" href="social.html">Соцпроекты</a></li>
@@ -76,142 +65,144 @@
 <!--/@header-->
 
 <main id="main">
-  <div class="container">
-    <nav class="breadcrumbs" aria-label="Хлебные крошки"><ol><li><a href="index.html">Главная</a></li><li aria-current="page">О компании</li></ol></nav>
-    <header class="page-head">
-      <div class="page-head__grid">
-        <div><p class="kicker">О компании</p><h1 class="h1" style="max-width:14ch">Делаем еду из&nbsp;зерна с&nbsp;2003 года</h1></div>
-        <p class="lead">«Новые продукты» — производитель из Челябинска. Мы хотим, чтобы правильная еда была ещё и быстрой: горячий суп без плиты за три минуты, хрустящий десерт к чаю, батончик в дорогу.</p>
+  <!-- Первый экран: заголовок, мозаика из фото продукции и полок, цифры -->
+  <section class="ab-hero" aria-labelledby="ab-title">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки"><ol><li><a href="index.html">Главная</a></li><li aria-current="page">О компании</li></ol></nav>
+      <div class="ab-hero__head">
+        <div><p class="kicker">О компании</p><h1 class="h1" id="ab-title">Делаем еду из&nbsp;зерна с&nbsp;2003 года</h1></div>
+        <p class="lead">«Новые продукты» — производитель из&nbsp;Челябинска. Мы хотим, чтобы правильная еда была ещё и&nbsp;быстрой: горячий суп без плиты за&nbsp;три минуты, хрустящий десерт к&nbsp;чаю, батончик в&nbsp;дорогу.</p>
       </div>
-    </header>
-  </div>
+      <div class="ab-mosaic">
+        <figure class="ab-mosaic__ph ab-mosaic__ph--a"><img src="assets/img/scenes/sl-desk.jpg" alt="Суп-пюре Street Lunch в коробке и в тарелке" width="1280" height="1600"></figure>
+        <figure class="ab-mosaic__ph ab-mosaic__ph--b"><img src="assets/img/scenes/rm-strawberry.jpg" alt="РисоМишки в белом и молочном шоколаде с клубникой" width="1600" height="1067"></figure>
+        <figure class="ab-mosaic__ph ab-mosaic__ph--c"><img src="assets/img/scenes/rm-desk.jpg" alt="Коробки РисоМишек на столе" width="1280" height="1600"></figure>
+        <figure class="ab-mosaic__ph ab-mosaic__ph--d"><img src="assets/img/shelves/zhm-3.jpg" alt="РисоМишки под маркой «ЖизньМарт» на полке магазина" width="1200" height="900"></figure>
+        <div class="ab-mosaic__badge" aria-hidden="true"><span>с</span><b>2003</b><span>года</span></div>
+      </div>
+      <dl class="ab-stats">
+        <div><dt>4</dt><dd>бренда и&nbsp;линейка круп и&nbsp;муки</dd></div>
+        <div><dt data-count-positions>68</dt><dd>позиций в&nbsp;каталоге</dd></div>
+        <div><dt>500<sup>+</sup></dt><dd>магазинов в&nbsp;14 сетях и&nbsp;Ozon</dd></div>
+        <div><dt>5</dt><dd>стран поставок</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- Липкое меню по разделам страницы -->
+  <nav class="page-nav" aria-label="Разделы страницы" data-pt-nav>
+    <div class="container"><ul>
+      <li><a href="#idea">Кто мы</a></li>
+      <li><a href="#history">История</a></li>
+      <li><a href="#quality">Производство</a></li>
+      <li><a href="#awards">Награды</a></li>
+    </ul></div>
+  </nav>
 
   <!-- Идея и подход: переработанный текст о компании из «! Маркетинг» -->
-  <section class="section" aria-labelledby="idea-title">
+  <section class="section" id="idea" aria-labelledby="idea-title">
     <div class="container split">
       <div>
-        <p class="kicker">Подход</p>
+        <p class="kicker">Кто мы</p>
         <h2 class="h2" id="idea-title">Зерно и бобовые — в основе</h2>
       </div>
       <div class="prose">
         <p class="lead">Зерновые продукты — основа пирамиды правильного питания. Поэтому всё, что мы выпускаем, сделано из круп и бобовых: гороха, чечевицы, риса, гречки, полбы, пшеницы и ячменя.</p>
-        <p>Сырьё закупаем у отечественных сельхозпроизводителей. Из гороха и чечевицы делаем супы-пюре, которым не нужна плита. Из воздушного риса — хрустящих медвежат в глазури. Из воздушных круп — батончики с фруктозой.</p>
-        <p>Мы постоянно расширяем ассортимент: изучаем новые рецепты, следим за тем, что нужно покупателям и сетям, и совершенствуем производство.</p>
+        <p>Сырьё закупаем у отечественных сельхозпроизводителей. Из гороха и чечевицы делаем супы-пюре, которым не нужна плита. Из воздушного риса — хрустящих медвежат в глазури. Из воздушных круп — батончики с фруктозой, орехами и сухофруктами.</p>
       </div>
     </div>
   </section>
 
-  <section class="section--tight" aria-labelledby="nums-title">
-    <div class="container">
-      <h2 class="visually-hidden" id="nums-title">Компания в цифрах</h2>
-      <div class="stats">
-        <div class="stat"><span class="num">2003</span><p>год основания</p></div>
-        <div class="stat"><span class="num">4</span><p>бренда и линейка круп и муки</p></div>
-        <div class="stat"><span class="num" data-count-positions>68</span><p>позиций в каталоге</p></div>
-        <div class="stat"><span class="num">5</span><p>стран поставок</p></div>
-        <div class="stat"><span class="num">500<sup>+</sup></span><p>магазинов в 14 сетях и Ozon</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- История роста: «было → стало» и шкала этапов, линия заполняется по мере прокрутки -->
+  <!-- История: три главы; слева — лента годов (подсвечивает текущий год, линия заполняется по мере прокрутки) -->
   <section class="section" id="history" aria-labelledby="hist-title">
     <div class="container">
-      <div class="section-head section-head--split"><div><p class="kicker">Как мы росли</p><h2 class="h2" id="hist-title">Из Челябинска — к&nbsp;полкам по&nbsp;всей стране</h2></div><p class="lead">Двадцать с&nbsp;лишним лет: от&nbsp;первых батончиков и&nbsp;региональных дипломов до&nbsp;федеральных сетей, «Новинки года» и&nbsp;экспорта.</p></div>
+      <div class="section-head section-head--split"><div><p class="kicker">История</p><h2 class="h2" id="hist-title">Как мы росли</h2></div><p class="lead">От&nbsp;первых батончиков и&nbsp;региональных дипломов — до&nbsp;федеральных сетей и&nbsp;экспорта.</p></div>
+      <div class="hist__layout" data-grow>
+        <nav class="hist__rail" aria-label="Годы истории" data-story-rail>
+          <ol>
+            <li><a href="#y2003">2003</a></li>
+            <li><a href="#y2005">2005</a></li>
+            <li><a href="#y2011">2011</a></li>
+            <li><a href="#y2019">2019</a></li>
+            <li><a href="#y2021">2021</a></li>
+            <li><a href="#y2022">2022</a></li>
+            <li><a href="#y2024">2024</a></li>
+            <li><a href="#y2025">2025</a></li>
+            <li><a href="#y2026">2026</a></li>
+          </ol>
+        </nav>
+        <div class="hist__body">
 
-      <div class="grow-ba reveal">
-        <div class="grow-ba__col">
-          <p class="grow-ba__when">2003</p>
-          <ul>
-            <li><b>1</b> город — Челябинск</li>
-            <li>Батончики Хрумстик — первая награда в&nbsp;2005</li>
-            <li>Региональные выставки</li>
-          </ul>
-        </div>
-        <div class="grow-ba__arrow" aria-hidden="true"><svg viewBox="0 0 64 24"><path d="M2 12h56M48 3l10 9-10 9" fill="none" stroke="currentColor" stroke-width="3"/></svg></div>
-        <div class="grow-ba__col grow-ba__col--now">
-          <p class="grow-ba__when">2026</p>
-          <ul>
-            <li><b>500+</b> магазинов в&nbsp;14 сетях, от&nbsp;Калининграда до&nbsp;Сибири</li>
-            <li><b>4</b> бренда и&nbsp;<b>68</b> позиций</li>
-            <li><b>4</b> страны экспорта и&nbsp;«Новинка года» WorldFood</li>
-          </ul>
+          <section class="hist__era hist__era--1" aria-labelledby="era-1">
+            <header class="hist__era-head"><span class="hist__era-n">Глава 1 · 2003–2012</span><h3 id="era-1">Начало и&nbsp;первые награды</h3></header>
+            <article class="hist__step reveal" id="y2003">
+              <div class="hist__media hist__media--mark"><img src="assets/img/np-mark.svg" alt="" width="160" height="160"></div>
+              <div class="hist__text"><p class="hist__year">2003</p><h4>Начало</h4><p>В&nbsp;Челябинске начинает работу компания «Новые продукты».</p></div>
+            </article>
+            <article class="hist__step reveal" id="y2005">
+              <button type="button" class="hist__media hist__media--doc" data-lightbox="assets/img/awards/hrumstik-2005.jpg" data-caption="Диплом конкурса «Напитки. Продукты. Упаковка — 2005», Екатеринбург: Хрумстик — III место"><img src="assets/img/awards/hrumstik-2005.jpg" alt="Диплом 2005 года: Хрумстик — III место" width="700" height="495" loading="lazy"></button>
+              <div class="hist__text"><p class="hist__year">2005</p><h4>Первая награда Хрумстика</h4><p>На&nbsp;выставке в&nbsp;Екатеринбурге батончики Хрумстик занимают III место как «самый вкусный продукт» по&nbsp;симпатиям посетителей.</p></div>
+            </article>
+            <article class="hist__step reveal" id="y2011">
+              <button type="button" class="hist__media hist__media--doc" data-lightbox="assets/img/awards/best-product-2011.jpg" data-caption="Диплом лауреата «Лучший продукт — 2011», «Продэкспо-2011»: бронзовая медаль за Хрумстик"><img src="assets/img/awards/best-product-2011.jpg" alt="Диплом лауреата «Лучший продукт — 2011»" width="600" height="849" loading="lazy"></button>
+              <div class="hist__text"><p class="hist__year">2011–2012</p><h4>Выход на «Продэкспо»</h4><p>Главная продуктовая выставка страны: бронза конкурса «Лучший продукт — 2011» за&nbsp;Хрумстик и&nbsp;бронза-2012 за&nbsp;«Шокорех» с&nbsp;орехами и&nbsp;цукатами.</p></div>
+            </article>
+          </section>
+
+          <section class="hist__era hist__era--2" aria-labelledby="era-2">
+            <header class="hist__era-head"><span class="hist__era-n">Глава 2 · 2019–2022</span><h3 id="era-2">Новые продукты из&nbsp;бобовых и&nbsp;риса</h3></header>
+            <article class="hist__step reveal" id="y2019">
+              <button type="button" class="hist__media hist__media--doc" data-lightbox="assets/img/awards/prodexpo-2019-zvezda.jpg" data-caption="«Продэкспо-2019», «Лучший продукт — 2019»: золотая звезда"><img src="assets/img/awards/prodexpo-2019-zvezda.jpg" alt="Диплом «Лучший продукт — 2019», золотая звезда" width="900" height="1268" loading="lazy"></button>
+              <div class="hist__text"><p class="hist__year">2019</p><h4>Золотая звезда за&nbsp;инновацию</h4><p>Сухие завтраки из&nbsp;гороха, нута и&nbsp;чечевицы получают золотую звезду «Лучший продукт — 2019» как лучший инновационный продукт.</p></div>
+            </article>
+            <article class="hist__step reveal" id="y2021">
+              <div class="hist__media hist__media--cut" style="--c:#c9e39d"><img src="assets/img/cutouts/lg-sl-griby-box.png" alt="Коробка супа-пюре Street Lunch с грибами" width="375" height="560" loading="lazy"></div>
+              <div class="hist__text"><p class="hist__year">2021</p><h4>Street Lunch выбирают сети</h4><p>Суп-пюре гороховый с&nbsp;грибами получает сертификат конкурса «Выбор сетей» на&nbsp;«Петерфуде»: в&nbsp;выборе участвовали федеральные и&nbsp;региональные сети. <mark class="tbd">уточнить: год запуска Street Lunch</mark></p></div>
+            </article>
+            <article class="hist__step reveal" id="y2022">
+              <div class="hist__media hist__media--cut" style="--c:#cfe5f5"><img src="assets/img/brand/rm-choco.png" alt="Шоколадные мишки из воздушного риса" width="520" height="311" loading="lazy"></div>
+              <div class="hist__text"><p class="hist__year">2022</p><h4>Рождаются РисоМишки</h4><p>На&nbsp;«Продэкспо-2022» показываем хрустящих «Мишек в&nbsp;шоколаде» из&nbsp;бурого и&nbsp;шлифованного риса — так начинается история РисоМишек.</p></div>
+            </article>
+          </section>
+
+          <section class="hist__era hist__era--3" aria-labelledby="era-3">
+            <header class="hist__era-head"><span class="hist__era-n">Глава 3 · 2024–2026</span><h3 id="era-3">Федеральные сети и&nbsp;экспорт</h3></header>
+            <article class="hist__step reveal" id="y2024">
+              <div class="hist__media"><img src="assets/img/scenes/stm-zhm-1.jpg" alt="РисоМишки в упаковке «ЖизньМарт»" width="1400" height="1400" loading="lazy"></div>
+              <div class="hist__text"><p class="hist__year">2024</p><h4>Первая собственная марка сети</h4><p>Запускаем РисоМишки под совместной маркой с&nbsp;«ЖизньМартом» и&nbsp;входим в&nbsp;«100 лучших товаров России».</p></div>
+            </article>
+            <article class="hist__step reveal" id="y2025">
+              <div class="hist__media hist__media--cut" style="--c:#fde3c3"><img src="assets/img/awards/worldfood-2025.png" alt="Знак «Новинка года 2025» WorldFood Moscow" width="540" height="600" loading="lazy"></div>
+              <div class="hist__text"><p class="hist__year">2025</p><h4>«Новинка года»</h4><p>РисоМишки побеждают на&nbsp;WorldFood Moscow в&nbsp;категории «Кондитерские изделия». На&nbsp;«Агро-2025» наша продукция получает три золота и&nbsp;два серебра.</p></div>
+            </article>
+            <article class="hist__step reveal" id="y2026">
+              <div class="hist__media"><img src="assets/img/shelves/rm-shelf-2.jpg" alt="РисоМишки на полке с плашками «Новинка»" width="1200" height="900" loading="lazy"></div>
+              <div class="hist__text"><p class="hist__year">2026</p><h4>Федеральные полки и&nbsp;экспорт</h4><p>РисоМишки — в&nbsp;306 магазинах «Перекрёстка» в&nbsp;100+ городах, Street Lunch — в&nbsp;186 магазинах «Светофора». Поставляем в&nbsp;Беларусь, Казахстан, Узбекистан и&nbsp;Кыргызстан.</p></div>
+            </article>
+          </section>
+
+          <!-- Итог: тогда и сейчас -->
+          <div class="grow-ba reveal">
+            <div class="grow-ba__col">
+              <p class="grow-ba__when">2003</p>
+              <ul>
+                <li><b>1</b> город — Челябинск</li>
+                <li>Батончики Хрумстик — первая награда в&nbsp;2005</li>
+                <li>Региональные выставки</li>
+              </ul>
+            </div>
+            <div class="grow-ba__arrow" aria-hidden="true"><svg viewBox="0 0 64 24"><path d="M2 12h56M48 3l10 9-10 9" fill="none" stroke="currentColor" stroke-width="3"/></svg></div>
+            <div class="grow-ba__col grow-ba__col--now">
+              <p class="grow-ba__when">2026</p>
+              <ul>
+                <li><b>500+</b> магазинов в&nbsp;14 сетях, от&nbsp;Калининграда до&nbsp;Сибири</li>
+                <li><b>4</b> бренда и&nbsp;<b>68</b> позиций</li>
+                <li><b>4</b> страны экспорта и&nbsp;«Новинка года» WorldFood</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-
-      <ol class="grow" data-grow>
-        <li class="grow__item reveal">
-          <div class="grow__year">2003</div>
-          <div class="grow__card">
-            <h3>Начало</h3>
-            <p>В Челябинске начинает работу компания «Новые продукты».</p>
-          </div>
-        </li>
-        <li class="grow__item reveal">
-          <div class="grow__year">2005</div>
-          <div class="grow__card">
-            <button type="button" class="grow__img" data-lightbox="assets/img/awards/hrumstik-2005.jpg" data-caption="Диплом конкурса «Напитки. Продукты. Упаковка — 2005», Екатеринбург: Хрумстик — III место"><img src="assets/img/awards/hrumstik-2005.jpg" alt="Диплом 2005 года: Хрумстик — номинант симпатий посетителей" width="700" height="495" loading="lazy"></button>
-            <h3>Первая награда Хрумстика</h3>
-            <p>На выставке в&nbsp;Екатеринбурге батончики Хрумстик занимают III место как «самый вкусный продукт» по&nbsp;симпатиям посетителей. В&nbsp;2005–2006 дипломы получают и&nbsp;другие марки: «Вкусняка», «Настоящая каша», «Шокорех».</p>
-          </div>
-        </li>
-        <li class="grow__item reveal">
-          <div class="grow__year">2011–12</div>
-          <div class="grow__card">
-            <button type="button" class="grow__img" data-lightbox="assets/img/awards/best-product-2011.jpg" data-caption="Диплом лауреата «Лучший продукт — 2011», «Продэкспо-2011»: бронзовая медаль за Хрумстик"><img src="assets/img/awards/best-product-2011.jpg" alt="Диплом лауреата «Лучший продукт — 2011»" width="600" height="849" loading="lazy"></button>
-            <h3>Выход на «Продэкспо»</h3>
-            <p>Главная продуктовая выставка страны: бронза конкурса «Лучший продукт — 2011» за&nbsp;Хрумстик и&nbsp;бронза-2012 за&nbsp;«Шокорех» с&nbsp;орехами и&nbsp;цукатами.</p>
-          </div>
-        </li>
-        <li class="grow__item reveal">
-          <div class="grow__year">2019</div>
-          <div class="grow__card">
-            <button type="button" class="grow__img" data-lightbox="assets/img/awards/prodexpo-2019-zvezda.jpg" data-caption="«Продэкспо-2019», «Лучший продукт — 2019»: золотая звезда"><img src="assets/img/awards/prodexpo-2019-zvezda.jpg" alt="Диплом «Лучший продукт — 2019», золотая звезда" width="900" height="1268" loading="lazy"></button>
-            <h3>Золотая звезда за&nbsp;инновацию</h3>
-            <p>Сухие завтраки из&nbsp;гороха, нута и&nbsp;чечевицы получают золотую звезду «Лучший продукт — 2019» как лучший инновационный продукт. Бобовые становятся нашей сильной стороной.</p>
-          </div>
-        </li>
-        <li class="grow__item reveal">
-          <div class="grow__year">2021</div>
-          <div class="grow__card">
-            <div class="grow__img grow__img--cut"><img src="assets/img/cutouts/sl-griby-box.png" alt="Коробка супа-пюре Street Lunch с грибами" width="241" height="360" loading="lazy"></div>
-            <h3>Street Lunch выбирают сети</h3>
-            <p>Суп-пюре гороховый с&nbsp;грибами получает сертификат конкурса «Выбор сетей» на&nbsp;«Петерфуде»: в&nbsp;выборе участвовали федеральные и&nbsp;региональные сети. <mark class="tbd">уточнить: год запуска Street Lunch</mark></p>
-          </div>
-        </li>
-        <li class="grow__item reveal">
-          <div class="grow__year">2022</div>
-          <div class="grow__card">
-            <div class="grow__img grow__img--cut"><img src="assets/img/brand/rm-choco.png" alt="Шоколадные мишки из воздушного риса" width="520" height="311" loading="lazy"></div>
-            <h3>Рождаются РисоМишки</h3>
-            <p>На «Продэкспо-2022» показываем хрустящих «Мишек в&nbsp;шоколаде» из&nbsp;бурого и&nbsp;шлифованного риса — так начинается история РисоМишек.</p>
-          </div>
-        </li>
-        <li class="grow__item reveal">
-          <div class="grow__year">2024</div>
-          <div class="grow__card">
-            <div class="grow__img"><img src="assets/img/scenes/stm-zhm-1.jpg" alt="РисоМишки в упаковке ЖизньМарт" width="1400" height="1400" loading="lazy"></div>
-            <h3>Первая собственная марка сети</h3>
-            <p>Запускаем РисоМишки под совместной маркой с&nbsp;«ЖизньМартом» и&nbsp;входим в&nbsp;«100 лучших товаров России».</p>
-          </div>
-        </li>
-        <li class="grow__item reveal">
-          <div class="grow__year">2025</div>
-          <div class="grow__card">
-            <div class="grow__img grow__img--cut"><img src="assets/img/awards/worldfood-2025.png" alt="Знак «Новинка года 2025» WorldFood Moscow" width="540" height="600" loading="lazy"></div>
-            <h3>«Новинка года»</h3>
-            <p>РисоМишки побеждают на&nbsp;WorldFood Moscow в&nbsp;категории «Кондитерские изделия». На&nbsp;«Агро-2025» наша продукция получает три золота и&nbsp;два серебра.</p>
-          </div>
-        </li>
-        <li class="grow__item grow__item--now reveal">
-          <div class="grow__year">2026</div>
-          <div class="grow__card">
-            <div class="grow__img"><img src="assets/img/shelves/rm-shelf-2.jpg" alt="РисоМишки на полке с плашками «Новинка»" width="1200" height="900" loading="lazy"></div>
-            <h3>Федеральные полки и&nbsp;экспорт</h3>
-            <p>РисоМишки — в&nbsp;306 магазинах «Перекрёстка» в&nbsp;100+ городах, Street Lunch — в&nbsp;186 магазинах «Светофора». Поставляем в&nbsp;Беларусь, Казахстан, Узбекистан и&nbsp;Кыргызстан, получаем сертификат организаторов WorldFood Moscow.</p>
-          </div>
-        </li>
-      </ol>
     </div>
   </section>
 
@@ -317,12 +308,9 @@
       <nav aria-label="Для партнёров">
         <h2>Для партнёров</h2>
         <ul>
-          <li><a href="business.html#retail">Сетям и дистрибьюторам</a></li>
-          <li><a href="business.html#stm">Своя торговая марка</a></li>
-          <li><a href="business.html#horeca">Учреждениям и HoReCa</a></li>
-          <li><a href="business.html#export">Экспорт</a></li>
-          <li><a href="business.html#suppliers">Поставщикам</a></li>
-          <li><a href="business.html#docs">Документы</a></li>
+          <li><a href="business.html">Сотрудничество</a></li>
+          <li><a href="business.html#docs">Документы и реквизиты</a></li>
+          <li><a href="business.html#form">Оставить заявку</a></li>
         </ul>
       </nav>
       <nav aria-label="О компании">
@@ -359,20 +347,7 @@
     <nav aria-label="Мобильное меню">
       <ul>
         <li><a data-nav="catalog" href="catalog.html">Продукция</a></li>
-        <li>
-          <details>
-            <summary>Для партнёров <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
-            <ul>
-              <li><a data-nav="business" href="business.html">Все направления</a></li>
-              <li><a href="business.html#retail">Сетям и дистрибьюторам</a></li>
-              <li><a href="business.html#stm">Своя торговая марка</a></li>
-              <li><a href="business.html#horeca">Учреждениям и HoReCa</a></li>
-              <li><a href="business.html#export">Экспорт</a></li>
-              <li><a href="business.html#suppliers">Поставщикам</a></li>
-              <li><a href="business.html#docs">Документы</a></li>
-            </ul>
-          </details>
-        </li>
+        <li><a data-nav="business" href="business.html">Для партнёров</a></li>
         <li><a data-nav="where" href="where.html">Где купить</a></li>
         <li><a data-nav="about" href="about.html" aria-current="page">О компании</a></li>
         <li><a data-nav="social" href="social.html">Соцпроекты</a></li>

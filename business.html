@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Для партнёров — сети, СТМ, учреждения, экспорт, поставщики | Новые продукты</title>
-  <meta name="description" content="Всё для партнёров на одной странице: поставки в сети и дистрибьюторам, собственная торговая марка, питание для учреждений и HoReCa, экспорт в ЕАЭС, закупка сырья, документы и заявка.">
+  <meta name="description" content="Работаем напрямую с производства: поставки в сети и дистрибьюторам, собственная торговая марка, питание для учреждений и HoReCa, экспорт, закупка сырья. Документы и заявка.">
   <meta name="theme-color" content="#123620">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/sofia-sans-extra-condensed-cyrillic-raxoHjaf.woff2" as="font" type="font/woff2" crossorigin>
@@ -40,18 +40,7 @@
     <nav class="main-nav" aria-label="Основное меню">
       <ul>
         <li><a class="nav-link" data-nav="catalog" href="catalog.html">Продукция</a></li>
-        <li class="has-dropdown">
-          <button class="nav-link" type="button" data-dropdown data-nav="business" data-active="true" aria-expanded="false" aria-controls="dd-business">Для партнёров <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
-          <ul class="dropdown" id="dd-business">
-            <li><a href="business.html#retail"><strong>Сетям и дистрибьюторам</strong><small>Полка, касса, маркетплейс; образцы и ЭДО</small></a></li>
-            <li><a href="business.html#stm"><strong>Своя торговая марка</strong><small>Продукт под маркой сети — кейс ЖизньМарт</small></a></li>
-            <li><a href="business.html#horeca"><strong>Учреждениям и HoReCa</strong><small>Горячее питание без кухни</small></a></li>
-            <li><a href="business.html#export"><strong>Экспорт</strong><small>Беларусь, Казахстан, Узбекистан, Кыргызстан</small></a></li>
-            <li><a href="business.html#suppliers"><strong>Поставщикам</strong><small>Сырьё и упаковка</small></a></li>
-            <li><a href="business.html#docs"><strong>Документы</strong><small>Декларации, сертификаты, реквизиты</small></a></li>
-            <li><a data-nav="business" data-active="true" href="business.html" aria-current="page"><strong>Всё для партнёров на одной странице →</strong></a></li>
-          </ul>
-        </li>
+        <li><a class="nav-link" data-nav="business" data-active="true" href="business.html" aria-current="page">Для партнёров</a></li>
         <li><a class="nav-link" data-nav="where" href="where.html">Где купить</a></li>
         <li><a class="nav-link" data-nav="about" href="about.html">О компании</a></li>
         <li><a class="nav-link" data-nav="social" href="social.html">Соцпроекты</a></li>
@@ -75,249 +64,118 @@
 <!--/@header-->
 
 <main id="main">
-  <!-- Шапка страницы: кто мы для партнёра и навигация по направлениям -->
+  <!-- Первый экран: кто мы для партнёра, фото продукции и главные цифры -->
   <section class="pt-hero section--dark">
     <div class="container">
       <nav class="breadcrumbs" aria-label="Хлебные крошки"><ol><li><a href="index.html">Главная</a></li><li aria-current="page">Для партнёров</li></ol></nav>
       <div class="pt-hero__grid">
-        <div>
+        <div class="pt-hero__text">
           <p class="kicker">Для партнёров</p>
           <h1 class="h1">Работаем напрямую с&nbsp;производства</h1>
+          <p class="lead">Street Lunch, РисоМишки, Хрумстик и&nbsp;Нашу Кашу мы&nbsp;делаем сами, в&nbsp;Челябинске. Поэтому быстро отвечаем, бесплатно передаём образцы и&nbsp;готовим условия под ваш канал.</p>
+          <div class="cluster mt-6"><a class="btn btn--accent btn--lg" href="#form">Стать партнёром</a><a class="btn btn--ghost btn--lg" href="catalog.html">Каталог продукции</a></div>
         </div>
-        <div>
-          <p class="lead">Сами производим в&nbsp;Челябинске то, что продаём: супы-пюре Street Lunch, РисоМишки, Хрумстик, Нашу Кашу, крупы и&nbsp;муку. Поэтому быстро отвечаем, бесплатно передаём образцы и&nbsp;готовим условия под ваш канал.</p>
-          <div class="cluster mt-5"><a class="btn btn--accent" href="#form">Отправить заявку</a><a class="btn btn--ghost" href="catalog.html">Каталог продукции</a></div>
+        <div class="pt-collage" aria-hidden="true">
+          <img class="pt-collage__ph pt-collage__ph--1" src="assets/img/scenes/sl-box-green.jpg" alt="" width="1280" height="1600">
+          <img class="pt-collage__ph pt-collage__ph--2" src="assets/img/scenes/rm-falling.jpg" alt="" width="1600" height="1600">
+          <img class="pt-collage__ph pt-collage__ph--3" src="assets/img/scenes/sl-packet.jpg" alt="" width="1400" height="1400">
+          <span class="pt-collage__sticker">Образцы<br>бесплатно</span>
         </div>
       </div>
-      <ol class="pt-cards" aria-label="Направления">
-        <li><a href="#retail"><span class="pt-cards__n">01</span><strong>Сетям и&nbsp;дистрибьюторам</strong><small>Полка, касса, маркетплейс</small></a></li>
-        <li><a href="#stm"><span class="pt-cards__n">02</span><strong>Своя торговая марка</strong><small>Продукт под маркой сети</small></a></li>
-        <li><a href="#horeca"><span class="pt-cards__n">03</span><strong>Учреждениям и&nbsp;HoReCa</strong><small>Горячее питание без кухни</small></a></li>
-        <li><a href="#export"><span class="pt-cards__n">04</span><strong>Экспорт</strong><small>Беларусь, Казахстан, Узбекистан, Кыргызстан</small></a></li>
-        <li><a href="#suppliers"><span class="pt-cards__n">05</span><strong>Поставщикам</strong><small>Сырьё и&nbsp;упаковка</small></a></li>
-      </ol>
+      <dl class="pt-facts">
+        <div><dt>306</dt><dd>магазинов «Перекрёстка» с&nbsp;РисоМишками</dd></div>
+        <div><dt>186</dt><dd>магазинов «Светофора» со&nbsp;Street Lunch</dd></div>
+        <div><dt>4</dt><dd>страны экспорта: Беларусь, Казахстан, Узбекистан, Кыргызстан</dd></div>
+        <div><dt>12&nbsp;мес</dt><dd>срок годности супов, РисоМишек и&nbsp;Хрумстика</dd></div>
+      </dl>
     </div>
   </section>
 
-  <!-- Липкое меню по разделам страницы -->
-  <nav class="pt-nav" aria-label="Разделы страницы" data-pt-nav>
-    <div class="container"><ul>
-      <li><a href="#retail">Сетям</a></li>
-      <li><a href="#stm">СТМ</a></li>
-      <li><a href="#horeca">Учреждениям и HoReCa</a></li>
-      <li><a href="#export">Экспорт</a></li>
-      <li><a href="#suppliers">Поставщикам</a></li>
-      <li><a href="#docs">Документы</a></li>
-      <li><a href="#form">Заявка</a></li>
-    </ul></div>
-  </nav>
-
-  <!-- 01. Сетям и дистрибьюторам -->
-  <section class="section pt-dir" id="retail" aria-labelledby="retail-title">
+  <!-- Сети, где уже продаётся продукция -->
+  <section class="section section--tight" aria-labelledby="pt-chains-title">
     <div class="container">
-      <header class="pt-dir__head">
-        <span class="pt-dir__n" aria-hidden="true">01</span>
-        <div><h2 class="h2" id="retail-title">Сетям и&nbsp;дистрибьюторам</h2><p class="lead">Знакомая покупателю еда в&nbsp;новом формате — от одного производителя и&nbsp;в&nbsp;упаковке под каждый канал продаж.</p></div>
-        <a class="btn" href="#form" data-pt-who="retail">Запросить условия</a>
-      </header>
-      <div class="pt-facts">
-        <div><b>306</b><span>магазинов «Перекрёстка» с&nbsp;РисоМишками в&nbsp;100+ городах</span></div>
-        <div><b>186</b><span>магазинов «Светофора» с&nbsp;супами Street Lunch на&nbsp;Урале и&nbsp;юге</span></div>
-        <div><b>1&nbsp;из&nbsp;2</b><span>мультипорционных коробок супа-пюре в&nbsp;федеральных сетях — наша<sup>*</sup></span></div>
-        <div><b>12&nbsp;мес</b><span>срок годности супов, РисоМишек и&nbsp;Хрумстика</span></div>
-      </div>
-      <div class="pt-cols">
-        <div>
-          <h3 class="pt-sub">Что вы получаете</h3>
-          <ul class="pt-ticks">
-            <li><b>Бесплатные образцы</b> для дегустации и&nbsp;оценки качества — по&nbsp;адресу, который укажете.</li>
-            <li><b>Подбор ассортимента</b> под формат магазина и&nbsp;аудиторию.</li>
-            <li><b>Промо на&nbsp;старте:</b> участвуем в&nbsp;промоакциях, готовим листовки и&nbsp;баннеры при вводе в&nbsp;матрицу.</li>
-            <li><b>Документы:</b> декларации ЕАЭС, спецификации, макеты этикеток.</li>
-            <li><b>ЭДО и&nbsp;логистика:</b> электронный документооборот, доставка до&nbsp;распределительных центров.</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="pt-sub">Форматы упаковки</h3>
-          <table class="spec pt-formats">
-            <tbody>
-              <tr><th scope="row">Коробка 240&nbsp;г</th><td>6 пакетиков по&nbsp;40&nbsp;г — основная полка супермаркета</td></tr>
-              <tr><th scope="row">Шоу-бокс</th><td>25 пакетиков по&nbsp;40&nbsp;г — выкладка у&nbsp;кассы и&nbsp;на&nbsp;полке</td></tr>
-              <tr><th scope="row">Стакан</th><td>Одна порция — магазины у&nbsp;дома и&nbsp;офисы</td></tr>
-              <tr><th scope="row">Дой-пак</th><td>5 пакетиков по&nbsp;40&nbsp;г — маркетплейсы и&nbsp;экспорт</td></tr>
-              <tr><th scope="row">Коробка РисоМишки</th><td>80&nbsp;г (солёные — 40&nbsp;г) — полка снеков и&nbsp;касса</td></tr>
-              <tr><th scope="row">Батончик Хрумстик</th><td>Поштучно — здоровое питание и&nbsp;касса</td></tr>
-              <tr><th scope="row">ПЭТ-банка и&nbsp;B&amp;B</th><td>Крупы и&nbsp;мука: ПЭТ — для маркетплейсов, B&amp;B — для сетей и&nbsp;опта</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <p class="pt-note">* По мониторингу ассортимента федеральных сетей, май–июль 2026 года. Где уже продаётся наша продукция — на&nbsp;странице <a href="where.html">«Где купить»</a>. Цены и&nbsp;условия зависят от&nbsp;объёма и&nbsp;региона, поэтому мы&nbsp;присылаем их по&nbsp;запросу.</p>
+      <div class="pt-chains__head"><h2 class="h3" id="pt-chains-title">Нас уже продают</h2><a class="link-arrow" href="where.html">Где купить</a></div>
+      <ul class="retail-strip retail-strip--logos retail-strip--compact" aria-label="Сети-партнёры" data-retail-strip></ul>
     </div>
   </section>
 
-  <!-- 02. Своя торговая марка -->
-  <section class="section section--alt pt-dir" id="stm" aria-labelledby="stm-title">
+  <!-- Направления — цветные плитки. Якоря #retail #stm #horeca #export #suppliers нужны ссылкам с главной и старых страниц -->
+  <section class="section section--alt" aria-labelledby="pt-dirs-title">
     <div class="container">
-      <header class="pt-dir__head">
-        <span class="pt-dir__n" aria-hidden="true">02</span>
-        <div><h2 class="h2" id="stm-title">Своя торговая марка (СТМ)</h2><p class="lead">Делаем продукт под маркой сети на&nbsp;наших линиях и&nbsp;рецептурах: меняются вкус, фасовка и&nbsp;дизайн под задачу.</p></div>
-        <a class="btn" href="#form" data-pt-who="stm">Обсудить проект</a>
-      </header>
-      <div class="pt-cols">
-        <div>
-          <h3 class="pt-sub">Что можем произвести</h3>
-          <ul class="pt-ticks">
-            <li><b>Супы и&nbsp;каши без варки</b> — суп-пюре из&nbsp;гороха и&nbsp;чечевицы, гречневая каша-пюре: пакетики, коробки, стаканы, дой-паки.</li>
-            <li><b>Десерты из&nbsp;воздушного риса</b> — фигурные хлебцы в&nbsp;глазури или солёные, как РисоМишки.</li>
-            <li><b>Батончики из&nbsp;воздушных круп</b> — с&nbsp;фруктозой, орехами, семечками и&nbsp;сухофруктами.</li>
-            <li><b>Крупы и&nbsp;мука</b> — в&nbsp;фасовке под сеть.</li>
-          </ul>
-          <h3 class="pt-sub mt-6">Как работаем</h3>
-          <ol class="pt-steps">
-            <li><b>Задача</b> — категория, аудитория, цена на&nbsp;полке, объёмы.</li>
-            <li><b>Рецептура и&nbsp;образцы</b> — подбираем вкус на&nbsp;базе наших продуктов.</li>
-            <li><b>Упаковка</b> — согласуем дизайн и&nbsp;макеты с&nbsp;вашей командой.</li>
-            <li><b>Документы</b> — спецификации, декларации, данные для этикетки.</li>
-            <li><b>Производство и&nbsp;поставка</b> — выпускаем партию и&nbsp;доставляем, в&nbsp;том числе на&nbsp;РЦ.</li>
-          </ol>
-        </div>
-        <div>
-          <h3 class="pt-sub">Кейс: РисоМишки для «ЖизньМарта»</h3>
-          <figure class="media pt-case"><img src="assets/img/scenes/stm-zhm-1.jpg" alt="РисоМишки в молочном шоколаде в упаковке ЖизньМарт" width="1400" height="1400" loading="lazy"></figure>
-          <p class="mt-4">С конца 2024 года выпускаем РисоМишки в&nbsp;белом и&nbsp;молочном шоколаде для сети «ЖизньМарт» под совместной маркой: на&nbsp;коробке — логотипы сети и&nbsp;бренда, дизайн разработан вместе с&nbsp;сетью.</p>
-          <h3 class="pt-sub mt-6">Нет своей марки? Возьмите нашу</h3>
-          <p class="pt-names"><span class="retail-chip">Бобснэк</span><span class="retail-chip">Бобосы</span><span class="retail-chip">Боб-Чемпион</span><span class="retail-chip">Вкус Няка</span><span class="retail-chip">Нашакаша</span><span class="retail-chip">Сландия</span><span class="retail-chip">Умстик</span><span class="retail-chip">Фрустик</span><span class="retail-chip">Фруктозик</span><span class="retail-chip">Хрусти и Расти</span><span class="retail-chip">Хрумбургер</span><span class="retail-chip">ХрумСнэк</span><span class="retail-chip">Чунга-Чанга</span></p>
-        </div>
+      <div class="section-head"><p class="kicker">Направления</p><h2 class="h2" id="pt-dirs-title">С&nbsp;кем работаем</h2></div>
+      <div class="pt-tiles">
+        <article class="pt-tile pt-tile--retail" id="retail">
+          <img class="pt-tile__img" src="assets/img/shelves/rm-shelf-1.jpg" alt="РисоМишки на полке магазина" width="1200" height="900" loading="lazy">
+          <div class="pt-tile__body">
+            <h3 class="pt-tile__title">Сетям и&nbsp;дистрибьюторам</h3>
+            <p>Бесплатные образцы, подбор ассортимента под формат магазина, промо на&nbsp;старте, ЭДО и&nbsp;доставка до&nbsp;распределительных центров.</p>
+            <a class="btn" href="#form" data-pt-who="retail">Запросить условия</a>
+          </div>
+        </article>
+        <article class="pt-tile pt-tile--stm" id="stm">
+          <img class="pt-tile__img" src="assets/img/scenes/stm-zhm-1.jpg" alt="РисоМишки в молочном шоколаде в упаковке «ЖизньМарт»" width="1400" height="1400" loading="lazy">
+          <div class="pt-tile__body">
+            <h3 class="pt-tile__title">Своя торговая марка</h3>
+            <p>Делаем продукт под вашей маркой на&nbsp;наших линиях. С&nbsp;конца 2024 года — РисоМишки для «ЖизньМарта».</p>
+            <a class="btn" href="#form" data-pt-who="stm">Обсудить проект</a>
+          </div>
+        </article>
+        <article class="pt-tile pt-tile--horeca" id="horeca">
+          <img class="pt-tile__img" src="assets/img/scenes/sl-bowl.jpg" alt="Суп-пюре Street Lunch в тарелке" width="1280" height="1600" loading="lazy">
+          <div class="pt-tile__body">
+            <h3 class="pt-tile__title">Учреждениям и&nbsp;HoReCa</h3>
+            <p>Суп-пюре за&nbsp;3&nbsp;минуты — нужен только кипяток. Хранится 12&nbsp;месяцев.</p>
+            <a class="btn" href="#form" data-pt-who="b2g">Запросить КП</a>
+          </div>
+        </article>
+        <article class="pt-tile pt-tile--export" id="export">
+          <img class="pt-tile__img" src="assets/img/scenes/rm-pattern.jpg" alt="РисоМишки в шоколаде на голубом фоне" width="1600" height="1600" loading="lazy">
+          <div class="pt-tile__body">
+            <h3 class="pt-tile__title">Экспорт</h3>
+            <p class="pt-tile__chips"><span>Беларусь</span><span>Казахстан</span><span>Узбекистан</span><span>Кыргызстан</span></p>
+            <p>Этикетки на&nbsp;языках ЕАЭС, декларации ЕАЭС, «Халяль» на&nbsp;супы.</p>
+            <a class="btn btn--light" href="#form" data-pt-who="export">Отправить запрос</a>
+          </div>
+        </article>
+        <article class="pt-tile pt-tile--suppliers" id="suppliers">
+          <div class="pt-tile__body">
+            <h3 class="pt-tile__title">Поставщикам сырья и&nbsp;упаковки</h3>
+            <p class="pt-tile__chips"><span>Крупы и&nbsp;зерно</span><span>Горох и&nbsp;чечевица</span><span>Сушёные овощи и&nbsp;грибы</span><span>Орехи и&nbsp;сухофрукты</span><span>Упаковка</span></p>
+            <a class="btn btn--ghost" href="#form" data-pt-who="supplier">Предложить сырьё</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- 03. Учреждениям и HoReCa -->
-  <section class="section pt-dir" id="horeca" aria-labelledby="horeca-title">
+  <!-- Форматы упаковки: фото вместо таблицы -->
+  <section class="section" aria-labelledby="pt-fmt-title">
     <div class="container">
-      <header class="pt-dir__head">
-        <span class="pt-dir__n" aria-hidden="true">03</span>
-        <div><h2 class="h2" id="horeca-title">Учреждениям и&nbsp;HoReCa</h2><p class="lead">Супы-пюре Street Lunch для госзаказчиков, учреждений, столовых и&nbsp;кафе: нужен только кипяток, а&nbsp;хранить можно год.</p></div>
-        <a class="btn" href="#form" data-pt-who="b2g">Запросить КП</a>
-      </header>
-      <div class="pt-facts">
-        <div><b>3&nbsp;мин</b><span>на приготовление: 250&nbsp;мл кипятка на&nbsp;порцию</span></div>
-        <div><b>5</b><span>порций по&nbsp;40&nbsp;г в&nbsp;одном дой-паке (200&nbsp;г)</span></div>
-        <div><b>≈300&nbsp;г</b><span>готового супа из&nbsp;одной порции</span></div>
-        <div><b>17&nbsp;г</b><span>растительного белка в&nbsp;100&nbsp;г сухого горохового супа</span></div>
-      </div>
-      <div class="pt-cols">
-        <div>
-          <h3 class="pt-sub">Формат и&nbsp;вкусы</h3>
-          <table class="spec">
-            <tbody>
-              <tr><th scope="row">Упаковка</th><td>Дой-пак 200&nbsp;г: 5 порционных пакетиков по&nbsp;40&nbsp;г. Крупная фасовка — по&nbsp;запросу</td></tr>
-              <tr><th scope="row">Вкусы</th><td>Гороховый с&nbsp;грибами, с&nbsp;«говядиной», с&nbsp;«курицей», с&nbsp;овощами; чечевичный с&nbsp;«копчёными рёбрышками»; борщ и&nbsp;солянка «по-Уральски»</td></tr>
-              <tr><th scope="row">Хранение</th><td>12 месяцев при температуре до&nbsp;+25&nbsp;°C и&nbsp;влажности не&nbsp;выше 75%; хранение на&nbsp;морозе допускается</td></tr>
-              <tr><th scope="row">Кратность и&nbsp;паллетизация</th><td>Пришлём спецификацию вместе с&nbsp;КП</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div>
-          <h3 class="pt-sub">Документы для закупки</h3>
-          <ul class="pt-ticks">
-            <li><b>Декларация ЕАЭС</b> N RU Д-RU.РА04.В.18188/25 до&nbsp;11.05.2030 — на&nbsp;всю линейку супов.</li>
-            <li><b>ТУ</b> 10.61.33-008-70822360-18.</li>
-            <li><b>«Халяль» и&nbsp;«ЭКО»</b> — добровольные сертификаты до&nbsp;марта 2028 года.</li>
-            <li><b>Протоколы испытаний</b> — по&nbsp;запросу вместе со&nbsp;спецификацией.</li>
-          </ul>
-          <p class="mt-4"><a class="link-arrow" href="#docs">Сканы документов</a></p>
-        </div>
-      </div>
+      <div class="section-head section-head--split"><div><p class="kicker">Форматы</p><h2 class="h2" id="pt-fmt-title">Упаковка под каждый канал</h2></div><p class="lead">Ещё есть дой-пак на&nbsp;5&nbsp;пакетиков — для маркетплейсов, учреждений и&nbsp;экспорта.</p></div>
+      <ul class="pt-fmt">
+        <li style="--c:#e4f1cc"><img src="assets/img/cutouts/lg-sl-griby-box.png" alt="" width="375" height="560" loading="lazy"><b>Коробка</b><span>6 пакетиков по&nbsp;40&nbsp;г — полка супермаркета</span></li>
+        <li style="--c:#fde4c6"><img class="is-white" src="assets/img/products/sl-griby-showbox.jpg" alt="" width="720" height="687" loading="lazy"><b>Шоу-бокс</b><span>25 пакетиков — у&nbsp;кассы и&nbsp;на&nbsp;полке</span></li>
+        <li style="--c:#f3e6cf"><img class="is-white" src="assets/img/products/sl-rebra-cup-classic.jpg" alt="" width="561" height="720" loading="lazy"><b>Стакан</b><span>Одна порция — магазины у&nbsp;дома и&nbsp;офисы</span></li>
+        <li style="--c:#d3e7f6"><img src="assets/img/cutouts/rm-box-milk.png" alt="" width="340" height="365" loading="lazy"><b>РисоМишки</b><span>Коробка 80&nbsp;г — полка снеков и&nbsp;касса</span></li>
+        <li style="--c:#f6ead6"><img class="is-white" src="assets/img/products/hr-bar.jpg" alt="" width="720" height="498" loading="lazy"><b>Хрумстик</b><span>Батончик поштучно — здоровое питание и&nbsp;касса</span></li>
+      </ul>
     </div>
   </section>
 
-  <!-- 04. Экспорт -->
-  <section class="section section--alt pt-dir" id="export" aria-labelledby="export-title">
-    <div class="container">
-      <header class="pt-dir__head">
-        <span class="pt-dir__n" aria-hidden="true">04</span>
-        <div><h2 class="h2" id="export-title">Экспорт</h2><p class="lead">Поставляем весь ассортимент в&nbsp;Беларусь, Казахстан, Узбекистан и&nbsp;Кыргызстан. Ответим на&nbsp;русском или английском.</p></div>
-        <a class="btn" href="#form" data-pt-who="export">Отправить запрос</a>
-      </header>
-      <div class="pt-cols">
-        <div>
-          <h3 class="pt-sub">Что важно для импортёра</h3>
-          <ul class="pt-ticks">
-            <li><b>Многоязычные этикетки:</b> на&nbsp;супах — русский, белорусский и&nbsp;казахский; на&nbsp;коробках РисоМишек — ещё узбекский, азербайджанский и&nbsp;китайский.</li>
-            <li><b>Декларации ЕАЭС:</b> супы и&nbsp;каши — до&nbsp;11.05.2030, РисоМишки — до&nbsp;17.05.2031; по&nbsp;остальным продуктам — по&nbsp;запросу.</li>
-            <li><b>«Халяль»</b> на&nbsp;супы Street Lunch — до&nbsp;25.03.2028.</li>
-            <li><b>Экспортные форматы:</b> чаще всего шоу-боксы (25 пакетиков) и&nbsp;дой-паки (5 пакетиков); доступны и&nbsp;остальные.</li>
-            <li><b>Срок годности 12&nbsp;месяцев</b> — хватает на&nbsp;логистику и&nbsp;реализацию.</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="pt-sub">Опыт поставок</h3>
-          <p>В Беларуси работает импортёр РисоМишек — ООО «Вельми Смачна» (Минск). Карта поставок из&nbsp;Челябинска — <a href="index.html#export-title">на&nbsp;главной</a>.</p>
-          <p class="mt-4"><a class="link-arrow" href="en/export.html" lang="en">Export page in English</a></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 05. Поставщикам -->
-  <section class="section pt-dir" id="suppliers" aria-labelledby="suppliers-title">
-    <div class="container">
-      <header class="pt-dir__head">
-        <span class="pt-dir__n" aria-hidden="true">05</span>
-        <div><h2 class="h2" id="suppliers-title">Поставщикам сырья и&nbsp;упаковки</h2><p class="lead">С 2003 года работаем с&nbsp;сырьём отечественных сельхозпроизводителей. Рассматриваем предложения хозяйств, переработчиков и&nbsp;производителей упаковки.</p></div>
-        <a class="btn" href="#form" data-pt-who="supplier">Предложить сырьё</a>
-      </header>
-      <div class="pt-cols">
-        <div>
-          <h3 class="pt-sub">Что закупаем</h3>
-          <table class="spec">
-            <tbody>
-              <tr><th scope="row">Крупы и&nbsp;зерно</th><td>Рис шлифованный и&nbsp;бурый, гречка и&nbsp;зелёная гречка, пшеница, полба, ячмень</td></tr>
-              <tr><th scope="row">Бобовые</th><td>Горох и&nbsp;чечевица, гороховая мука</td></tr>
-              <tr><th scope="row">Сушёные овощи и&nbsp;грибы</th><td>Морковь, лук, чеснок, укроп, тыква, томат, паприка, свёкла, капуста, белые грибы, картофельные хлопья и&nbsp;другие</td></tr>
-              <tr><th scope="row">Орехи, семена, сухофрукты</th><td>Курага, грецкий орех, семечки тыквы и&nbsp;подсолнечника</td></tr>
-              <tr><th scope="row">Для глазури и&nbsp;батончиков</th><td>Заменитель масла какао, сухая молочная сыворотка, лецитин, фруктоза, патока, подсолнечное масло</td></tr>
-              <tr><th scope="row">Упаковка</th><td>Коробки и&nbsp;шоу-боксы, порционные пакеты, стаканы, дой-паки, ПЭТ-банки, упаковка для батончиков</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div>
-          <h3 class="pt-sub">Чего ждём от&nbsp;поставщика</h3>
-          <ul class="pt-ticks">
-            <li><b>Документы:</b> декларации или сертификаты соответствия, удостоверения качества на&nbsp;каждую партию.</li>
-            <li><b>Стабильность:</b> одинаковое качество от&nbsp;партии к&nbsp;партии и&nbsp;понятные сроки отгрузки.</li>
-            <li><b>Образцы:</b> перед первой поставкой — образец для проверки качества.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Документы -->
+  <!-- Документы: сканы, реквизиты, скачивания -->
   <section class="section section--alt" id="docs" aria-labelledby="docs-title">
     <div class="container">
-      <div class="section-head section-head--split"><div><p class="kicker">Документы</p><h2 class="h2" id="docs-title">Всё для байера в&nbsp;одном месте</h2></div><p class="lead">Сканы деклараций и&nbsp;сертификатов — ниже, нажмите, чтобы рассмотреть. Протоколы, спецификации и&nbsp;макеты этикеток пришлём по&nbsp;запросу.</p></div>
-      <div class="pt-cols">
-        <div>
-          <h3 class="pt-sub">Декларации и&nbsp;технические условия</h3>
-          <table class="spec">
-            <tbody>
-              <tr><th scope="row">Супы-пюре Street Lunch, «по-Уральски» и&nbsp;Наша Каша</th><td>Декларация ЕАЭС N RU Д-RU.РА04.В.18188/25 от&nbsp;12.05.2025, до&nbsp;11.05.2030 · ТУ 10.61.33-008-70822360-18</td></tr>
-              <tr><th scope="row">РисоМишки</th><td>Декларация ЕАЭС N RU Д-RU.РА03.В.74745/26 от&nbsp;18.05.2026, до&nbsp;17.05.2031 · ТУ 10.61.33-011-70822360-2020</td></tr>
-              <tr><th scope="row">Хрумстик</th><td>ТУ 9294-005-70822360-12 · <mark class="tbd">уточнить: номер декларации</mark></td></tr>
-              <tr><th scope="row">Крупы и&nbsp;мука</th><td>Фасовка в&nbsp;разработке — документы появятся вместе с&nbsp;ней</td></tr>
-            </tbody>
-          </table>
-          <h3 class="pt-sub mt-6">Скачать</h3>
-          <div class="cluster">
-            <a class="btn btn--sm" href="assets/downloads/novye-produkty-foto-produkcii.zip" download>Фото продукции · ZIP 5&nbsp;МБ</a>
-            <a class="btn btn--sm btn--ghost" href="assets/downloads/novye-produkty-znak.svg" download>Знак компании · SVG</a>
-          </div>
-        </div>
-        <div>
-          <h3 class="pt-sub">Реквизиты</h3>
+      <div class="section-head section-head--split"><div><p class="kicker">Документы</p><h2 class="h2" id="docs-title">Декларации и&nbsp;сертификаты</h2></div><p class="lead">Нажмите на&nbsp;документ, чтобы рассмотреть. Протоколы, спецификации и&nbsp;макеты этикеток пришлём по&nbsp;запросу.</p></div>
+      <div class="doc-grid">
+        <button type="button" class="doc-card" data-lightbox="assets/img/docs/decl-supy-kashi-2025.jpg" data-caption="Декларация ЕАЭС N RU Д-RU.РА04.В.18188/25 — супы и каши, до 11.05.2030"><span class="doc-card__img"><img src="assets/img/docs/decl-supy-kashi-2025.jpg" alt="Декларация о соответствии на супы и каши" loading="lazy"></span><strong>Декларация ЕАЭС — супы и каши</strong><small>До 11.05.2030</small></button>
+        <button type="button" class="doc-card" data-lightbox="assets/img/docs/decl-risomishki-2026.jpg" data-caption="Декларация ЕАЭС N RU Д-RU.РА03.В.74745/26 — РисоМишки, до 17.05.2031"><span class="doc-card__img"><img src="assets/img/docs/decl-risomishki-2026.jpg" alt="Декларация о соответствии на РисоМишки" loading="lazy"></span><strong>Декларация ЕАЭС — РисоМишки</strong><small>До 17.05.2031</small></button>
+        <button type="button" class="doc-card" data-lightbox="assets/img/docs/halal-street-lunch.jpg" data-caption="Сертификат «Халяль» РОСС RU.33039.ИЛ05ОС.00119 — Street Lunch, до 25.03.2028"><span class="doc-card__img"><img src="assets/img/docs/halal-street-lunch.jpg" alt="Сертификат «Халяль» на супы Street Lunch" loading="lazy"></span><strong>«Халяль» — супы Street Lunch</strong><small>До 25.03.2028</small></button>
+        <button type="button" class="doc-card" data-lightbox="assets/img/docs/eco-street-lunch.jpg" data-caption="Сертификат «ЭКО» РОСС RU.32874.04ЭРС0.ОС01.00493 — Street Lunch, до 23.03.2028"><span class="doc-card__img"><img src="assets/img/docs/eco-street-lunch.jpg" alt="Сертификат «ЭКО» на супы Street Lunch" loading="lazy"></span><strong>«ЭКО» — супы Street Lunch</strong><small>До 23.03.2028</small></button>
+        <button type="button" class="doc-card" data-lightbox="assets/img/docs/eco-risomishki.jpg" data-caption="Сертификат «ЭКО» РОСС RU.32874.04ЭРС0.ОС01.00494 — РисоМишки, до 23.03.2028"><span class="doc-card__img"><img src="assets/img/docs/eco-risomishki.jpg" alt="Сертификат «ЭКО» на РисоМишки" loading="lazy"></span><strong>«ЭКО» — РисоМишки</strong><small>До 23.03.2028</small></button>
+      </div>
+      <div class="pt-docbar">
+        <details class="pt-req">
+          <summary>Реквизиты компании</summary>
           <table class="spec">
             <tbody>
               <tr><th scope="row">Компания</th><td>ООО «Новые продукты»</td></tr>
@@ -328,23 +186,12 @@
               <tr><th scope="row">Отдел продаж</th><td><a href="tel:+79043054275">+7 (904) 305-42-75</a> · <a href="mailto:info@newprod.ru">info@newprod.ru</a></td></tr>
             </tbody>
           </table>
+        </details>
+        <div class="cluster">
+          <a class="btn btn--sm" href="assets/downloads/novye-produkty-foto-produkcii.zip" download>Фото продукции · ZIP 5&nbsp;МБ</a>
+          <a class="btn btn--sm btn--ghost" href="assets/downloads/novye-produkty-znak.svg" download>Знак компании · SVG</a>
         </div>
       </div>
-      <div class="doc-grid mt-7">
-        <button type="button" class="doc-card" data-lightbox="assets/img/docs/decl-supy-kashi-2025.jpg" data-caption="Декларация ЕАЭС N RU Д-RU.РА04.В.18188/25 — супы и каши, до 11.05.2030"><span class="doc-card__img"><img src="assets/img/docs/decl-supy-kashi-2025.jpg" alt="Декларация о соответствии на супы и каши" loading="lazy"></span><strong>Декларация ЕАЭС — супы и каши</strong><small>До 11.05.2030</small></button>
-        <button type="button" class="doc-card" data-lightbox="assets/img/docs/decl-risomishki-2026.jpg" data-caption="Декларация ЕАЭС N RU Д-RU.РА03.В.74745/26 — РисоМишки, до 17.05.2031"><span class="doc-card__img"><img src="assets/img/docs/decl-risomishki-2026.jpg" alt="Декларация о соответствии на РисоМишки" loading="lazy"></span><strong>Декларация ЕАЭС — РисоМишки</strong><small>До 17.05.2031</small></button>
-        <button type="button" class="doc-card" data-lightbox="assets/img/docs/halal-street-lunch.jpg" data-caption="Сертификат «Халяль» РОСС RU.33039.ИЛ05ОС.00119 — Street Lunch, до 25.03.2028"><span class="doc-card__img"><img src="assets/img/docs/halal-street-lunch.jpg" alt="Сертификат «Халяль» на супы Street Lunch" loading="lazy"></span><strong>«Халяль» — супы Street Lunch</strong><small>До 25.03.2028</small></button>
-        <button type="button" class="doc-card" data-lightbox="assets/img/docs/eco-street-lunch.jpg" data-caption="Сертификат «ЭКО» РОСС RU.32874.04ЭРС0.ОС01.00493 — Street Lunch, до 23.03.2028"><span class="doc-card__img"><img src="assets/img/docs/eco-street-lunch.jpg" alt="Сертификат «ЭКО» на супы Street Lunch" loading="lazy"></span><strong>«ЭКО» — супы Street Lunch</strong><small>До 23.03.2028</small></button>
-        <button type="button" class="doc-card" data-lightbox="assets/img/docs/eco-risomishki.jpg" data-caption="Сертификат «ЭКО» РОСС RU.32874.04ЭРС0.ОС01.00494 — РисоМишки, до 23.03.2028"><span class="doc-card__img"><img src="assets/img/docs/eco-risomishki.jpg" alt="Сертификат «ЭКО» на РисоМишки" loading="lazy"></span><strong>«ЭКО» — РисоМишки</strong><small>До 23.03.2028</small></button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Вопросы -->
-  <section class="section" aria-labelledby="bfaq-title">
-    <div class="container split">
-      <div><p class="kicker">Вопросы партнёров</p><h2 class="h2" id="bfaq-title">Частые вопросы</h2></div>
-      <div class="faq" data-faq="business"></div>
     </div>
   </section>
 
@@ -354,7 +201,7 @@
       <div>
         <p class="kicker">Заявка</p>
         <h2 class="h2" id="form-title">Расскажите о&nbsp;задаче — пришлём предложение</h2>
-        <p class="lead mt-5">Выберите направление, оставьте контакт и&nbsp;пару слов о&nbsp;задаче. Условия зависят от&nbsp;объёма и&nbsp;региона, поэтому мы&nbsp;присылаем их письмом.</p>
+        <p class="lead mt-5">Выберите направление и&nbsp;оставьте контакт — условия пришлём письмом.</p>
         <p class="mt-5">Добавили позиции в&nbsp;каталоге? Они уйдут вместе с&nbsp;заявкой: <button class="btn btn--sm btn--light" type="button" data-request-open data-who="retail">Ваш список · <span class="count-badge" data-request-count>0</span></button></p>
       </div>
       <form class="form-grid pt-form" data-mail-form data-with-list data-topic="Партнёрство" novalidate>
@@ -424,12 +271,9 @@
       <nav aria-label="Для партнёров">
         <h2>Для партнёров</h2>
         <ul>
-          <li><a href="business.html#retail">Сетям и дистрибьюторам</a></li>
-          <li><a href="business.html#stm">Своя торговая марка</a></li>
-          <li><a href="business.html#horeca">Учреждениям и HoReCa</a></li>
-          <li><a href="business.html#export">Экспорт</a></li>
-          <li><a href="business.html#suppliers">Поставщикам</a></li>
-          <li><a href="business.html#docs">Документы</a></li>
+          <li><a href="business.html">Сотрудничество</a></li>
+          <li><a href="business.html#docs">Документы и реквизиты</a></li>
+          <li><a href="business.html#form">Оставить заявку</a></li>
         </ul>
       </nav>
       <nav aria-label="О компании">
@@ -466,20 +310,7 @@
     <nav aria-label="Мобильное меню">
       <ul>
         <li><a data-nav="catalog" href="catalog.html">Продукция</a></li>
-        <li>
-          <details>
-            <summary>Для партнёров <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
-            <ul>
-              <li><a data-nav="business" data-active="true" href="business.html" aria-current="page">Все направления</a></li>
-              <li><a href="business.html#retail">Сетям и дистрибьюторам</a></li>
-              <li><a href="business.html#stm">Своя торговая марка</a></li>
-              <li><a href="business.html#horeca">Учреждениям и HoReCa</a></li>
-              <li><a href="business.html#export">Экспорт</a></li>
-              <li><a href="business.html#suppliers">Поставщикам</a></li>
-              <li><a href="business.html#docs">Документы</a></li>
-            </ul>
-          </details>
-        </li>
+        <li><a data-nav="business" data-active="true" href="business.html" aria-current="page">Для партнёров</a></li>
         <li><a data-nav="where" href="where.html">Где купить</a></li>
         <li><a data-nav="about" href="about.html">О компании</a></li>
         <li><a data-nav="social" href="social.html">Соцпроекты</a></li>
