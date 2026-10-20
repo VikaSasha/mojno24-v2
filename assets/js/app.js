@@ -663,7 +663,9 @@
   function initRetailStrip() {
     $$("[data-retail-strip]").forEach(function (el) {
       /* Белый логотип на фирменном цвете: красим всю плитку, а не маленькую подложку под картинкой */
-      el.innerHTML = NP.RETAIL.map(function (r) {
+      /* Порядок: по числу магазинов (Перекрёсток — первым), сети без данных — в конце */
+      var sorted = NP.RETAIL.slice().sort(function (a, b) { return (b.stores || 0) - (a.stores || 0); });
+      el.innerHTML = sorted.map(function (r) {
         if (r.logo && r.logoBg) return '<li class="retail-tile retail-tile--on-color" style="--tile-bg:' + r.logoBg + '">' + retailLogo({ logo: r.logo, name: r.name }) + "</li>";
         return '<li class="retail-tile">' + retailLogo(r) + "</li>";
       }).join("");
@@ -808,26 +810,46 @@
         (n.cover && n.img ? '<p class="mt-5"><button type="button" class="btn btn--ghost" data-lightbox="' + img(n.img) + '" data-caption="' + esc(n.title) + '">' + esc(n.imgLabel || "Смотреть диплом") + "</button></p>" : "");
     }
   }
+  /* ---------- Соцпроекты: как новости — фильтр по направлению, сетка карточек и страница проекта (social.html?id=…) ---------- */
+  var SOCIAL_DIRS = ["army", "charity", "events"];
+  function dirName(id) { var d = NP.DIRECTIONS.filter(function (x) { return x.id === id; })[0]; return d ? d.ru : ""; }
+  /* Год для сортировки: первая четырёхзначная цифра; «уточнить» — считаем самым свежим */
+  function projYear(p) { var m = typeof p.year === "string" ? p.year.match(/\d{4}/g) : null; return m ? +m[m.length - 1] : 9999; }
+  function projectsSorted() { return NP.PROJECTS.slice().sort(function (a, b) { return projYear(b) - projYear(a); }); }
+  function projectMedia(p) {
+    if (p.docs) return '<div class="s-card__img s-card__img--doc s-card__img--' + p.dir + '">' + p.docs.slice(0, 2).map(function (d) { return picture(d.img, d.title); }).join("") + "</div>";
+    var ph = p.photos.filter(function (x) { return x.img === p.cover; })[0] || p.photos[0];
+    return '<div class="s-card__img">' + picture(ph.img, ph.alt) + "</div>";
+  }
+  function projectCard(p) {
+    var year = typeof p.year === "string" ? "<span>" + esc(p.year) + "</span>" : "";
+    return '<a class="n-card s-card" href="' + url("social.html") + "?id=" + p.id + '">' + projectMedia(p) + '<div class="n-card__meta"><span class="badge badge--soft">' + esc(dirName(p.dir)) + "</span>" + year + "</div><h3>" + esc(p.title) + "</h3><p>" + esc(p.text) + "</p></a>";
+  }
   function initSocial() {
     var root = $("[data-social]"); if (!root) return;
-    var dir = qsParam("dir") || "all", chipsEl = $("[data-dir-chips]", root), list = $("[data-projects]", root);
+    var id = qsParam("id"), listView = $("[data-social-list]", root), itemView = $("[data-social-item]", root);
     function docHTML(d) { return '<button type="button" class="doc-card" data-lightbox="' + img(d.img) + '" data-caption="' + esc(d.title + (d.year ? ", " + d.year : "")) + '"><span class="doc-card__img">' + picture(d.img, d.title) + "</span><strong>" + esc(d.title) + "</strong>" + (d.year ? "<small>" + esc(d.year) + "</small>" : "") + "</button>"; }
+    if (id) {
+      var p = NP.PROJECTS.filter(function (x) { return x.id === id; })[0];
+      listView.hidden = true; itemView.hidden = false;
+      var art = $("[data-social-article]", itemView);
+      if (!p) { art.innerHTML = '<div class="state state--error" role="alert">' + ICON.alert + '<h2>Проект не найден</h2><p>Возможно, ссылка устарела.</p><a class="btn" href="social.html">Все проекты</a></div>'; return; }
+      document.title = p.title + " | Соцпроекты | Новые продукты";
+      $("[data-crumbs]", itemView).innerHTML = '<li><a href="index.html">Главная</a></li><li><a href="social.html">Соцпроекты</a></li><li aria-current="page">' + esc(p.title) + "</li>";
+      var media = p.docs ? '<h2 class="h4 mt-7 mb-4">' + (p.docs.length > 1 ? "Документы" : "Благодарственное письмо") + '</h2><div class="doc-grid">' + p.docs.map(docHTML).join("") + "</div>"
+        : '<h2 class="h4 mt-7 mb-4">Фото</h2><div class="mosaic">' + p.photos.map(function (ph) { return '<figure><button type="button" class="mosaic__btn" data-lightbox="' + img(ph.img) + '" data-caption="' + esc(ph.alt) + '">' + picture(ph.img, ph.alt) + "</button></figure>"; }).join("") + "</div>";
+      art.innerHTML = '<div class="n-card__meta"><span class="badge badge--soft">' + esc(dirName(p.dir)) + "</span><span>" + val(p.year) + '</span></div><h1 class="h1 mt-4">' + esc(p.title) + '</h1><div class="prose mt-6"><p>' + esc(p.text) + "</p></div>" + media;
+      $("[data-social-more]", itemView).innerHTML = projectsSorted().filter(function (x) { return x.id !== p.id; }).slice(0, 3).map(projectCard).join("");
+      return;
+    }
+    var dir = qsParam("dir") || "all", chipsEl = $("[data-dir-chips]", root), list = $("[data-projects]", root);
+    if (SOCIAL_DIRS.indexOf(dir) < 0) dir = "all";
     function draw() {
-      chipsEl.innerHTML = [{ id: "all", ru: T.all }].concat(NP.DIRECTIONS).map(function (d) { return '<button type="button" class="chip" data-dir="' + d.id + '" aria-pressed="' + (dir === d.id) + '">' + esc(d.ru) + "</button>"; }).join("");
-      var html = NP.DIRECTIONS.filter(function (d) { return dir === "all" || dir === d.id; }).map(function (d) {
-        var items;
-        if (d.id === "expo") {
-          items = NP.NEWS.filter(function (n) { return n.tag === "expo" || n.tag === "awards"; }).sort(function (a, b) { return a.date < b.date ? 1 : -1; });
-          return '<section class="reveal" aria-labelledby="dir-' + d.id + '"><div class="rule-title"><h2 class="h3" id="dir-' + d.id + '">' + esc(d.ru) + '</h2></div><p class="muted mt-4">' + esc(d.text) + '</p><div class="cards cards--3 mt-6">' + items.slice(0, 6).map(newsCard).join("") + '</div><p class="mt-6"><a class="link-arrow" href="news.html">Все новости о выставках</a></p></section>';
-        }
-        items = NP.PROJECTS.filter(function (p) { return p.dir === d.id; });
-        return '<section class="reveal" aria-labelledby="dir-' + d.id + '"><div class="rule-title"><h2 class="h3" id="dir-' + d.id + '">' + esc(d.ru) + '</h2></div><p class="muted mt-4">' + esc(d.text) + "</p>" +
-          items.map(function (p) {
-            var media = p.docs ? '<div class="project__docs">' + p.docs.map(docHTML).join("") + "</div>" : '<div class="mosaic">' + p.photos.map(function (ph) { return "<figure>" + picture(ph.img, ph.alt) + "</figure>"; }).join("") + "</div>";
-            return '<article class="project"><div><p class="kicker kicker--plain">' + val(p.year) + "</p><h3>" + esc(p.title) + '</h3><p class="mt-4">' + esc(p.text) + "</p></div>" + media + "</article>";
-          }).join("") + "</section>";
-      }).join('<div class="mt-7"></div>');
-      list.innerHTML = html; initReveal(list);
+      chipsEl.innerHTML = [{ id: "all", ru: T.all }].concat(NP.DIRECTIONS.filter(function (d) { return SOCIAL_DIRS.indexOf(d.id) >= 0; })).map(function (d) {
+        var n = d.id === "all" ? NP.PROJECTS.length : NP.PROJECTS.filter(function (p) { return p.dir === d.id; }).length;
+        return '<button type="button" class="chip" data-dir="' + d.id + '" aria-pressed="' + (dir === d.id) + '">' + esc(d.ru) + '<span class="chip__n">' + n + "</span></button>"; }).join("");
+      list.innerHTML = projectsSorted().filter(function (p) { return dir === "all" || p.dir === dir; }).map(projectCard).join("");
+      initReveal(list);
     }
     chipsEl.addEventListener("click", function (e) { var b = e.target.closest("[data-dir]"); if (!b) return; dir = b.getAttribute("data-dir"); draw(); try { history.replaceState(null, "", location.pathname + (dir !== "all" ? "?dir=" + dir : "")); } catch (er) { /* file:// */ } });
     draw();
@@ -923,6 +945,37 @@
     $$("[data-reviews-note]").forEach(function (n) { n.textContent = "Отзывы покупателей с " + R.source + (retold ? " — в пересказе, без имён." : "."); });
     initReveal(el);
   }
+  /* ---------- «О компании»: линия шкалы роста заполняется по мере прокрутки ---------- */
+  function initGrowth() {
+    var el = $("[data-grow]"); if (!el) return;
+    if (RM) { el.style.setProperty("--p", 1); return; }
+    var ticking = false;
+    function upd() { ticking = false; var r = el.getBoundingClientRect(), vh = window.innerHeight; var p = (vh * 0.6 - r.top) / r.height; el.style.setProperty("--p", Math.max(0, Math.min(1, p)).toFixed(3)); }
+    window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }, { passive: true });
+    window.addEventListener("resize", upd); upd();
+  }
+  /* ---------- «Для партнёров»: подсветка текущего раздела в липком меню; кнопки разделов выбирают направление в форме ---------- */
+  function initPartnerNav() {
+    var nav = $("[data-pt-nav]"); if (!nav) return;
+    var links = $$("a[href^='#']", nav), map = {};
+    links.forEach(function (a) { var s = document.getElementById(a.getAttribute("href").slice(1)); if (s) map[s.id] = a; });
+    function mark(id) {
+      links.forEach(function (a) { a.removeAttribute("aria-current"); });
+      var a = map[id]; if (!a) return; a.setAttribute("aria-current", "true");
+      var ul = a.parentNode.parentNode; if (ul.scrollWidth > ul.clientWidth) ul.scrollTo({ left: a.offsetLeft - 16, behavior: RM ? "auto" : "smooth" });
+    }
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (en) { en.forEach(function (e) { if (e.isIntersecting) mark(e.target.id); }); }, { rootMargin: "-35% 0px -60% 0px" });
+      Object.keys(map).forEach(function (id) { io.observe(document.getElementById(id)); });
+    }
+    document.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-pt-who]"); if (!b) return;
+      var r = $('#form input[name="who"][value="' + b.getAttribute("data-pt-who") + '"]'); if (r) r.checked = true;
+    });
+    /* Старые адреса разделов (retail.html и т. п.) ведут сюда с якорем — радиокнопку выбираем и по нему */
+    var who = { retail: "retail", stm: "stm", horeca: "b2g", "export": "export", suppliers: "supplier" }[location.hash.slice(1)];
+    if (who) { var r0 = $('#form input[name="who"][value="' + who + '"]'); if (r0) r0.checked = true; }
+  }
   /* ---------- Карта поставок из Челябинска (главная) ----------
      Контуры стран — NP_GEO (geo-export.js, проекция Ламберта); точки — по той же проекции.
      Экспорт — дуги в страны (точка — столица, подпись — страна); сети в России — города из NP.CITIES;
@@ -946,7 +999,10 @@
         { id: "uz", ru: "Узбекистан", en: "Uzbekistan", lon: 69.28, lat: 41.31, left: true },
         { id: "kg", ru: "Кыргызстан", en: "Kyrgyzstan", lon: 74.59, lat: 42.87 }
       ];
-      var cities = NP.CITIES.filter(function (c) { return c.id !== "chelyabinsk"; });
+      /* На карте — крупные города; остальные перечислены в легенде одной цифрой */
+      var MAPC = ["moscow", "spb", "ekaterinburg", "rostov", "perm", "tyumen", "nnovgorod", "samara", "volgograd", "krasnodar", "kaliningrad"];
+      var allCities = NP.CITIES.filter(function (c) { return c.id !== "chelyabinsk"; });
+      var cities = allCities.filter(function (c) { return MAPC.indexOf(c.id) >= 0; }), restN = allCities.length - cities.length;
       var VLAD = { ru: "Владивосток", en: "Vladivostok", lon: 131.89, lat: 43.12 }, vlad = P(VLAD.lon, VLAD.lat);
       function nm(o) { return EN && o.en ? o.en : o.ru || o.name; }
       var routes = "", dots = "", pkts = "", labels = "";
@@ -983,7 +1039,7 @@
         '<ul class="xmap__legend">' +
         '<li><span class="xmap__key xmap__key--hub" aria-hidden="true"></span><span><b>' + (EN ? "Production" : "Производство") + "</b>" + (EN ? "Chelyabinsk, since 2003" : "Челябинск, с 2003 года") + "</span></li>" +
         '<li><span class="xmap__key xmap__key--ex" aria-hidden="true"></span><span><b>' + (EN ? "Export" : "Экспорт") + "</b>" + EXPORT.map(nm).join(", ") + "</span></li>" +
-        '<li><span class="xmap__key xmap__key--ru" aria-hidden="true"></span><span><b>' + (EN ? "Retail chains in Russia" : "Сети в России") + "</b>" + cities.map(nm).join(", ") + "</span></li>" +
+        '<li><span class="xmap__key xmap__key--ru" aria-hidden="true"></span><span><b>' + (EN ? "Retail chains in Russia" : "Сети в России") + "</b>" + cities.map(nm).join(", ") + (restN > 0 ? (EN ? " and " + restN + " more cities" : " и ещё " + restN + " " + plural(restN, ["город", "города", "городов"])) : "") + "</span></li>" +
         '<li><span class="xmap__key xmap__key--web" aria-hidden="true"></span><span><b>' + (EN ? "Marketplaces" : "Маркетплейсы") + "</b>" + (EN ? "Delivery across Russia, from Kaliningrad to Vladivostok" : "Доставка по всей России — от Калининграда до Владивостока") + "</span></li></ul>";
       /* Наведение на подпись страны подсвечивает её контур и маршрут */
       $$(".xmap__label--ex", el).forEach(function (lbl) {
@@ -999,17 +1055,7 @@
   /* Соцпроекты на главной — карусель: письма «веером» на подложке, события — фото */
   function initProjectStrip() {
     var el = $("[data-projects-strip]"); if (!el) return;
-    var dirName = {}; NP.DIRECTIONS.forEach(function (d) { dirName[d.id] = d.ru; });
-    el.innerHTML = NP.PROJECTS.map(function (p) {
-      var media;
-      if (p.docs) media = '<div class="s-card__img s-card__img--doc s-card__img--' + p.dir + '">' + p.docs.slice(0, 2).map(function (d) { return picture(d.img, d.title); }).join("") + "</div>";
-      else {
-        var ph = p.photos.filter(function (x) { return x.img === p.cover; })[0] || p.photos[0];
-        media = '<div class="s-card__img">' + picture(ph.img, ph.alt) + "</div>";
-      }
-      var year = typeof p.year === "string" ? "<span>" + esc(p.year) + "</span>" : "";
-      return '<a class="n-card s-card" href="' + url("social.html") + "?dir=" + p.dir + '">' + media + '<div class="n-card__meta"><span class="badge badge--soft">' + esc(dirName[p.dir]) + "</span>" + year + "</div><h3>" + esc(p.title) + "</h3><p>" + esc(p.text) + "</p></a>";
-    }).join("");
+    el.innerHTML = projectsSorted().map(projectCard).join("");
   }
   /* ---------- Видео: обложка-кнопка, плеер подгружается только по клику ---------- */
   function initVideos() {
@@ -1064,6 +1110,8 @@
   initReviews();
   initProjectStrip();
   initExportMap();
+  initPartnerNav();
+  initGrowth();
   initVideos();
   initCatalog();
   initProduct();
