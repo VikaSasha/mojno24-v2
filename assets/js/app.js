@@ -999,19 +999,21 @@
         { id: "uz", ru: "Узбекистан", en: "Uzbekistan", lon: 69.28, lat: 41.31, left: true },
         { id: "kg", ru: "Кыргызстан", en: "Kyrgyzstan", lon: 74.59, lat: 42.87 }
       ];
-      /* На карте — крупные города; остальные перечислены в легенде одной цифрой */
-      var MAPC = ["moscow", "spb", "ekaterinburg", "rostov", "perm", "tyumen", "nnovgorod", "samara", "volgograd", "krasnodar", "kaliningrad"];
-      var allCities = NP.CITIES.filter(function (c) { return c.id !== "chelyabinsk"; });
-      var cities = allCities.filter(function (c) { return MAPC.indexOf(c.id) >= 0; }), restN = allCities.length - cities.length;
+      /* Все города представленности из NP.CITIES: точка, маршрут из Челябинска и подпись.
+         Подписи раскладывает layout() — так, чтобы не налезали друг на друга; крупные сети — точка больше */
+      var cities = NP.CITIES.filter(function (c) { return !c.home; });
+      var BIG = ["moscow", "spb", "ekaterinburg", "rostov", "perm"];
+      var SIDE = { rostov: "t" }; /* подсказка: с какой стороны сначала пробовать подпись (освобождает место соседям) */
+      var SHORT = { nnovgorod: ["Н. Новгород", "N. Novgorod"], chelny: ["Наб. Челны", "Nab. Chelny"], ntagil: ["Н. Тагил", "N. Tagil"] };
       var VLAD = { ru: "Владивосток", en: "Vladivostok", lon: 131.89, lat: 43.12 }, vlad = P(VLAD.lon, VLAD.lat);
       function nm(o) { return EN && o.en ? o.en : o.ru || o.name; }
+      function shortNm(c) { var s = SHORT[c.id]; return s ? s[EN ? 1 : 0] : nm(c); }
       var routes = "", dots = "", pkts = "", labels = "";
       cities.forEach(function (c) {
-        var pt = P(c.lon, c.lat);
+        var pt = P(c.lon, c.lat), end = c.id === "kaliningrad";
         routes += '<path class="xmap__route xmap__route--ru" d="' + arc(hub, pt, 0.14) + '"/>';
-        dots += '<circle class="xmap__dot" cx="' + f(pt[0]) + '" cy="' + f(pt[1]) + '" r="3.4"><title>' + esc(nm(c)) + "</title></circle>";
-        var end = c.id === "kaliningrad", major = end || c.id === "moscow";
-        if (major) labels += '<span class="xmap__label xmap__label--city' + (end ? " xmap__label--end" : "") + '" style="' + pos(pt) + '">' + esc(nm(c)) + "</span>";
+        dots += '<circle class="xmap__dot' + (BIG.indexOf(c.id) >= 0 ? " xmap__dot--big" : "") + '" data-id="' + c.id + '" cx="' + f(pt[0]) + '" cy="' + f(pt[1]) + '" r="' + (BIG.indexOf(c.id) >= 0 ? 4.6 : 3.2) + '"><title>' + esc(nm(c) + (c.note && !EN ? ". " + c.note : "")) + "</title></circle>";
+        labels += '<span class="xmap__label xmap__label--city' + (end ? " xmap__label--end xmap__label--west" : "") + '"' + (end ? "" : ' data-auto="' + c.id + '"') + ' style="' + pos(pt) + (BIG.indexOf(c.id) >= 0 ? ";--g:11px" : "") + '">' + esc(shortNm(c)) + "</span>";
       });
       routes += '<path class="xmap__route xmap__route--web" d="' + arc(hub, vlad, 0.16) + '"/>';
       dots += '<circle class="xmap__dot xmap__dot--web" cx="' + f(vlad[0]) + '" cy="' + f(vlad[1]) + '" r="4"/>';
@@ -1033,13 +1035,15 @@
         '<path class="xmap__other" d="' + G.paths.other + '"/><path class="xmap__ru" d="' + G.paths.ru + '"/>' +
         EXPORT.map(function (x) { return '<path class="xmap__ex" data-c="' + x.id + '" d="' + G.paths[x.id] + '"/>'; }).join("") +
         '<text class="xmap__wm" x="' + f(wm[0]) + '" y="' + f(wm[1]) + '">' + (EN ? "RUSSIA" : "РОССИЯ") + "</text>" +
-        routes + dots + pkts +
-        '<g transform="translate(' + f(hub[0]) + " " + f(hub[1]) + ')"><circle r="46" fill="url(#xmap-glow)"/><circle class="xmap__pulse" r="12"/><circle class="xmap__pulse xmap__pulse--2" r="12"/><circle r="13" class="xmap__hub"/><path class="xmap__star" d="' + star + '"/></g>' +
+        routes +
+        '<g transform="translate(' + f(hub[0]) + " " + f(hub[1]) + ')"><circle r="46" fill="url(#xmap-glow)"/><circle class="xmap__pulse" r="12"/><circle class="xmap__pulse xmap__pulse--2" r="12"/></g>' +
+        dots + pkts +
+        '<g transform="translate(' + f(hub[0]) + " " + f(hub[1]) + ')"><circle r="13" class="xmap__hub"/><path class="xmap__star" d="' + star + '"/></g>' +
         '</svg><div class="xmap__labels" aria-hidden="true">' + labels + "</div></div>" +
         '<ul class="xmap__legend">' +
         '<li><span class="xmap__key xmap__key--hub" aria-hidden="true"></span><span><b>' + (EN ? "Production" : "Производство") + "</b>" + (EN ? "Chelyabinsk, since 2003" : "Челябинск, с 2003 года") + "</span></li>" +
         '<li><span class="xmap__key xmap__key--ex" aria-hidden="true"></span><span><b>' + (EN ? "Export" : "Экспорт") + "</b>" + EXPORT.map(nm).join(", ") + "</span></li>" +
-        '<li><span class="xmap__key xmap__key--ru" aria-hidden="true"></span><span><b>' + (EN ? "Retail chains in Russia" : "Сети в России") + "</b>" + cities.map(nm).join(", ") + (restN > 0 ? (EN ? " and " + restN + " more cities" : " и ещё " + restN + " " + plural(restN, ["город", "города", "городов"])) : "") + "</span></li>" +
+        '<li><span class="xmap__key xmap__key--ru" aria-hidden="true"></span><span><b>' + (EN ? "Retail chains in Russia" : "Сети в России") + "</b>" + (EN ? cities.length + " cities: " : cities.length + " " + plural(cities.length, ["город", "города", "городов"]) + ": ") + cities.map(nm).join(", ") + "</span></li>" +
         '<li><span class="xmap__key xmap__key--web" aria-hidden="true"></span><span><b>' + (EN ? "Marketplaces" : "Маркетплейсы") + "</b>" + (EN ? "Delivery across Russia, from Kaliningrad to Vladivostok" : "Доставка по всей России — от Калининграда до Владивостока") + "</span></li></ul>";
       /* Наведение на подпись страны подсвечивает её контур и маршрут */
       $$(".xmap__label--ex", el).forEach(function (lbl) {
@@ -1047,6 +1051,35 @@
         function hot(on) { $$('[data-c="' + c + '"]', el).forEach(function (x) { x.classList.toggle("is-hot", on); }); }
         lbl.addEventListener("mouseenter", function () { hot(true); }); lbl.addEventListener("mouseleave", function () { hot(false); });
       });
+      /* Подписи городов: по порядку CITIES пробуем справа, слева, по диагоналям, сверху, снизу; занятое место — другие подписи,
+         точки и знак Челябинска. Не влезла нигде — подпись прячется (название остаётся во всплывающей подсказке и легенде) */
+      function layout() {
+        var R = $(".xmap__canvas", el).getBoundingClientRect(); if (!R.width) return;
+        var taken = [], compact = R.width < 760; /* узкая карта: подписываем только крупные города, мелкие точки подписям не мешают */
+        function box(r, pad, id, padX) { var px = padX == null ? pad : padX; return { l: r.left - px, t: r.top - pad, r: r.right + px, b: r.bottom + pad, id: id }; }
+        function hit(a) {
+          return a.l < R.left || a.r > R.right || a.t < R.top || a.b > R.bottom ||
+            taken.some(function (b) { return b.id !== a.id && a.l < b.r && a.r > b.l && a.t < b.b && a.b > b.t; });
+        }
+        $$(".xmap__label:not([data-auto])", el).forEach(function (s) { if (s.offsetParent) taken.push(box(s.getBoundingClientRect(), 3)); });
+        $$(".xmap__dot, .xmap__hub", el).forEach(function (d) { if (compact && d.classList.contains("xmap__dot") && !d.classList.contains("xmap__dot--big") && d.hasAttribute("data-id")) return; taken.push(box(d.getBoundingClientRect(), 0, d.getAttribute("data-id"))); });
+        $$(".xmap__label[data-auto]", el).forEach(function (s) {
+          s.classList.remove("is-off"); if (!s.offsetParent) return;
+          if (compact && BIG.indexOf(s.getAttribute("data-auto")) < 0) { s.classList.add("is-off"); return; }
+          var sides = ["", "l", "tr", "br", "tl", "bl", "t", "b"], pref = SIDE[s.getAttribute("data-auto")];
+          if (pref) sides.unshift(pref);
+          var ok = sides.some(function (side) {
+            s.className = "xmap__label xmap__label--city" + (side ? " xmap__label--" + side : "");
+            var b = box(s.getBoundingClientRect(), 1, s.getAttribute("data-auto"), 7); /* по горизонтали зазор шире — соседние подписи не читаются как одна */
+            if (hit(b)) return false;
+            taken.push(b); return true;
+          });
+          if (!ok) s.classList.add("is-off");
+        });
+      }
+      layout();
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+      var lt; window.addEventListener("resize", function () { clearTimeout(lt); lt = setTimeout(layout, 150); });
       if (!("IntersectionObserver" in window) || RM) { el.classList.add("is-in"); return; }
       var io = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { el.classList.add("is-in"); io.disconnect(); } }, { rootMargin: "0px 0px -15% 0px" });
       io.observe(el);

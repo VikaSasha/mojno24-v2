@@ -876,12 +876,23 @@ button.grow__img { cursor: zoom-in; }
 .xmap__label small { display: block; margin-top: 4px; font: 600 .66rem/1 var(--font-text); letter-spacing: .12em; opacity: .75; }
 .xmap__label--l { transform: translate(calc(-100% - 12px), -50%); text-align: right; }
 .xmap__label--ex { color: var(--amber-300); pointer-events: auto; cursor: default; }
-.xmap__label--hub { transform: translate(18px, -50%); font-size: clamp(1rem, .7rem + 1.2vw, 1.75rem); }
+.xmap__label--hub { transform: translate(20px, 6px); font-size: clamp(1rem, .7rem + 1.2vw, 1.75rem); }
 .xmap__label--city { font: 600 clamp(.68rem, .6rem + .25vw, .82rem)/1 var(--font-text); text-transform: none; letter-spacing: 0; color: rgba(251, 248, 241, .85); }
+.xmap__label--city { transform: translate(var(--g, 8px), -50%); }
+.xmap__label--city.xmap__label--l { transform: translate(calc(-100% - var(--g, 8px)), -50%); }
+.xmap__label--city.xmap__label--t { transform: translate(-50%, calc(-100% - var(--g, 8px))); }
+.xmap__label--city.xmap__label--b { transform: translate(-50%, var(--g, 8px)); }
+.xmap__label--city.xmap__label--tr { transform: translate(calc(var(--g, 8px) * .7), calc(-100% - var(--g, 8px) * .5)); }
+.xmap__label--city.xmap__label--br { transform: translate(calc(var(--g, 8px) * .7), calc(var(--g, 8px) * .5)); }
+.xmap__label--city.xmap__label--tl { transform: translate(calc(-100% - var(--g, 8px) * .7), calc(-100% - var(--g, 8px) * .5)); }
+.xmap__label--city.xmap__label--bl { transform: translate(calc(-100% - var(--g, 8px) * .7), calc(var(--g, 8px) * .5)); }
+.xmap__label.is-off { visibility: hidden; }
 .xmap__label--end { color: var(--amber-300); }
+/* На узкой карте подпись Калининграда — над точкой: справа ей мешал бы Петербург */
+@media (max-width: 899px) { .xmap__label--city.xmap__label--west { transform: translate(-50%, calc(-100% - 7px)); } }
+.xmap__dot--big { stroke: rgba(251, 248, 241, .35); stroke-width: 4; paint-order: stroke; }
 @media (max-width: 639px) {
   .xmap__label small { display: none; }
-  .xmap__label--city:not(.xmap__label--end) { display: none; }
   .xmap__label { transform: translate(7px, -50%); }
   .xmap__label--l { transform: translate(calc(-100% - 7px), -50%); }
 }
