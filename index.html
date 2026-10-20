@@ -47,15 +47,15 @@
       <ul>
         <li><a class="nav-link" data-nav="catalog" href="catalog.html">Продукция</a></li>
         <li class="has-dropdown">
-          <button class="nav-link" type="button" data-dropdown data-nav="business" aria-expanded="false" aria-controls="dd-business">Бизнесу <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <button class="nav-link" type="button" data-dropdown data-nav="business" aria-expanded="false" aria-controls="dd-business">Для партнёров <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
           <ul class="dropdown" id="dd-business">
-            <li><a data-nav="retail" href="retail.html"><strong>Сетям и дистрибьюторам</strong><small>Ассортимент, поддержка продаж, образцы</small></a></li>
-            <li><a data-nav="private-label" href="private-label.html"><strong>СТМ и контрактное производство</strong><small>Продукт под вашей маркой — кейс ЖизньМарт</small></a></li>
-            <li><a data-nav="b2g" href="b2g.html"><strong>B2G и HoReCa</strong><small>Питание для учреждений, столовых, кафе</small></a></li>
-            <li><a data-nav="export" href="export.html"><strong>Экспорт</strong><small>Беларусь, Казахстан, Узбекистан, Кыргызстан</small></a></li>
-            <li><a data-nav="suppliers" href="suppliers.html"><strong>Поставщикам</strong><small>Сырьё и упаковка</small></a></li>
-            <li><a data-nav="documents" href="documents.html"><strong>Документы</strong><small>Каталог, декларации, медиакит</small></a></li>
-            <li><a data-nav="business" href="business.html"><strong>Все направления →</strong></a></li>
+            <li><a href="business.html#retail"><strong>Сетям и дистрибьюторам</strong><small>Полка, касса, маркетплейс; образцы и ЭДО</small></a></li>
+            <li><a href="business.html#stm"><strong>Своя торговая марка</strong><small>Продукт под маркой сети — кейс ЖизньМарт</small></a></li>
+            <li><a href="business.html#horeca"><strong>Учреждениям и HoReCa</strong><small>Горячее питание без кухни</small></a></li>
+            <li><a href="business.html#export"><strong>Экспорт</strong><small>Беларусь, Казахстан, Узбекистан, Кыргызстан</small></a></li>
+            <li><a href="business.html#suppliers"><strong>Поставщикам</strong><small>Сырьё и упаковка</small></a></li>
+            <li><a href="business.html#docs"><strong>Документы</strong><small>Декларации, сертификаты, реквизиты</small></a></li>
+            <li><a data-nav="business" href="business.html"><strong>Всё для партнёров на одной странице →</strong></a></li>
           </ul>
         </li>
         <li><a class="nav-link" data-nav="where" href="where.html">Где купить</a></li>
@@ -124,7 +124,7 @@
         <div class="stat"><span class="num">4</span><p>бренда: Street Lunch, РисоМишки, Наша Каша, Хрумстик</p></div>
         <div class="stat"><span class="num" data-count-positions>68</span><p>позиций: <span data-count-products>35</span> <span data-count-products-word>продуктов</span> в 8 форматах упаковки</p></div>
         <div class="stat"><span class="num">5</span><p>стран: Россия, Беларусь, Казахстан, Узбекистан, Кыргызстан</p></div>
-        <div class="stat"><span class="num">160<sup>+</sup></span><p>магазинов в 14 сетях-партнёрах — плюс Ozon</p></div>
+        <div class="stat"><span class="num">500<sup>+</sup></span><p>магазинов в 14 сетях — от «Перекрёстка» до «Светофора», плюс Ozon</p></div>
       </div>
     </div>
   </section>
@@ -222,25 +222,25 @@
     </div>
   </section>
 
-  <!-- 5. Для бизнеса: один компактный вход — направления списком, три факта, один запрос.
+  <!-- 5. Для партнёров: один компактный вход — направления списком, три факта, один запрос.
        Как у производителей отрасли (Увелка, ЭФКО): на главной коротко, подробности — на страницах направлений. -->
   <section class="section section--dark biz" aria-labelledby="b2b-title">
     <div class="container">
       <div class="biz__grid">
         <div class="biz__intro">
-          <p class="kicker">Для бизнеса</p>
+          <p class="kicker">Для партнёров</p>
           <h2 class="h2" id="b2b-title">Своё производство — для сетей, СТМ, учреждений и&nbsp;экспорта</h2>
           <p class="lead mt-4">Бесплатные образцы, документы и ЭДО, доставка до&nbsp;РЦ. Условия каждого направления — на&nbsp;его странице.</p>
           <div class="biz__cta">
             <button class="btn btn--accent" type="button" data-request-open data-who="retail">Отправить запрос</button>
-            <a class="link-arrow" href="documents.html">Документы для байеров</a>
+            <a class="link-arrow" href="business.html#docs">Документы для байеров</a>
           </div>
         </div>
         <ul class="biz__list" aria-label="Направления">
-          <li><a href="retail.html"><span class="biz__name">Сетям и&nbsp;дистрибьюторам</span><span class="biz__desc">Полка, маркетплейсы, доставка до&nbsp;РЦ</span><svg class="biz__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></li>
-          <li><a href="private-label.html"><span class="biz__name">Собственная торговая марка</span><span class="biz__desc">Продукт под маркой сети — как РисоМишки для&nbsp;ЖизньМарта</span><svg class="biz__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></li>
-          <li><a href="b2g.html"><span class="biz__name">Учреждениям и&nbsp;HoReCa</span><span class="biz__desc">Супы без варки для столовых и&nbsp;кафе, срок годности 12&nbsp;месяцев</span><svg class="biz__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></li>
-          <li><a href="export.html"><span class="biz__name">Экспорт</span><span class="biz__desc">Беларусь, Казахстан, Узбекистан, Кыргызстан</span><svg class="biz__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></li>
+          <li><a href="business.html#retail"><span class="biz__name">Сетям и&nbsp;дистрибьюторам</span><span class="biz__desc">Полка, маркетплейсы, доставка до&nbsp;РЦ</span><svg class="biz__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></li>
+          <li><a href="business.html#stm"><span class="biz__name">Собственная торговая марка</span><span class="biz__desc">Продукт под маркой сети — как РисоМишки для&nbsp;ЖизньМарта</span><svg class="biz__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></li>
+          <li><a href="business.html#horeca"><span class="biz__name">Учреждениям и&nbsp;HoReCa</span><span class="biz__desc">Супы без варки для столовых и&nbsp;кафе, срок годности 12&nbsp;месяцев</span><svg class="biz__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></li>
+          <li><a href="business.html#export"><span class="biz__name">Экспорт</span><span class="biz__desc">Беларусь, Казахстан, Узбекистан, Кыргызстан</span><svg class="biz__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></a></li>
         </ul>
       </div>
       <dl class="biz__facts">
@@ -248,7 +248,7 @@
         <div class="biz__fact"><dt>8</dt><dd>форматов упаковки — под полку, кассу, маркетплейс и&nbsp;опт</dd></div>
         <div class="biz__fact"><dt>с&nbsp;2003</dt><dd>своё производство в&nbsp;Челябинске: сами отвечаем за&nbsp;рецептуру и&nbsp;качество</dd></div>
       </dl>
-      <p class="biz__note">* По мониторингу федеральных сетей, 2026 год. Поставщикам сырья и упаковки — <a href="suppliers.html">отдельная страница</a>.</p>
+      <p class="biz__note">* По мониторингу федеральных сетей, 2026 год. Поставщикам сырья и упаковки — <a href="business.html#suppliers">отдельная страница</a>.</p>
     </div>
   </section>
 
@@ -256,7 +256,7 @@
   <section class="section section--alt" aria-labelledby="where-title">
     <div class="container">
       <div class="section-head section-head--split">
-        <div><p class="kicker">Где купить</p><h2 class="h2" id="where-title">В сетях от Калининграда до Урала — и онлайн</h2></div>
+        <div><p class="kicker">Где купить</p><h2 class="h2" id="where-title">В сетях от Калининграда до Сибири — и онлайн по всей России</h2></div>
         <p class="lead">Онлайн — на маркетплейсах с доставкой по всей России. В офлайне — федеральные и региональные сети.</p>
       </div>
       <div class="where-block">
@@ -283,7 +283,7 @@
         </div>
         <div>
           <p class="lead">На экспорт — весь ассортимент: этикетки на&nbsp;русском, казахском, узбекском и&nbsp;белорусском языках, декларации ЕАЭС. Шоу-боксы и&nbsp;дой-паки — основные экспортные форматы.</p>
-          <div class="cluster mt-5"><a class="btn btn--accent" href="export.html">Экспорт: подробнее</a><a class="btn btn--ghost" href="en/export.html" lang="en">English</a></div>
+          <div class="cluster mt-5"><a class="btn btn--accent" href="business.html#export">Экспорт: подробнее</a><a class="btn btn--ghost" href="en/export.html" lang="en">English</a></div>
         </div>
       </div>
       <div class="xmap" data-export-map></div>
@@ -476,15 +476,15 @@
           <li><a href="where.html">Где купить</a></li>
         </ul>
       </nav>
-      <nav aria-label="Бизнесу">
-        <h2>Бизнесу</h2>
+      <nav aria-label="Для партнёров">
+        <h2>Для партнёров</h2>
         <ul>
-          <li><a href="retail.html">Сетям и дистрибьюторам</a></li>
-          <li><a href="private-label.html">СТМ и контрактное производство</a></li>
-          <li><a href="b2g.html">B2G и HoReCa</a></li>
-          <li><a href="export.html">Экспорт</a></li>
-          <li><a href="suppliers.html">Поставщикам</a></li>
-          <li><a href="documents.html">Документы</a></li>
+          <li><a href="business.html#retail">Сетям и дистрибьюторам</a></li>
+          <li><a href="business.html#stm">Своя торговая марка</a></li>
+          <li><a href="business.html#horeca">Учреждениям и HoReCa</a></li>
+          <li><a href="business.html#export">Экспорт</a></li>
+          <li><a href="business.html#suppliers">Поставщикам</a></li>
+          <li><a href="business.html#docs">Документы</a></li>
         </ul>
       </nav>
       <nav aria-label="О компании">
@@ -523,15 +523,15 @@
         <li><a data-nav="catalog" href="catalog.html">Продукция</a></li>
         <li>
           <details>
-            <summary>Бизнесу <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <summary>Для партнёров <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
             <ul>
               <li><a data-nav="business" href="business.html">Все направления</a></li>
-              <li><a data-nav="retail" href="retail.html">Сетям и дистрибьюторам</a></li>
-              <li><a data-nav="private-label" href="private-label.html">СТМ и контрактное производство</a></li>
-              <li><a data-nav="b2g" href="b2g.html">B2G и HoReCa</a></li>
-              <li><a data-nav="export" href="export.html">Экспорт</a></li>
-              <li><a data-nav="suppliers" href="suppliers.html">Поставщикам</a></li>
-              <li><a data-nav="documents" href="documents.html">Документы</a></li>
+              <li><a href="business.html#retail">Сетям и дистрибьюторам</a></li>
+              <li><a href="business.html#stm">Своя торговая марка</a></li>
+              <li><a href="business.html#horeca">Учреждениям и HoReCa</a></li>
+              <li><a href="business.html#export">Экспорт</a></li>
+              <li><a href="business.html#suppliers">Поставщикам</a></li>
+              <li><a href="business.html#docs">Документы</a></li>
             </ul>
           </details>
         </li>

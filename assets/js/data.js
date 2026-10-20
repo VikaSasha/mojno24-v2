@@ -313,10 +313,10 @@
   /* ---------- Где купить: сети и города (данные отдела продаж) ----------
      logo — файл в assets/img/retail (официальные логотипы сетей; без logo выводится название) */
   var RETAIL = [
-    { id: "svetofor", logo: "retail/svetofor.png", name: "Светофор", type: "Федеральная сеть", brands: ["street-lunch"], note: "Супы-пюре Street Lunch в коробках по 240 г.", region: "Урал, юг России, Калининград", stores: 144 },
+    { id: "svetofor", logo: "retail/svetofor.png", name: "Светофор", type: "Федеральная сеть", brands: ["street-lunch"], note: "Супы-пюре Street Lunch в коробках по 240 г.", region: "Свердловская, Пермская и Ростовская области", stores: 186 },
     { id: "globus", logo: "retail/globus.svg", name: "GLOBUS", type: "Федеральная сеть", brands: ["street-lunch"], note: "Сеть гипермаркетов.", region: "Москва" },
     { id: "lenta", logo: "retail/lenta.svg", name: "Лента", type: "Федеральная сеть", brands: ["street-lunch"], note: "Супы-пюре Street Lunch в стаканах." },
-    { id: "perekrestok", logo: "retail/perekrestok.svg", name: "Перекрёсток", type: "Федеральная сеть", brands: [], note: "Федеральная сеть супермаркетов." },
+    { id: "perekrestok", logo: "retail/perekrestok.svg", name: "Перекрёсток", type: "Федеральная сеть", brands: ["risomishki"], note: "РисоМишки в белой и молочной глазури, 80 г.", region: "Москва, Санкт-Петербург, Екатеринбург, Тюмень, Нижний Новгород и ещё 100+ городов", stores: 306 },
     { id: "spar", logo: "retail/spar.svg", name: "SPAR Урал", type: "Региональная сеть", brands: [], note: "Сеть супермаркетов SPAR на Урале." },
     { id: "zhiznmart", logo: "retail/zhiznmart.svg", logoBg: "#00342a", name: "ЖизньМарт", type: "Региональная сеть", brands: ["risomishki"], note: "РисоМишки, в том числе под совместной маркой сети." },
     { id: "yagodka", name: "Ягодка", type: "Региональная сеть", brands: ["risomishki"], note: "Хрустящий десерт РисоМишки." },
@@ -329,14 +329,30 @@
     { id: "kantmarket", name: "КантМаркет", type: "Региональная сеть", brands: ["risomishki"], note: "Хрустящий десерт РисоМишки." }
   ];
   var CITIES = [
-    { id: "chelyabinsk", name: "Челябинск", en: "Chelyabinsk", lat: 55.1644, lon: 61.4368, retail: ["svetofor", "ariant", "mayak", "teorema"], home: true, note: "Здесь наше производство и фирменный адрес: ул. Лазурная, 8." },
-    { id: "ekaterinburg", name: "Екатеринбург", en: "Yekaterinburg", lat: 56.8389, lon: 60.6057, retail: ["svetofor", "zhiznmart", "yagodka"], note: "Светофор — 74 магазина в Свердловской области: Екатеринбург, Первоуральск, Каменск-Уральский, Ревда, Серов, Асбест и ещё 30+ населённых пунктов." },
-    { id: "rostov", name: "Ростов-на-Дону", en: "Rostov-on-Don", lat: 47.2357, lon: 39.7015, retail: ["svetofor"], note: "Светофор — 70 магазинов в Ростовской области: Ростов-на-Дону, Таганрог, Шахты, Новочеркасск, Батайск и ещё 30+ населённых пунктов." },
-    { id: "moscow", name: "Москва", en: "Moscow", lat: 55.7558, lon: 37.6173, retail: ["globus"] },
-    { id: "magnitogorsk", name: "Магнитогорск", en: "Magnitogorsk", lat: 53.4072, lon: 58.9791, retail: ["svetofor"] },
-    { id: "krasnodar", name: "Краснодар", en: "Krasnodar", lat: 45.0355, lon: 38.9753, retail: ["svetofor"] },
-    { id: "kaliningrad", name: "Калининград", en: "Kaliningrad", lat: 54.7104, lon: 20.4522, retail: ["svetofor", "bazar"] },
-    { id: "perm", name: "Пермь", en: "Perm", lat: 58.0105, lon: 56.2502, retail: ["fitograd"] }
+    /* Представленность по городам. Перекрёсток — адресная программа X5 (РисоМишки, 306 магазинов; в список — города от 3 магазинов
+       и уже указанные), Светофор — выгрузки УралРитейлГрупп, ЮгРитейлЛогистики, ПармаЛогистик (Street Lunch, 186 точек). Остатки не учитываем. */
+    { id: "chelyabinsk", name: "Челябинск", en: "Chelyabinsk", lat: 55.1644, lon: 61.4368, retail: ["svetofor", "perekrestok", "ariant", "mayak", "teorema"], home: true, note: "Здесь наше производство и фирменный адрес: ул. Лазурная, 8." },
+    { id: "moscow", name: "Москва", en: "Moscow", lat: 55.7558, lon: 37.6173, retail: ["perekrestok", "globus"], note: "Перекрёсток — 55 магазинов в Москве, а также магазины в Подмосковье: Видное, Подольск, Королёв, Люберцы, Серпухов и другие." },
+    { id: "spb", name: "Санкт-Петербург", en: "Saint Petersburg", lat: 59.9343, lon: 30.3351, retail: ["perekrestok"], note: "Перекрёсток — 24 магазина в Петербурге и магазины в Ленинградской области." },
+    { id: "ekaterinburg", name: "Екатеринбург", en: "Yekaterinburg", lat: 56.8389, lon: 60.6057, retail: ["perekrestok", "svetofor", "zhiznmart", "yagodka"], note: "Перекрёсток — 16 магазинов. Светофор — 74 магазина в Свердловской области: Екатеринбург, Первоуральск, Каменск-Уральский, Ревда, Серов, Асбест и ещё 30+ населённых пунктов." },
+    { id: "rostov", name: "Ростов-на-Дону", en: "Rostov-on-Don", lat: 47.2357, lon: 39.7015, retail: ["svetofor", "perekrestok"], note: "Светофор — 70 магазинов в Ростовской области: Ростов-на-Дону, Таганрог, Шахты, Новочеркасск, Батайск и ещё 30+ населённых пунктов. Перекрёсток — 4 магазина." },
+    { id: "perm", name: "Пермь", en: "Perm", lat: 58.0105, lon: 56.2502, retail: ["svetofor", "perekrestok", "fitograd"], note: "Светофор — 42 магазина в Пермском крае: Пермь, Березники, Кунгур, Соликамск, Чайковский, Чусовой и ещё 20+ населённых пунктов. Перекрёсток — 4 магазина." },
+    { id: "tyumen", name: "Тюмень", en: "Tyumen", lat: 57.1530, lon: 65.5343, retail: ["perekrestok"], note: "Перекрёсток — 9 магазинов." },
+    { id: "tula", name: "Тула", en: "Tula", lat: 54.1931, lon: 37.6173, retail: ["perekrestok"], note: "Перекрёсток — 8 магазинов." },
+    { id: "nnovgorod", name: "Нижний Новгород", en: "Nizhny Novgorod", lat: 56.3269, lon: 44.0059, retail: ["perekrestok"], note: "Перекрёсток — 8 магазинов." },
+    { id: "volgograd", name: "Волгоград", en: "Volgograd", lat: 48.7080, lon: 44.5133, retail: ["perekrestok"], note: "Перекрёсток — 7 магазинов." },
+    { id: "samara", name: "Самара", en: "Samara", lat: 53.1959, lon: 50.1002, retail: ["perekrestok"], note: "Перекрёсток — 7 магазинов." },
+    { id: "voronezh", name: "Воронеж", en: "Voronezh", lat: 51.6608, lon: 39.2003, retail: ["perekrestok"], note: "Перекрёсток — 5 магазинов." },
+    { id: "lipetsk", name: "Липецк", en: "Lipetsk", lat: 52.6031, lon: 39.5708, retail: ["perekrestok"], note: "Перекрёсток — 5 магазинов." },
+    { id: "tver", name: "Тверь", en: "Tver", lat: 56.8587, lon: 35.9176, retail: ["perekrestok"], note: "Перекрёсток — 4 магазина." },
+    { id: "izhevsk", name: "Ижевск", en: "Izhevsk", lat: 56.8526, lon: 53.2045, retail: ["perekrestok"], note: "Перекрёсток — 4 магазина." },
+    { id: "ufa", name: "Уфа", en: "Ufa", lat: 54.7388, lon: 55.9721, retail: ["perekrestok"], note: "Перекрёсток — 3 магазина." },
+    { id: "krasnodar", name: "Краснодар", en: "Krasnodar", lat: 45.0355, lon: 38.9753, retail: ["svetofor", "perekrestok"], note: "Перекрёсток — 3 магазина." },
+    { id: "yoshkar-ola", name: "Йошкар-Ола", en: "Yoshkar-Ola", lat: 56.6344, lon: 47.8999, retail: ["perekrestok"], note: "Перекрёсток — 3 магазина." },
+    { id: "chelny", name: "Набережные Челны", en: "Naberezhnye Chelny", lat: 55.7436, lon: 52.3958, retail: ["perekrestok"], note: "Перекрёсток — 3 магазина." },
+    { id: "ntagil", name: "Нижний Тагил", en: "Nizhny Tagil", lat: 57.9101, lon: 59.9813, retail: ["perekrestok", "svetofor"], note: "Перекрёсток — 3 магазина. Светофор — 4 магазина." },
+    { id: "magnitogorsk", name: "Магнитогорск", en: "Magnitogorsk", lat: 53.4072, lon: 58.9791, retail: ["svetofor", "perekrestok"], note: "Перекрёсток — 2 магазина." },
+    { id: "kaliningrad", name: "Калининград", en: "Kaliningrad", lat: 54.7104, lon: 20.4522, retail: ["svetofor", "bazar"] }
   ];
 
   /* ---------- Новости ----------
@@ -538,7 +554,7 @@
       { q: "Можно ли получить образцы?", a: "Да. Образцы для внутренней дегустации и оценки качества предоставляем бесплатно." },
       { q: "Какие документы вы предоставляете?", a: "Декларации о соответствии ЕАЭС, спецификации, макеты этикеток и органолептические характеристики. Продукция выпускается по ТУ. На супы Street Lunch есть добровольные сертификаты «Халяль» и «ЭКО», на РисоМишки — «ЭКО». Сканы — на странице «Документы»." },
       { q: "Работаете ли вы по ЭДО и с доставкой до РЦ?", a: "Да, работаем через электронный документооборот и организуем доставку на распределительные центры." },
-      { q: "Производите ли вы под маркой сети (СТМ)?", a: "Да. Например, РисоМишки выпускаются для сети ЖизньМарт под совместной маркой. Подробнее — на странице «СТМ и контрактное производство»." },
+      { q: "Производите ли вы под маркой сети (СТМ)?", a: "Да. Например, РисоМишки выпускаются для сети ЖизньМарт под совместной маркой. Подробнее — в разделе «Своя торговая марка» на странице «Для партнёров»." },
       { q: "Поставляете ли вы за рубеж?", a: "Да: в Беларусь, Казахстан, Узбекистан и Кыргызстан. На экспорт доступен весь ассортимент." },
       { q: "Почему на сайте нет цен и условий поставки?", a: "Условия зависят от объёма, канала и региона, поэтому мы готовим их индивидуально. Отправьте заявку — пришлём предложение." }
     ]
