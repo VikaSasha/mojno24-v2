@@ -786,6 +786,38 @@ dialog.modal[open] { animation: modal-in var(--t-3) var(--ease); }
 .page-nav a[aria-current="true"] { color: var(--green-700); border-bottom-color: var(--amber-500); }
 #idea, #history, #quality, #awards { scroll-margin-top: calc(var(--sticky-top) + 52px); }
 
+/* «О компании», блок «Кто мы»: короткий текст и карточка с одним крупным фактом */
+.ab-lede { display: grid; gap: var(--s-6); align-items: center; }
+@media (min-width: 1024px) { .ab-lede { grid-template-columns: 7fr 5fr; gap: var(--s-8); } }
+.ab-lede .lead { margin-top: var(--s-5); }
+.ab-fact { margin: 0; overflow: hidden; border-radius: var(--r-lg); background: var(--green-900); box-shadow: var(--sh-2); }
+.ab-fact img { display: block; width: 100%; aspect-ratio: 5 / 4; object-fit: cover; }
+.ab-fact figcaption { display: grid; gap: var(--s-2); padding: var(--s-5) var(--s-6) var(--s-6); }
+.ab-fact b { font: 900 clamp(2.8rem, 2rem + 3.4vw, 4.5rem)/.85 var(--font-display); color: var(--amber-300); }
+.ab-fact span { max-width: 32ch; font-size: var(--fs-sm); line-height: 1.45; color: rgba(251, 248, 241, .85); }
+.ab-fact sup { color: var(--amber-300); }
+.ab-note { margin: var(--s-6) 0 0; font-size: var(--fs-xs); color: var(--text-muted); }
+/* Фотополоса-разделитель во всю ширину */
+.ab-band { position: relative; margin: 0; overflow: hidden; }
+.ab-band img { display: block; width: 100%; height: clamp(180px, 26vw, 360px); object-fit: cover; }
+.ab-band figcaption { position: absolute; inset: auto 0 0; padding: var(--s-7) var(--gutter) var(--s-5); background: linear-gradient(transparent, rgba(12, 38, 21, .78)); color: var(--paper-50); text-align: center; font: 800 clamp(1.1rem, .9rem + 1.1vw, 2rem)/1.1 var(--font-display); text-transform: uppercase; }
+/* Производство: путь продукта и четыре коротких факта */
+.ab-flow { list-style: none; margin: 0 0 var(--s-7); padding: 0; display: grid; gap: var(--s-3); grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 900px) { .ab-flow { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-5); } }
+.ab-flow li { position: relative; display: grid; gap: 4px; align-content: start; padding: var(--s-5); border-radius: var(--r-md); background: var(--surface); border: var(--bw) solid var(--line); }
+@media (min-width: 900px) {
+  .ab-flow li:not(:last-child)::after { content: ""; position: absolute; top: 50%; right: calc(var(--s-5) * -1); width: var(--s-5); height: 2px; background: var(--amber-500); }
+  .ab-flow li:not(:last-child)::before { content: ""; position: absolute; top: 50%; right: calc(var(--s-5) * -1 + 2px); width: 8px; height: 8px; margin-top: -3px; border-top: 2px solid var(--amber-500); border-right: 2px solid var(--amber-500); transform: rotate(45deg); }
+}
+.ab-flow span { font: 800 var(--fs-sm)/1 var(--font-display); color: var(--amber-600); }
+.ab-flow b { font: 800 var(--fs-lg)/1.05 var(--font-display); text-transform: uppercase; }
+.ab-flow small { font-size: var(--fs-sm); line-height: 1.4; color: var(--ink-600); }
+.ab-q { display: grid; gap: var(--s-5) var(--s-7); }
+@media (min-width: 640px) { .ab-q { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1280px) { .ab-q { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.ab-q article { padding-top: var(--s-4); border-top: 2px solid var(--ink-900); }
+.ab-q h3 { margin-bottom: var(--s-2); font: 800 var(--fs-lg)/1.1 var(--font-display); text-transform: uppercase; }
+.ab-q p { margin: 0; font-size: var(--fs-sm); line-height: 1.5; color: var(--ink-600); }
 /* «О компании»: история главами. Слева на широком экране — лента годов: текущий год подсвечен, линия заполняется по мере прокрутки (--p ставит initGrowth) */
 .hist__layout { --p: 0; display: grid; gap: var(--s-6); }
 .hist__rail { display: none; }
