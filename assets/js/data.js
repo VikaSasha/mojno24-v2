@@ -320,9 +320,8 @@
     { id: "spar", logo: "retail/spar.svg", name: "SPAR Урал", type: "Региональная сеть", brands: [], note: "Сеть супермаркетов SPAR на Урале." },
     { id: "zhiznmart", logo: "retail/zhiznmart.svg", logoBg: "#00342a", name: "ЖизньМарт", type: "Региональная сеть", brands: ["risomishki"], note: "РисоМишки, в том числе под совместной маркой сети." },
     { id: "yagodka", name: "Ягодка", type: "Региональная сеть", brands: ["risomishki"], note: "Хрустящий десерт РисоМишки." },
-    { id: "ariant", logo: "retail/ariant.svg", name: "Ариант", type: "Региональная сеть", brands: ["risomishki"], note: "Хрустящий десерт РисоМишки." },
+    { id: "ariant", logo: "retail/ariant.png", name: "ТС Ариант", type: "Фирменная сеть", brands: ["risomishki"], note: "Фирменная сеть мясной продукции формата «магазин у дома»: 54 магазина в Челябинской области. Хрустящий десерт РисоМишки.", region: "Челябинская область" },
     { id: "mayak", name: "Маяк", type: "Региональная сеть", brands: [], note: "Сеть магазинов." },
-    { id: "teorema", logo: "retail/teorema.webp", name: "Теорема", type: "Региональная сеть", brands: [], note: "Сеть магазинов." },
     { id: "mindal", logo: "retail/mindal.png", name: "Миндаль", type: "Региональная сеть", brands: ["risomishki"], note: "РисоМишки в белой глазури.", stores: 20 },
     { id: "fitograd", name: "ФитоГрад", type: "Магазины здорового питания", brands: ["street-lunch", "hrumstik"], note: "Супы Street Lunch и батончики Хрумстик." },
     { id: "bazar", name: "Bazar Market", type: "Региональная сеть", brands: ["street-lunch"], note: "Супы-пюре Street Lunch в стаканах." },
@@ -332,7 +331,7 @@
     /* Представленность по городам. Перекрёсток — адресная программа X5 (РисоМишки, 306 магазинов; в список — города от 3 магазинов
        и уже указанные), Светофор — выгрузки шести поставщиков сети на 06–20.10.2026: УралРитейлГрупп, Челябинск Ритейл, ПармаЛогистик,
        ЮГСЕРВИС, Приволжье Трейд, ЮгРитейлЛогистика (Street Lunch, 220 точек в 143 населённых пунктах). Остатки не учитываем. */
-    { id: "chelyabinsk", name: "Челябинск", en: "Chelyabinsk", lat: 55.1644, lon: 61.4368, retail: ["svetofor", "perekrestok", "ariant", "mayak", "teorema"], home: true, note: "Здесь наше производство и фирменный адрес: ул. Лазурная, 8. Светофор — 45 магазинов в Челябинской области, 8 из них в Челябинске." },
+    { id: "chelyabinsk", name: "Челябинск", en: "Chelyabinsk", lat: 55.1644, lon: 61.4368, retail: ["svetofor", "perekrestok", "zhiznmart", "ariant", "mayak"], home: true, note: "Здесь наше производство и фирменный адрес: ул. Лазурная, 8. Светофор — 45 магазинов в Челябинской области, 8 из них в Челябинске." },
     { id: "moscow", name: "Москва", en: "Moscow", lat: 55.7558, lon: 37.6173, retail: ["perekrestok", "globus"], note: "Перекрёсток — 55 магазинов в Москве, а также магазины в Подмосковье: Видное, Подольск, Королёв, Люберцы, Серпухов и другие." },
     { id: "spb", name: "Санкт-Петербург", en: "Saint Petersburg", lat: 59.9343, lon: 30.3351, retail: ["perekrestok"], note: "Перекрёсток — 24 магазина в Петербурге и магазины в Ленинградской области." },
     { id: "ekaterinburg", name: "Екатеринбург", en: "Yekaterinburg", lat: 56.8389, lon: 60.6057, retail: ["perekrestok", "svetofor", "zhiznmart", "yagodka"], note: "Перекрёсток — 16 магазинов. Светофор — 63 магазина в Свердловской области: 10 в Екатеринбурге, а также Нижний Тагил, Каменск-Уральский, Первоуральск, Серов, Ревда, Асбест и ещё 37 населённых пунктов." },
