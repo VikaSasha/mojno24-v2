@@ -899,16 +899,18 @@ dialog.modal[open] { animation: modal-in var(--t-3) var(--ease); }
 .pt-tile--export .pt-tile__chips span { background: rgba(255, 255, 255, .18); }
 .pt-tile--suppliers { --tile-bg: var(--green-100); background-image: radial-gradient(circle at 100% 100%, rgba(47, 154, 79, .22) 0 30%, transparent 31%); }
 .pt-tile--suppliers .pt-tile__body { justify-content: center; }
-/* Форматы упаковки: фото на цветной подложке; белый фон у фото «растворяется» через multiply */
+/* Форматы упаковки: снимок по центру цветной подложки, высота подгоняется под форму предмета (--ih),
+   белый фон у фотографий «растворяется» через multiply */
 .pt-fmt { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-3); grid-template-columns: repeat(2, minmax(0, 1fr)); }
-@media (min-width: 768px) { .pt-fmt { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-4); } }
-@media (min-width: 1024px) { .pt-fmt { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
-.pt-fmt li { display: flex; flex-direction: column; gap: 6px; padding: var(--s-4) var(--s-4) var(--s-5); border-radius: var(--r-lg); background: var(--c); }
-.pt-fmt img { width: 100%; height: clamp(120px, 10vw, 160px); margin-bottom: var(--s-3); object-fit: contain; filter: drop-shadow(0 14px 12px rgba(29, 27, 22, .2)); transition: transform var(--t-2) var(--ease); }
-.pt-fmt img.is-white { mix-blend-mode: multiply; filter: none; }
-.pt-fmt li:hover img { transform: translateY(-6px) rotate(-2deg); }
+@media (min-width: 640px) { .pt-fmt { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-4); } }
+@media (min-width: 1024px) { .pt-fmt { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.pt-fmt li { display: grid; grid-template-rows: 1fr auto auto; justify-items: center; gap: 6px; padding: var(--s-5) var(--s-4) var(--s-5); border-radius: var(--r-lg); background: var(--c); text-align: center; }
+.pt-fmt__img { align-self: center; width: 100%; height: var(--ih, 150px); max-height: 170px; margin-bottom: var(--s-4); object-fit: contain; object-position: center bottom; filter: drop-shadow(0 14px 12px rgba(29, 27, 22, .2)); transition: transform var(--t-2) var(--ease); }
+@media (max-width: 639px) { .pt-fmt__img { height: calc(var(--ih, 150px) * .78); } }
+.pt-fmt__img.is-white { mix-blend-mode: multiply; filter: none; }
+.pt-fmt li:hover .pt-fmt__img { transform: translateY(-6px) rotate(-2deg); }
 .pt-fmt b { font: 800 var(--fs-xl)/1 var(--font-display); text-transform: uppercase; }
-.pt-fmt span { font-size: var(--fs-sm); line-height: 1.4; color: var(--ink-600); }
+.pt-fmt span { max-width: 26ch; font-size: var(--fs-sm); line-height: 1.4; color: var(--ink-600); }
 /* Документы: реквизиты свёрнуты, рядом — скачивания */
 .pt-docbar { display: grid; gap: var(--s-5); margin-top: var(--s-7); align-items: start; }
 @media (min-width: 1024px) { .pt-docbar { grid-template-columns: minmax(0, 1fr) auto; gap: var(--s-7); } }
