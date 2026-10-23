@@ -300,7 +300,7 @@
 [data-theme="risomishki"] .brand-faq .faq details:last-child { border-bottom: 0; }
 [data-theme="risomishki"] .brand-faq .faq summary { font-family: var(--font-round); font-weight: 600; }
 [data-theme="risomishki"] .brand-faq details[open] summary .plus { background: var(--rm-orange); border-color: var(--rm-orange); color: #fff; }
-[data-theme="risomishki"] .brand-faq--snacks::after { content: ""; display: block; margin-top: var(--s-7); height: clamp(110px, 13vw, 232px); background: url("../img/brand/rm-landscape.jpg") center bottom / cover no-repeat; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 45%); mask-image: linear-gradient(to bottom, transparent 0, #000 45%); }
+[data-theme="risomishki"] .brand-faq--snacks::after { content: ""; display: block; margin-top: var(--s-7); height: clamp(110px, 13vw, 232px); background: url("../img/brand/rm-landscape.webp") center bottom / cover no-repeat; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 45%); mask-image: linear-gradient(to bottom, transparent 0, #000 45%); }
 [data-theme="risomishki"] .brand-cta { background: radial-gradient(60% 80% at 80% 20%, rgba(255, 170, 80, .45), transparent 70%), linear-gradient(135deg, #d8561a, #a63a0b); }
 [data-theme="risomishki"] .brand-cta .h2 { font-family: var(--font-round); font-weight: 800; }
 [data-theme="risomishki"] .brand-cta .kicker { color: #ffe08a; }

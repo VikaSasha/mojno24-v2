@@ -52,5 +52,5 @@
 
 1. Положите исходник в папку «! Маркетинг» с понятным именем.
 2. Добавьте строку в `tools/export-images.ps1`, например:
-   `Export (Src 'Дой-пак Грибы.jpg') 'products/sl-griby-doy.jpg' 720 'trim' -pad 0.03`
-3. Запустите скрипт, затем в `assets/js/data.js` замените `img: "ph:doy"` на `img: "products/sl-griby-doy.jpg"`.
+   `Export (Src 'Дой-пак Грибы.jpg') 'products/sl-griby-doy.webp' 720 'trim' -pad 0.03`
+3. Запустите скрипт, затем в `assets/js/data.js` замените `img: "ph:doy"` на `img: "products/sl-griby-doy.webp"`.
