@@ -1110,7 +1110,7 @@
       el.innerHTML = list.map(function (v) {
         var title = EN && v.titleEn ? v.titleEn : v.title;
         return '<figure class="video-card video-card--' + v.o + ' reveal"><button type="button" class="video-card__play" data-video="' + v.id + '" aria-label="' + esc((EN ? "Play video: " : "Смотреть видео: ") + title + ", " + v.dur) + '">' +
-          '<img src="' + img("video/" + v.id + ".jpg") + '" alt="" loading="lazy" decoding="async"><span class="video-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></span>' +
+          '<img src="' + img("video/" + v.id + ".webp") + '" alt="" loading="lazy" decoding="async"><span class="video-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></span>' +
           '<span class="video-card__dur" aria-hidden="true">' + esc(v.dur) + "</span></button><figcaption>" + esc(title) + "</figcaption></figure>";
       }).join(""); initReveal(el);
     });
@@ -1119,7 +1119,7 @@
     var b = e.target.closest("[data-video]"); if (!b) return;
     var v = (NP.VIDEOS || []).filter(function (x) { return x.id === b.getAttribute("data-video"); })[0]; if (!v) return;
     var vid = document.createElement("video");
-    vid.src = ROOT + "assets/video/" + v.id + ".mp4"; vid.poster = img("video/" + v.id + ".jpg");
+    vid.src = ROOT + "assets/video/" + v.id + ".mp4"; vid.poster = img("video/" + v.id + ".webp");
     vid.controls = true; vid.playsInline = true; vid.preload = "auto"; vid.className = "video-card__player";
     vid.setAttribute("aria-label", EN && v.titleEn ? v.titleEn : v.title);
     b.replaceWith(vid); vid.focus();
